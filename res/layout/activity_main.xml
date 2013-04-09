@@ -1,0 +1,39 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" >
+
+    <LinearLayout
+        android:layout_width="200dp"
+        android:layout_height="match_parent"
+        android:layout_centerVertical="true"
+        android:orientation="vertical" >
+
+        <Button
+            android:id="@+id/CariTarianButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Cari Tarian"
+            android:onClick="cariTarian" />
+
+        <Button
+            android:id="@+id/LihatBookmarkButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lihat Bookmark" />
+
+        <Button
+            android:id="@+id/LihatAwardButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Lihat Award" />
+
+        <Button
+            android:id="@+id/MainkanQuizButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mainkan Quiz" />
+
+    </LinearLayout>
+
+</RelativeLayout>
