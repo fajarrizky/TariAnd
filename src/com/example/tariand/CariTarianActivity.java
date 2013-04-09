@@ -1,96 +1,88 @@
 package com.example.tariand;
 
 import android.app.ActionBar;
+import android.app.ActionBar.Tab;
+import android.app.Activity;
 import android.app.FragmentTransaction;
-import android.content.Context;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.NavUtils;
-import android.view.Gravity;
-import android.view.LayoutInflater;
-import android.view.Menu;
-import android.view.MenuItem;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
+import android.app.Fragment;
 
-public class CariTarianActivity extends FragmentActivity implements ActionBar.TabListener {
+public class CariTarianActivity extends Activity {
 
-    private static final String STATE_SELECTED_NAVIGATION_ITEM = "selected_navigation_item";
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
 
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cari_tarian);
+		final ActionBar actionBar = getActionBar();
+		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
-        // Set up the action bar.
-        final ActionBar actionBar = getActionBar();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
+		Tab nama = actionBar.newTab();
+		nama.setText("Berdasarkan Nama");
+		nama.setTabListener(new TabListener<CariNama>(this, "Nama",
+				CariNama.class));
+		actionBar.addTab(nama);
 
-        // For each of the sections in the app, add a tab to the action bar.
-        actionBar.addTab(actionBar.newTab().setText("abc").setTabListener(this));
-        actionBar.addTab(actionBar.newTab().setText(R.string.title_section2).setTabListener(this));
-        actionBar.addTab(actionBar.newTab().setText(R.string.title_section3).setTabListener(this));
-    }
+		Tab prov = actionBar.newTab();
+		prov.setText("Berdasarkan Provinsi");
+		prov.setTabListener(new TabListener<CariProvinsi>(this,
+				"Berdasarkan Provinsi", CariProvinsi.class));
+		actionBar.addTab(prov);
 
-    @Override
-    public void onRestoreInstanceState(Bundle savedInstanceState) {
-        if (savedInstanceState.containsKey(STATE_SELECTED_NAVIGATION_ITEM)) {
-            getActionBar().setSelectedNavigationItem(
-                    savedInstanceState.getInt(STATE_SELECTED_NAVIGATION_ITEM));
-        }
-    }
+		if (savedInstanceState != null) {
+			int savedIndex = savedInstanceState.getInt("SAVED_INDEX");
+			getActionBar().setSelectedNavigationItem(savedIndex);
+		}
+	}
+	
+	@Override
+	protected void onSaveInstanceState(Bundle outState) {
+		// TODO Auto-generated method stub
+		super.onSaveInstanceState(outState);
+		outState.putInt("SAVED_INDEX", getActionBar().getSelectedNavigationIndex());
+	}
 
-    @Override
-    public void onSaveInstanceState(Bundle outState) {
-        outState.putInt(STATE_SELECTED_NAVIGATION_ITEM,
-                getActionBar().getSelectedNavigationIndex());
-    }
+	public static class TabListener<T> implements ActionBar.TabListener {
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_cari_tarian, menu);
-        return true;
-    }
+		private final Activity myActivity;
+		private final String myTag;
+		private final Class<T> myClass;
 
-    
+		public TabListener(Activity activity, String tag, Class<T> cls) {
+			myActivity = activity;
+			myTag = tag;
+			myClass = cls;
+		}
+		
+		@Override
+		public void onTabUnselected(ActionBar.Tab tab,
+				FragmentTransaction fragmentTransaction) {
+			android.app.Fragment myFragment = myActivity.getFragmentManager()
+					.findFragmentByTag(myTag);
 
-    public void onTabUnselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
-    }
+			if (myFragment != null) {
+				// Detach the fragment, because another one is being attached
+				fragmentTransaction.detach(myFragment);
+			}
+		}
+		
+		@Override
+		public void onTabSelected(ActionBar.Tab tab,
+				FragmentTransaction ft) {
+			Object myFragment = myActivity.getFragmentManager().findFragmentByTag(myTag);
+			   
+			   // Check if the fragment is already initialized
+			         if (myFragment == null) {
+			             // If not, instantiate and add it to the activity
+			             myFragment = Fragment.instantiate(myActivity, myClass.getName());
+			             ft.add(android.R.id.content, (android.app.Fragment) myFragment, myTag);
+			         } else {
+			             // If it exists, simply attach it in order to show it
+			             ft.attach((android.app.Fragment) myFragment);
+			         }
+		}
 
-    public void onTabSelected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
-        // When the given tab is selected, show the tab contents in the container
-        Fragment fragment = new DummySectionFragment();
-        Bundle args = new Bundle();
-        args.putInt(DummySectionFragment.ARG_SECTION_NUMBER, tab.getPosition() + 1);
-        fragment.setArguments(args);
-        getSupportFragmentManager().beginTransaction()
-                .replace(R.id.container, fragment)
-                .commit();
-    }
-
-    public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction) {
-    }
-
-    /**
-     * A dummy fragment representing a section of the app, but that simply displays dummy text.
-     */
-    public static class DummySectionFragment extends Fragment {
-        public DummySectionFragment() {
-        }
-
-        public static final String ARG_SECTION_NUMBER = "section_number";
-
-        @Override
-        public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                Bundle savedInstanceState) {
-            TextView textView = new TextView(getActivity());
-            textView.setGravity(Gravity.CENTER);
-            Bundle args = getArguments();
-            textView.setText(Integer.toString(args.getInt(ARG_SECTION_NUMBER)));
-            return textView;
-        }
-    }
+		public void onTabReselected(ActionBar.Tab tab,
+				FragmentTransaction fragmentTransaction) {
+		}
+	}
 }
