@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="blue">#449DEF</color>
+    <color name="blue_stroke">#2F6699</color>
+    <color name="blue_gradS">#00a2e2</color>
+    <color name="blue_gradE">#0767a4</color>
+    <color name="menu_text">#FFFFFF</color>
+    <color name="menu_shadow">#29009C</color>
+</resources>

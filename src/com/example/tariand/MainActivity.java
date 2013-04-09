@@ -20,7 +20,7 @@ public class MainActivity extends Activity {
         return true;
     }
     public void cariTarian (View v){
-    	startActivity(new Intent(getApplicationContext(), MainActivity.class));
+    	startActivity(new Intent(getApplicationContext(), CariTarianActivity.class));
     }
     
 }

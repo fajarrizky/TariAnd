@@ -4,35 +4,47 @@
     android:layout_height="match_parent" >
 
     <LinearLayout
-        android:layout_width="200dp"
+        android:layout_width="350dp"
         android:layout_height="match_parent"
         android:layout_centerVertical="true"
         android:orientation="vertical" >
 
         <Button
             android:id="@+id/CariTarianButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Cari Tarian"
-            android:onClick="cariTarian" />
+            android:onClick="cariTarian"
+            style="@style/main_menu"
+			android:background="@drawable/menu_btn"
+			android:layout_marginTop="10dp" />
 
         <Button
             android:id="@+id/LihatBookmarkButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lihat Bookmark" />
+            android:text="Lihat Bookmark"
+            style="@style/main_menu"
+			android:background="@drawable/menu_btn"
+			android:layout_marginTop="10dp" />
 
         <Button
             android:id="@+id/LihatAwardButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Lihat Award" />
+            android:text="Lihat Award"
+            style="@style/main_menu"
+			android:background="@drawable/menu_btn"
+			android:layout_marginTop="10dp" />
 
         <Button
             android:id="@+id/MainkanQuizButton"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Mainkan Quiz" />
+            android:text="Mainkan Quiz"
+            style="@style/main_menu"
+			android:background="@drawable/menu_btn"
+			android:layout_marginTop="10dp"/>
 
     </LinearLayout>
 
