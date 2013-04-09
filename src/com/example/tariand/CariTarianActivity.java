@@ -30,9 +30,9 @@ public class CariTarianActivity extends FragmentActivity implements ActionBar.Ta
         actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
         // For each of the sections in the app, add a tab to the action bar.
-        actionBar.addTab(actionBar.newTab().setText("abc").setTabListener(this));
-        actionBar.addTab(actionBar.newTab().setText(R.string.title_section2).setTabListener(this));
-        actionBar.addTab(actionBar.newTab().setText(R.string.title_section3).setTabListener(this));
+        actionBar.addTab(actionBar.newTab().setText("Berdasarkan Nama").setTabListener(this));
+        actionBar.addTab(actionBar.newTab().setText("Berdasarkan Provinsi").setTabListener(this));
+        //actionBar.addTab(actionBar.newTab().setText(R.string.title_section3).setTabListener(this));
     }
 
     @Override
