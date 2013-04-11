@@ -14,34 +14,48 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical" >
-
+
             <TabWidget
                 android:id="@android:id/tabs"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content" >
-
             </TabWidget>
-
+
             <FrameLayout
                 android:id="@android:id/tabcontent"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" >
-
+
                 <LinearLayout
-                    android:id="@+id/tab1"
+                    android:id="@+id/Nama"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" >
+
+                    <EditText
+                        android:id="@+id/editText1"
+                        android:layout_width="440dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginLeft="18dp"
+                        android:layout_marginTop="22dp"
+                        android:ems="10" >
+
+                        <requestFocus />
+                    </EditText>
+
+                    <ImageButton
+                        android:id="@+id/searchButton"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/ic_action_search"
+                        android:layout_marginTop="13dp"
+                        android:layout_marginLeft="5dp" />
 
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/tab2"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent" >
-                </LinearLayout>
-
-                <LinearLayout
-                    android:id="@+id/tab3"
+                    android:id="@+id/Provinsi"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" >
                 </LinearLayout>
