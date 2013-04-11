@@ -53,7 +53,6 @@ public class CariTarianActivity extends Activity {
 			myClass = cls;
 		}
 		
-		@Override
 		public void onTabUnselected(ActionBar.Tab tab,
 				FragmentTransaction fragmentTransaction) {
 			android.app.Fragment myFragment = myActivity.getFragmentManager()
@@ -65,7 +64,6 @@ public class CariTarianActivity extends Activity {
 			}
 		}
 		
-		@Override
 		public void onTabSelected(ActionBar.Tab tab,
 				FragmentTransaction ft) {
 			Object myFragment = myActivity.getFragmentManager().findFragmentByTag(myTag);
