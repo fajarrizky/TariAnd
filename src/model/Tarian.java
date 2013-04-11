@@ -5,6 +5,8 @@ public class Tarian {
 	private String name;
 	private String location;
 	private String description;
+	private String linkVideo;
+	private String[] linkGambar;
 	private boolean isBookmark;
 	
 }
