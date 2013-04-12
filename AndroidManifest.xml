@@ -33,6 +33,10 @@
             android:name="com.example.tariand.CariProvinsi"
             android:label="@string/title_activity_cari_provinsi" >
         </activity>
+        <activity
+            android:name=".ListViewActivity"
+            android:label="@string/title_activity_list_view" >
+        </activity>
     </application>
 
 </manifest>
