@@ -16,8 +16,8 @@ public class ListViewAdapter extends BaseAdapter {
 
 	private Tarian[] tarianArray;
 	private LayoutInflater mInflater;
-	
-	public ListViewAdapter (Context context, Tarian[] results){
+
+	public ListViewAdapter(Context context, Tarian[] results) {
 		tarianArray = results;
 		mInflater = LayoutInflater.from(context);
 	}
@@ -39,14 +39,12 @@ public class ListViewAdapter extends BaseAdapter {
 
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
-		if (convertView == null){
+		if (convertView == null) {
 			convertView = mInflater.inflate(R.layout.simple_list_item_1, null);
-			
+
 		}
-		
+
 		return null;
 	}
-	
-	
 
 }

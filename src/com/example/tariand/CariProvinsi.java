@@ -12,6 +12,10 @@ public class CariProvinsi extends Fragment {
 	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
 		View FragView = inflater.inflate(R.layout.activity_cari_provinsi, container, false);
+		TouchImageView map = (TouchImageView) FragView.findViewById(R.id.imap);
+		map.setImageResource(R.drawable.imap);
+		map.setMaxZoom(4f);
+		
 		return FragView;
 	}
 }
