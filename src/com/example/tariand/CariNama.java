@@ -30,6 +30,7 @@ public class CariNama extends Fragment {
 				Toast.makeText(getActivity(), "halo", 3).show();
 				Intent i = new Intent(getActivity(), ListViewActivity.class);
 				i.putExtra("searchByName", true);
+				
 				i.putExtra("tarianName", namaTarian);
 				startActivity(i);
 			}
