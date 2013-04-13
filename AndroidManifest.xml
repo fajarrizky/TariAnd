@@ -40,11 +40,22 @@
         <activity
             android:name=".ShowTarianActivity"
             android:label="@string/title_activity_show_tarian" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+        </activity>
+        <activity
+            android:name=".ShowDeskripsiActivity"
+            android:label="@string/title_activity_show_deskripsi" >
+        </activity>
+        <activity
+            android:name=".ShowGambarActivity"
+            android:label="@string/title_activity_show_gambar" >
+        </activity>
+        <activity
+            android:name=".ShowVideoActivity"
+            android:label="@string/title_activity_show_video" >
+        </activity>
+        <activity
+            android:name=".PlayQuizActivity"
+            android:label="@string/title_activity_play_quiz" >
         </activity>
     </application>
 

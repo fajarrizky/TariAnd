@@ -14,5 +14,9 @@
     <string name="title_activity_cari_provinsi">CariProvinsi</string>
     <string name="title_activity_list_view">ListViewActivity</string>
     <string name="title_activity_show_tarian">ShowTarianActivity</string>
+    <string name="title_activity_show_deskripsi">ShowDeskripsiActivity</string>
+    <string name="title_activity_show_gambar">ShowGambarActivity</string>
+    <string name="title_activity_show_video">ShowVideoActivity</string>
+    <string name="title_activity_play_quiz">PlayQuizActivity</string>
 
 </resources>
