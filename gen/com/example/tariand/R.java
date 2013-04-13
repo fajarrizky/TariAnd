@@ -49,11 +49,11 @@ public final class R {
         public static final int b2=0x7f090004;
         public static final int b3=0x7f090006;
         public static final int b4=0x7f090003;
-        public static final int b5=0x7f090007;
-        public static final int b6=0x7f090008;
+        public static final int b5=0x7f090008;
+        public static final int b6=0x7f090007;
         public static final int b7=0x7f090009;
-        public static final int b8=0x7f09000a;
-        public static final int b9=0x7f09000b;
+        public static final int b8=0x7f09000b;
+        public static final int b9=0x7f09000a;
         public static final int container=0x7f09000d;
         public static final int editText1=0x7f09000f;
         public static final int imap=0x7f090002;
