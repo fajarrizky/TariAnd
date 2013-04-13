@@ -1,5 +1,7 @@
 package com.example.tariand;
 
+import helper.ListViewAdapter;
+import model.Tarian;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -18,13 +20,14 @@ public class ListViewActivity extends Activity {
     public boolean onCreateOptionsMenu(Menu menu) {
         getMenuInflater().inflate(R.menu.activity_list_view, menu);
         
-        String[] stringArray = new String[10];
+        Tarian[] tarianArray = new Tarian[10];
         
-        for (int i = 0; i < stringArray.length; i++) {
-			stringArray[i] = "tarian" +i;
+        for (int i = 0; i < tarianArray.length; i++) {
+			tarianArray[i].setName("tarian" +i);
+			tarianArray[i].setBookmark(false);
 		}
         
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, stringArray);
+        ListViewAdapter adapter = new ListViewAdapter(getApplicationContext(), tarianArray);
         
         ListView listview = (ListView) findViewById(R.id.listView1);
         listview.setAdapter(adapter);
