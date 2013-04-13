@@ -49,6 +49,7 @@ public class ListViewAdapter extends BaseAdapter {
 
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
+		final int thisposition = position;
 		if (convertView == null) {
 			convertView = mInflater.inflate(com.example.tariand.R.layout.list_view, null);
 			TextView tv = (TextView) convertView.findViewById(com.example.tariand.R.id.namaTarian);
@@ -62,8 +63,10 @@ public class ListViewAdapter extends BaseAdapter {
 					
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
+						tarianArray[thisposition].setBookmark(false);
 						v.findViewById(com.example.tariand.R.id.bookmark).setVisibility(View.GONE);
-						v.findViewById(com.example.tariand.R.id.noBookmark).setVisibility(View.VISIBLE);
+						
+						//v.findViewById(com.example.tariand.R.id.noBookmark).setVisibility(View.VISIBLE);
 					}
 				});
 			}
@@ -73,7 +76,8 @@ public class ListViewAdapter extends BaseAdapter {
 					
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
-						v.findViewById(com.example.tariand.R.id.noBookmark).setVisibility(View.GONE);
+						//v.findViewById(com.example.tariand.R.id.noBookmark).setVisibility(View.GONE);
+						tarianArray[thisposition].setBookmark(true);
 						v.findViewById(com.example.tariand.R.id.bookmark).setVisibility(View.VISIBLE);
 						
 					}

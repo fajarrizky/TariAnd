@@ -58,7 +58,7 @@ public final class R {
         public static final int b7=0x7f090009;
         public static final int b8=0x7f09000b;
         public static final int b9=0x7f09000a;
-        public static final int bookmark=0x7f09001b;
+        public static final int bookmark=0x7f09001a;
         public static final int container=0x7f09000d;
         public static final int customlistview=0x7f090016;
         public static final int editText1=0x7f09000f;
@@ -66,7 +66,7 @@ public final class R {
         public static final int listView1=0x7f090011;
         public static final int menu_settings=0x7f09001c;
         public static final int namaTarian=0x7f090019;
-        public static final int noBookmark=0x7f09001a;
+        public static final int noBookmark=0x7f09001b;
         public static final int searchButton=0x7f090001;
     }
     public static final class layout {
@@ -75,15 +75,17 @@ public final class R {
         public static final int activity_cari_tarian=0x7f030002;
         public static final int activity_list_view=0x7f030003;
         public static final int activity_main=0x7f030004;
-        public static final int customlistviewlayout=0x7f030005;
-        public static final int list_view=0x7f030006;
+        public static final int activity_show_tarian=0x7f030005;
+        public static final int customlistviewlayout=0x7f030006;
+        public static final int list_view=0x7f030007;
     }
     public static final class menu {
         public static final int activity_cari_tarian=0x7f080000;
         public static final int activity_list_view=0x7f080001;
         public static final int activity_main=0x7f080002;
-        public static final int cari_nama=0x7f080003;
-        public static final int cari_provinsi=0x7f080004;
+        public static final int activity_show_tarian=0x7f080003;
+        public static final int cari_nama=0x7f080004;
+        public static final int cari_provinsi=0x7f080005;
     }
     public static final class string {
         public static final int action_settings=0x7f060009;
@@ -95,6 +97,7 @@ public final class R {
         public static final int title_activity_cari_tarian=0x7f060007;
         public static final int title_activity_list_view=0x7f06000b;
         public static final int title_activity_main=0x7f060003;
+        public static final int title_activity_show_tarian=0x7f06000c;
         public static final int title_section1=0x7f060006;
         public static final int title_section2=0x7f060005;
         public static final int title_section3=0x7f060004;

@@ -23,8 +23,8 @@ public class ListViewActivity extends Activity {
         Tarian[] tarianArray = new Tarian[10];
         
         for (int i = 0; i < tarianArray.length; i++) {
-			tarianArray[i].setName("tarian" +i);
-			tarianArray[i].setBookmark(false);
+			tarianArray[i] = new Tarian(i, "tarian" + i);
+			tarianArray[i].setBookmark(true);
 		}
         
         ListViewAdapter adapter = new ListViewAdapter(getApplicationContext(), tarianArray);

@@ -1,4 +1,4 @@
-package com.example.voldemort;
+package control;
 
 import java.io.BufferedReader;
 import java.io.IOException;
