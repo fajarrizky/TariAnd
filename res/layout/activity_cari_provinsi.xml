@@ -2,103 +2,321 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
+    android:gravity="start"
     android:orientation="horizontal" >
 
     <com.example.tariand.TouchImageView
         android:id="@+id/imap"
-        android:layout_width="543dp"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" />
-
-    <Button
-        android:id="@+id/b4"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:layout_below="@+id/b2"
-        android:layout_toRightOf="@+id/b2"
-        android:background="@drawable/tombol" />
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
 
     <Button
         android:id="@+id/b1"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:layout_above="@+id/b2"
         android:layout_alignParentLeft="true"
-        android:layout_marginBottom="14dp"
-        android:layout_marginLeft="24dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="14dp"
+        android:layout_marginTop="49dp"
         android:background="@drawable/tombol" />
 
     <Button
         android:id="@+id/b2"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:layout_alignBottom="@+id/b3"
-        android:layout_marginBottom="26dp"
-        android:layout_marginLeft="14dp"
+        android:layout_below="@+id/b1"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="8dp"
         android:layout_toRightOf="@+id/b1"
-        android:background="@drawable/tombol" />
-
-    <Button
-        android:id="@+id/b6"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:layout_alignLeft="@+id/b3"
-        android:layout_below="@+id/b5"
-        android:layout_marginTop="14dp"
-        android:background="@drawable/tombol" />
-
-    <Button
-        android:id="@+id/b5"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/b3"
-        android:background="@drawable/tombol" />
-
-    <Button
-        android:id="@+id/b7"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:layout_alignBaseline="@+id/b3"
-        android:layout_alignBottom="@+id/b3"
-        android:layout_toRightOf="@+id/b5"
         android:background="@drawable/tombol" />
 
     <Button
         android:id="@+id/b3"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:layout_above="@+id/b5"
-        android:layout_marginBottom="14dp"
-        android:layout_marginLeft="14dp"
+        android:layout_below="@+id/b2"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="32dp"
+        android:layout_toRightOf="@+id/b2"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b4"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignBottom="@+id/b3"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/b3"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b5"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_above="@+id/b4"
+        android:layout_marginLeft="22dp"
         android:layout_toRightOf="@+id/b4"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b9"
+        android:id="@+id/b6"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:layout_below="@+id/b8"
-        android:layout_toRightOf="@+id/b7"
+        android:layout_below="@+id/b4"
+        android:layout_toRightOf="@+id/b4"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b10"
-        android:layout_width="10dp"
-        android:layout_height="10dp"
-        android:layout_alignLeft="@+id/b9"
-        android:layout_below="@+id/b6"
+        android:id="@+id/b7"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/b5"
         android:background="@drawable/tombol" />
 
     <Button
         android:id="@+id/b8"
         android:layout_width="10dp"
         android:layout_height="10dp"
+        android:layout_below="@+id/b7"
+        android:layout_marginTop="12dp"
+        android:layout_marginRight="12dp"
+        android:layout_toRightOf="@+id/b6"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b9"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_alignBaseline="@+id/b8"
+        android:layout_alignBottom="@+id/b8"
+        android:layout_alignLeft="@+id/b4"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b10"
+        android:layout_width="9dp"
+        android:layout_height="9dp"
+        android:layout_below="@+id/b8"
+        android:layout_marginTop="5dp"
+        android:layout_toLeftOf="@+id/b7"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b11"
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+        android:layout_alignLeft="@+id/b7"
+        android:layout_below="@+id/b10"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="3dp"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b12"
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+        android:layout_below="@+id/b10"
+        android:layout_toRightOf="@+id/b11"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="2dp"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b13"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_below="@+id/b11"
+        android:layout_marginLeft="4dp"
+        android:layout_toRightOf="@+id/b12"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b14"
+        android:layout_width="7dp"
+        android:layout_height="7dp"
+        android:layout_alignBaseline="@+id/b13"
+        android:layout_alignBottom="@+id/b13"
+        android:layout_marginLeft="12dp"
+        android:layout_toRightOf="@+id/b13"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b15"
+        android:layout_width="5dp"
+        android:layout_height="5dp"
+        android:layout_below="@+id/b14"
+        android:layout_marginLeft="2dp"
+        android:layout_toRightOf="@+id/b14"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b16"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignBottom="@+id/b15"
+        android:layout_marginLeft="14dp"
+        android:layout_toRightOf="@+id/b15"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b17"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignRight="@+id/b15"
+        android:layout_below="@+id/b5"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b18"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_below="@+id/b6"
+        android:layout_toRightOf="@+id/b16"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b19"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_below="@+id/b7"
+        android:layout_marginLeft="18dp"
+        android:layout_toRightOf="@+id/b18"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b20"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignBaseline="@+id/b17"
+        android:layout_alignBottom="@+id/b17"
+        android:layout_toRightOf="@+id/b19"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b21"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_below="@+id/b1"
+        android:layout_toRightOf="@+id/b19"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b22"
+        android:layout_width="6dp"
+        android:layout_height="6dp"
+        android:layout_below="@+id/b16"
+        android:layout_toRightOf="@+id/b18"
+        android:layout_marginLeft="14dp"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b23"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_below="@+id/b22"
+        android:layout_toRightOf="@+id/b20"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b24"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignBaseline="@+id/b23"
+        android:layout_alignBottom="@+id/b23"
+        android:layout_marginLeft="26dp"
+        android:layout_toRightOf="@+id/b23"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b25"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignBaseline="@+id/b19"
+        android:layout_alignBottom="@+id/b19"
+        android:layout_toRightOf="@+id/b23"
+        android:layout_marginLeft="12dp"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b26"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
         android:layout_alignBaseline="@+id/b5"
         android:layout_alignBottom="@+id/b5"
         android:layout_marginLeft="14dp"
-        android:layout_toRightOf="@+id/b9"
+        android:layout_toRightOf="@+id/b24"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b27"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_below="@+id/b4"
+        android:layout_toLeftOf="@+id/b26"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b28"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_below="@+id/b29"
+        android:layout_toRightOf="@+id/b25"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b29"
+        android:layout_width="9dp"
+        android:layout_height="9dp"
+        android:layout_above="@+id/b10"
+        android:layout_alignRight="@+id/b26"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b30"
+        android:layout_width="8dp"
+        android:layout_height="8dp"
+        android:layout_alignBottom="@+id/b26"
+        android:layout_marginLeft="18dp"
+        android:layout_toRightOf="@+id/b26"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b31"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_below="@+id/b25"
+        android:layout_marginLeft="35dp"
+        android:layout_toRightOf="@+id/b30"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b32"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignBaseline="@+id/b30"
+        android:layout_alignBottom="@+id/b30"
+        android:layout_alignRight="@+id/b31"
+        android:layout_marginRight="7dp"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b33"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_above="@+id/b18"
+        android:layout_marginLeft="37dp"
+        android:layout_toRightOf="@+id/b31"
+        android:background="@drawable/tombol" />
+
+    <Button
+        android:id="@+id/b34"
+        android:layout_width="10dp"
+        android:layout_height="10dp"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/b18"
+        android:layout_marginRight="38dp"
         android:background="@drawable/tombol" />
 
 </RelativeLayout>
