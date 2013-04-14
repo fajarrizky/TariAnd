@@ -26,11 +26,12 @@ public class CariNama extends Fragment {
 			
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
-				Toast.makeText(getActivity(), "halo", 3).show();
-				Intent i = new Intent(getActivity(), ListViewActivity.class);
-				i.putExtra("searchByName", true);
 				
-				i.putExtra("tarianName", namaTarian);
+				Intent i = new Intent(getActivity(), ListViewActivity.class);
+				Bundle b = new Bundle();
+				b.putBoolean("searchByName", true);
+				b.putString("tarianName", namaTarian);
+				i.putExtra("namatarian", b);
 				startActivity(i);
 			}
 		});

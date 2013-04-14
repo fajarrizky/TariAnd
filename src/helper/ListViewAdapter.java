@@ -1,5 +1,7 @@
 package helper;
 
+import java.util.ArrayList;
+
 import model.Tarian;
 
 
@@ -16,7 +18,7 @@ import com.example.tariand.*;
 
 public class ListViewAdapter extends BaseAdapter {
 
-	private Tarian[] tarianArray;
+	private ArrayList<Tarian> tarianArray;
 	private LayoutInflater mInflater;
 	
 	public void setVisibleFalse(ImageButton i){
@@ -27,19 +29,19 @@ public class ListViewAdapter extends BaseAdapter {
 		i.setVisibility(View.VISIBLE);
 	}
 
-	public ListViewAdapter(Context context, Tarian[] results) {
+	public ListViewAdapter(Context context, ArrayList<Tarian> results) {
 		tarianArray = results;
 		mInflater = LayoutInflater.from(context);
 	}
 
 	public int getCount() {
 		// TODO Auto-generated method stub
-		return tarianArray.length;
+		return tarianArray.size();
 	}
 
 	public Object getItem(int arg0) {
 		// TODO Auto-generated method stub
-		return tarianArray[arg0];
+		return tarianArray.get(arg0);
 	}
 
 	public long getItemId(int arg0) {
@@ -55,15 +57,15 @@ public class ListViewAdapter extends BaseAdapter {
 			TextView tv = (TextView) convertView.findViewById(com.example.tariand.R.id.namaTarian);
 			ImageButton bukmark = (ImageButton) convertView.findViewById(com.example.tariand.R.id.bookmark);
 			ImageButton anbukmark = (ImageButton) convertView.findViewById(com.example.tariand.R.id.noBookmark);
-			tv.setText(tarianArray[position].getName());
+			tv.setText(tarianArray.get(position).getName());
 			
-			if (tarianArray[position].isBookmarked()){
+			if (tarianArray.get(thisposition).isBookmarked()){
 				bukmark.setVisibility(1);
 				bukmark.setOnClickListener(new View.OnClickListener() {
 					
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
-						tarianArray[thisposition].setBookmark(false);
+						tarianArray.get(thisposition).setBookmark(false);
 						v.findViewById(com.example.tariand.R.id.bookmark).setVisibility(View.GONE);
 						
 						//v.findViewById(com.example.tariand.R.id.noBookmark).setVisibility(View.VISIBLE);
@@ -77,7 +79,7 @@ public class ListViewAdapter extends BaseAdapter {
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
 						//v.findViewById(com.example.tariand.R.id.noBookmark).setVisibility(View.GONE);
-						tarianArray[thisposition].setBookmark(true);
+						tarianArray.get(thisposition).setBookmark(true);
 						v.findViewById(com.example.tariand.R.id.bookmark).setVisibility(View.VISIBLE);
 						
 					}
