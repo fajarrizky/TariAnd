@@ -5,9 +5,12 @@ import helper.CustomHttpClient;
 import java.util.ArrayList;
 import java.util.ListIterator;
 import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
+
+import android.os.StrictMode;
 import android.util.Log;
 import model.Tarian;
 
@@ -40,10 +43,11 @@ public class TarianManager {
 	//niatnya ini buat ngeretrieve dari database, masukin semua tarian ke list.
 	public void retrieve(){
 		ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();  
-		//postParameters.add(new BasicNameValuePair("Nama", input.getText().toString()));
+		postParameters.add(new BasicNameValuePair("Nama", "asd"));
+		
 		String response = null;
 		try {
-			response = CustomHttpClient.executeHttpPost("http://192.168.6.54/android/daftar_tarian.php", postParameters);
+			response = CustomHttpClient.executeHttpGet("http://192.168.6.54/android/daftar_tarian.php");
 		    String result = response.toString();  
 		    try{
 		    	JSONArray jArray = new JSONArray(result);
@@ -79,13 +83,13 @@ public class TarianManager {
 	public ArrayList<Tarian> searchByName(String targetName){
 		ArrayList<Tarian> target = new ArrayList<Tarian>();
 
-		ListIterator<Tarian> MainIterator = listTarian.listIterator();
-		while(MainIterator.hasNext()){
-			Tarian temp = MainIterator.next();
-			if(temp.getName().contains(targetName)){
-				target.add(temp);
+		for (Tarian tarian : listTarian) {
+			if(tarian.getName().toLowerCase().contains(targetName)){
+				Log.d("equals?", tarian.getName().contains(targetName) + "");
+				target.add(tarian);
 			}
 		}
+		
 		return target;
 	}
 
@@ -97,7 +101,7 @@ public class TarianManager {
 		ListIterator<Tarian> MainIterator = listTarian.listIterator();
 		while(MainIterator.hasNext()){
 			Tarian temp = MainIterator.next();
-			if(temp.getLocation().equals(targetLocation)){
+			if(temp.getLocation().toLowerCase().equals(targetLocation)){
 				target.add(temp);
 			}
 		}

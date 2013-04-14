@@ -7,6 +7,7 @@ import control.TarianManager;
 import helper.ListViewAdapter;
 import model.Tarian;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.app.Activity;
 import android.util.Log;
 import android.view.Menu;
@@ -22,6 +23,8 @@ public class ListViewActivity extends Activity {
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
+    	
+    	StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectDiskReads().detectDiskWrites().detectNetwork().penaltyLog().build());
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view);
         

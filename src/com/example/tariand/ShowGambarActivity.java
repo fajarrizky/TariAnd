@@ -14,6 +14,7 @@ public class ShowGambarActivity extends Fragment {
 		View FragView = inflater.inflate(R.layout.activity_show_gambar, container, false);
 		return FragView;
         
+		
     }
 
    
