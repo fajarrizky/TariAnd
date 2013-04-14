@@ -31,6 +31,9 @@ public class ListViewActivity extends Activity {
          	arrayTari = tariManager.searchByName(nama);
         	
 			}
+        if (this.getIntent().getBooleanExtra("bookmark", false)){
+        	arrayTari = tariManager.getBookmarkedTarian();
+        }
         
         ListViewAdapter adapter = new ListViewAdapter(getApplicationContext(), arrayTari);
         
