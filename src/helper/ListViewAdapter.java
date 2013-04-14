@@ -7,6 +7,10 @@ import model.Tarian;
 
 import android.R;
 import android.content.Context;
+import android.content.Intent;
+import android.os.Bundle;
+import android.os.Parcelable;
+import android.sax.StartElementListener;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -58,6 +62,16 @@ public class ListViewAdapter extends BaseAdapter {
 			ImageButton bukmark = (ImageButton) convertView.findViewById(com.example.tariand.R.id.bookmark);
 			ImageButton anbukmark = (ImageButton) convertView.findViewById(com.example.tariand.R.id.noBookmark);
 			tv.setText(tarianArray.get(position).getName());
+			tv.setClickable(true);
+			tv.setOnClickListener(new View.OnClickListener() {
+				
+				public void onClick(View arg0) {
+					// TODO Auto-generated method stub
+					Intent i = new Intent(arg0.getContext(), ShowDeskripsiActivity.class);
+					i.putExtra("tarian", tarianArray.get(thisposition));
+					arg0.getContext().startActivity(i);
+				}
+			});
 			
 			if (tarianArray.get(thisposition).isBookmarked()){
 				bukmark.setVisibility(1);
