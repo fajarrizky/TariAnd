@@ -32,10 +32,11 @@ public final class R {
         public static final int ic_action_search=0x7f020000;
         public static final int ic_launcher=0x7f020001;
         public static final int imap=0x7f020002;
-        public static final int menu_btn=0x7f020003;
-        public static final int nostar=0x7f020004;
-        public static final int star=0x7f020005;
-        public static final int tombol=0x7f020006;
+        public static final int menu=0x7f020003;
+        public static final int menu_btn=0x7f020004;
+        public static final int nostar=0x7f020005;
+        public static final int star=0x7f020006;
+        public static final int tombol=0x7f020007;
     }
     public static final class id {
         public static final int CariTarianButton=0x7f09002b;
@@ -43,26 +44,27 @@ public final class R {
         public static final int LihatBookmarkButton=0x7f09002e;
         public static final int MainkanQuizButton=0x7f09002d;
         public static final int Nama=0x7f090027;
-        public static final int NamaTarian=0x7f090039;
+        public static final int NamaTarian=0x7f09003b;
         public static final int Provinsi=0x7f090029;
         public static final int SearchField=0x7f090001;
-        public static final int StarButton=0x7f09003a;
-        public static final int StartQuiz=0x7f09002f;
+        public static final int StarButton=0x7f09003c;
+        public static final int StartQuiz=0x7f090030;
         public static final int aceh=0x7f090004;
-        public static final int action_settings=0x7f09003f;
+        public static final int action_settings=0x7f090041;
         public static final int awardListView=0x7f090000;
         public static final int babel=0x7f09000a;
         public static final int bali=0x7f090019;
         public static final int banten=0x7f09000e;
         public static final int bengkulu=0x7f09000c;
-        public static final int bookmark=0x7f09003c;
-        public static final int button1=0x7f090031;
-        public static final int button2=0x7f090032;
+        public static final int bookmark=0x7f09003e;
+        public static final int button1=0x7f090032;
+        public static final int button2=0x7f090033;
         public static final int container=0x7f090026;
-        public static final int customlistview=0x7f090038;
+        public static final int customlistview=0x7f09003a;
+        public static final int descTari=0x7f090034;
         public static final int editText1=0x7f090028;
         public static final int gorontalo=0x7f09001d;
-        public static final int gridView1=0x7f090033;
+        public static final int gridView1=0x7f090035;
         public static final int imap=0x7f090003;
         public static final int jabar=0x7f090010;
         public static final int jakarta=0x7f09000f;
@@ -80,9 +82,10 @@ public final class R {
         public static final int listView1=0x7f09002a;
         public static final int maluku=0x7f090022;
         public static final int malut=0x7f090023;
-        public static final int menu_settings=0x7f09003e;
-        public static final int namaTarian=0x7f09003b;
-        public static final int noBookmark=0x7f09003d;
+        public static final int menuImage=0x7f09002f;
+        public static final int menu_settings=0x7f090040;
+        public static final int namaTarian=0x7f09003d;
+        public static final int noBookmark=0x7f09003f;
         public static final int ntb=0x7f09001a;
         public static final int ntt=0x7f09001b;
         public static final int pabar=0x7f090024;
@@ -97,11 +100,11 @@ public final class R {
         public static final int sumbar=0x7f090006;
         public static final int sumsel=0x7f09000b;
         public static final int sumut=0x7f090005;
-        public static final int tab1=0x7f090034;
-        public static final int tab2=0x7f090035;
-        public static final int tab3=0x7f090036;
-        public static final int textView1=0x7f090030;
-        public static final int videoView1=0x7f090037;
+        public static final int tab1=0x7f090036;
+        public static final int tab2=0x7f090037;
+        public static final int tab3=0x7f090038;
+        public static final int textView1=0x7f090031;
+        public static final int videoView1=0x7f090039;
     }
     public static final class layout {
         public static final int activity_award_list_view=0x7f030000;

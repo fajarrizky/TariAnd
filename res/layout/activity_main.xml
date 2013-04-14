@@ -48,4 +48,12 @@
         android:background="@drawable/menu_btn"
         android:text="Mainkan Quiz" />
 
+    <ImageView
+        android:id="@+id/menuImage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toRightOf="@+id/CariTarianButton"
+        android:src="@drawable/menu" />
+
 </RelativeLayout>
