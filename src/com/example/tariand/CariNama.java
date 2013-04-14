@@ -17,8 +17,7 @@ public class CariNama extends Fragment {
 	public TextView textview;
 	
 	@Override
-	public View onCreateView(LayoutInflater inflater, ViewGroup container,
-			Bundle savedInstanceState) {
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,Bundle savedInstanceState) {
 		View FragView = inflater.inflate(R.layout.activity_cari_nama, container, false);
 		ImageButton b = (ImageButton) FragView.findViewById(R.id.searchButton);
 		textview = (TextView) FragView.findViewById(R.id.SearchField);
