@@ -11,7 +11,7 @@
         android:layout_height="fill_parent" />
 
     <Button
-        android:id="@+id/b1"
+        android:id="@+id/aceh"
         android:layout_width="10dp"
         android:layout_height="10dp"
         android:layout_alignParentLeft="true"
@@ -21,301 +21,301 @@
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b2"
+        android:id="@+id/sumut"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:layout_below="@+id/b1"
+        android:layout_below="@+id/aceh"
         android:layout_marginLeft="16dp"
         android:layout_marginTop="8dp"
-        android:layout_toRightOf="@+id/b1"
+        android:layout_toRightOf="@+id/aceh"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b3"
+        android:id="@+id/sumbar"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:layout_below="@+id/b2"
+        android:layout_below="@+id/sumut"
         android:layout_marginLeft="11dp"
         android:layout_marginTop="32dp"
-        android:layout_toRightOf="@+id/b2"
+        android:layout_toRightOf="@+id/sumut"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b4"
+        android:id="@+id/riau"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:layout_alignBottom="@+id/b3"
+        android:layout_alignBottom="@+id/sumbar"
         android:layout_marginBottom="10dp"
         android:layout_marginLeft="10dp"
-        android:layout_toRightOf="@+id/b3"
+        android:layout_toRightOf="@+id/sumbar"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b5"
+        android:id="@+id/kepriau"
         android:layout_width="8dp"
         android:layout_height="8dp"
-        android:layout_above="@+id/b4"
+        android:layout_above="@+id/riau"
         android:layout_marginLeft="22dp"
-        android:layout_toRightOf="@+id/b4"
+        android:layout_toRightOf="@+id/riau"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b6"
+        android:id="@+id/jambi"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:layout_below="@+id/b4"
-        android:layout_toRightOf="@+id/b4"
+        android:layout_below="@+id/riau"
+        android:layout_toRightOf="@+id/riau"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b7"
+        android:id="@+id/babel"
         android:layout_width="8dp"
         android:layout_height="8dp"
         android:layout_centerVertical="true"
-        android:layout_toRightOf="@+id/b5"
+        android:layout_toRightOf="@+id/kepriau"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b8"
+        android:id="@+id/sumsel"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:layout_below="@+id/b7"
+        android:layout_below="@+id/babel"
         android:layout_marginTop="12dp"
         android:layout_marginRight="12dp"
-        android:layout_toRightOf="@+id/b6"
+        android:layout_toRightOf="@+id/jambi"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b9"
+        android:id="@+id/bengkulu"
         android:layout_width="8dp"
         android:layout_height="8dp"
-        android:layout_alignBaseline="@+id/b8"
-        android:layout_alignBottom="@+id/b8"
-        android:layout_alignLeft="@+id/b4"
+        android:layout_alignBaseline="@+id/sumsel"
+        android:layout_alignBottom="@+id/sumsel"
+        android:layout_alignLeft="@+id/riau"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b10"
+        android:id="@+id/lampung"
         android:layout_width="9dp"
         android:layout_height="9dp"
-        android:layout_below="@+id/b8"
+        android:layout_below="@+id/sumsel"
         android:layout_marginTop="5dp"
-        android:layout_toLeftOf="@+id/b7"
+        android:layout_toLeftOf="@+id/babel"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b11"
+        android:id="@+id/banten"
         android:layout_width="6dp"
         android:layout_height="6dp"
-        android:layout_alignLeft="@+id/b7"
-        android:layout_below="@+id/b10"
+        android:layout_alignLeft="@+id/babel"
+        android:layout_below="@+id/lampung"
         android:layout_marginTop="10dp"
         android:layout_marginLeft="3dp"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b12"
+        android:id="@+id/jakarta"
         android:layout_width="6dp"
         android:layout_height="6dp"
-        android:layout_below="@+id/b10"
-        android:layout_toRightOf="@+id/b11"
+        android:layout_below="@+id/lampung"
+        android:layout_toRightOf="@+id/banten"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="2dp"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b13"
+        android:id="@+id/jabar"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:layout_below="@+id/b11"
+        android:layout_below="@+id/banten"
         android:layout_marginLeft="4dp"
-        android:layout_toRightOf="@+id/b12"
+        android:layout_toRightOf="@+id/jakarta"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b14"
+        android:id="@+id/jateng"
         android:layout_width="7dp"
         android:layout_height="7dp"
-        android:layout_alignBaseline="@+id/b13"
-        android:layout_alignBottom="@+id/b13"
+        android:layout_alignBaseline="@+id/jabar"
+        android:layout_alignBottom="@+id/jabar"
         android:layout_marginLeft="12dp"
-        android:layout_toRightOf="@+id/b13"
+        android:layout_toRightOf="@+id/jabar"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b15"
+        android:id="@+id/jogja"
         android:layout_width="5dp"
         android:layout_height="5dp"
-        android:layout_below="@+id/b14"
+        android:layout_below="@+id/jateng"
         android:layout_marginLeft="2dp"
-        android:layout_toRightOf="@+id/b14"
+        android:layout_toRightOf="@+id/jateng"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b16"
+        android:id="@+id/jatim"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:layout_alignBottom="@+id/b15"
+        android:layout_alignBottom="@+id/jogja"
         android:layout_marginLeft="14dp"
-        android:layout_toRightOf="@+id/b15"
+        android:layout_toRightOf="@+id/jogja"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b17"
+        android:id="@+id/kalbar"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:layout_alignRight="@+id/b15"
-        android:layout_below="@+id/b5"
+        android:layout_alignRight="@+id/jogja"
+        android:layout_below="@+id/kepriau"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b18"
+        android:id="@+id/kalteng"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:layout_below="@+id/b6"
-        android:layout_toRightOf="@+id/b16"
+        android:layout_below="@+id/jambi"
+        android:layout_toRightOf="@+id/jatim"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b19"
+        android:id="@+id/kalsel"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:layout_below="@+id/b7"
+        android:layout_below="@+id/babel"
         android:layout_marginLeft="18dp"
-        android:layout_toRightOf="@+id/b18"
+        android:layout_toRightOf="@+id/kalteng"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b20"
+        android:id="@+id/kaltim"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:layout_alignBaseline="@+id/b17"
-        android:layout_alignBottom="@+id/b17"
-        android:layout_toRightOf="@+id/b19"
+        android:layout_alignBaseline="@+id/kalbar"
+        android:layout_alignBottom="@+id/kalbar"
+        android:layout_toRightOf="@+id/kalsel"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b21"
+        android:id="@+id/kalut"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:layout_below="@+id/b1"
-        android:layout_toRightOf="@+id/b19"
+        android:layout_below="@+id/aceh"
+        android:layout_toRightOf="@+id/kalsel"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b22"
+        android:id="@+id/bali"
         android:layout_width="6dp"
         android:layout_height="6dp"
-        android:layout_below="@+id/b16"
-        android:layout_toRightOf="@+id/b18"
+        android:layout_below="@+id/jatim"
+        android:layout_toRightOf="@+id/kalteng"
         android:layout_marginLeft="14dp"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b23"
+        android:id="@+id/ntb"
         android:layout_width="8dp"
         android:layout_height="8dp"
-        android:layout_below="@+id/b22"
-        android:layout_toRightOf="@+id/b20"
+        android:layout_below="@+id/bali"
+        android:layout_toRightOf="@+id/kaltim"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b24"
+        android:id="@+id/ntt"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:layout_alignBaseline="@+id/b23"
-        android:layout_alignBottom="@+id/b23"
+        android:layout_alignBaseline="@+id/ntb"
+        android:layout_alignBottom="@+id/ntb"
         android:layout_marginLeft="26dp"
-        android:layout_toRightOf="@+id/b23"
+        android:layout_toRightOf="@+id/ntb"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b25"
+        android:id="@+id/sulbar"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:layout_alignBaseline="@+id/b19"
-        android:layout_alignBottom="@+id/b19"
-        android:layout_toRightOf="@+id/b23"
+        android:layout_alignBaseline="@+id/kalsel"
+        android:layout_alignBottom="@+id/kalsel"
+        android:layout_toRightOf="@+id/ntb"
         android:layout_marginLeft="12dp"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b26"
+        android:id="@+id/gorontalo"
         android:layout_width="8dp"
         android:layout_height="8dp"
-        android:layout_alignBaseline="@+id/b5"
-        android:layout_alignBottom="@+id/b5"
+        android:layout_alignBaseline="@+id/kepriau"
+        android:layout_alignBottom="@+id/kepriau"
         android:layout_marginLeft="14dp"
-        android:layout_toRightOf="@+id/b24"
+        android:layout_toRightOf="@+id/ntt"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b27"
+        android:id="@+id/sulteng"
         android:layout_width="8dp"
         android:layout_height="8dp"
-        android:layout_below="@+id/b4"
-        android:layout_toLeftOf="@+id/b26"
+        android:layout_below="@+id/riau"
+        android:layout_toLeftOf="@+id/gorontalo"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b28"
+        android:id="@+id/sulsel"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:layout_below="@+id/b29"
-        android:layout_toRightOf="@+id/b25"
+        android:layout_below="@+id/sultenggara"
+        android:layout_toRightOf="@+id/sulbar"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b29"
+        android:id="@+id/sultenggara"
         android:layout_width="9dp"
         android:layout_height="9dp"
-        android:layout_above="@+id/b10"
-        android:layout_alignRight="@+id/b26"
+        android:layout_above="@+id/lampung"
+        android:layout_alignRight="@+id/gorontalo"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b30"
+        android:id="@+id/sulut"
         android:layout_width="8dp"
         android:layout_height="8dp"
-        android:layout_alignBottom="@+id/b26"
+        android:layout_alignBottom="@+id/gorontalo"
         android:layout_marginLeft="18dp"
-        android:layout_toRightOf="@+id/b26"
+        android:layout_toRightOf="@+id/gorontalo"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b31"
+        android:id="@+id/maluku"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:layout_below="@+id/b25"
+        android:layout_below="@+id/sulbar"
         android:layout_marginLeft="35dp"
-        android:layout_toRightOf="@+id/b30"
+        android:layout_toRightOf="@+id/sulut"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b32"
+        android:id="@+id/malut"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:layout_alignBaseline="@+id/b30"
-        android:layout_alignBottom="@+id/b30"
-        android:layout_alignRight="@+id/b31"
+        android:layout_alignBaseline="@+id/sulut"
+        android:layout_alignBottom="@+id/sulut"
+        android:layout_alignRight="@+id/maluku"
         android:layout_marginRight="7dp"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b33"
+        android:id="@+id/pabar"
         android:layout_width="10dp"
         android:layout_height="10dp"
-        android:layout_above="@+id/b18"
+        android:layout_above="@+id/kalteng"
         android:layout_marginLeft="37dp"
-        android:layout_toRightOf="@+id/b31"
+        android:layout_toRightOf="@+id/maluku"
         android:background="@drawable/tombol" />
 
     <Button
-        android:id="@+id/b34"
+        android:id="@+id/papua"
         android:layout_width="10dp"
         android:layout_height="10dp"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/b18"
+        android:layout_below="@+id/kalteng"
         android:layout_marginRight="38dp"
         android:background="@drawable/tombol" />
 
