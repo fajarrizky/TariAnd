@@ -18,13 +18,32 @@ public class TarianManager {
 		listTarian = new ArrayList<Tarian>();
 	}
 
+	public void testCode(){
+        //test code
+        Tarian aa = new Tarian(1, "Tari Pendet");
+        aa.setBookmark(false);
+        aa.setDescription("Tarian dari Bali");
+        aa.setLocation("Bali");
+        listTarian.add(aa);
+        Tarian bb = new Tarian(2, "Harlem Shake");
+        bb.setBookmark(true);
+        bb.setDescription("orang2an kejang2");
+        bb.setLocation("internet");
+        listTarian.add(bb);
+        
+        for (Tarian asd : listTarian) {
+			Log.d("Nama Tarian", asd.getName());
+			Log.d("Deskripsi Tarian", asd.getDescription());
+		}
+        //end of test code
+	}
 	//niatnya ini buat ngeretrieve dari database, masukin semua tarian ke list.
 	public void retrieve(){
 		ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();  
 		//postParameters.add(new BasicNameValuePair("Nama", input.getText().toString()));
 		String response = null;
 		try {
-			response = CustomHttpClient.executeHttpPost("http://192.168.0.105/android/daftar_tarian.php", postParameters);
+			response = CustomHttpClient.executeHttpPost("http://192.168.6.54/android/daftar_tarian.php", postParameters);
 		    String result = response.toString();  
 		    try{
 		    	JSONArray jArray = new JSONArray(result);
@@ -44,6 +63,8 @@ public class TarianManager {
 			        tarian.setLocation(Provinsi[i]);
 			        listTarian.add(tarian);
 			        }
+		        
+		
 		    } 
 		    catch(JSONException e){
 		    	Log.e("log_tag", "Error parsing data "+e.toString());
@@ -61,7 +82,7 @@ public class TarianManager {
 		ListIterator<Tarian> MainIterator = listTarian.listIterator();
 		while(MainIterator.hasNext()){
 			Tarian temp = MainIterator.next();
-			if(temp.getName().equals(targetName)){
+			if(temp.getName().contains(targetName)){
 				target.add(temp);
 			}
 		}
