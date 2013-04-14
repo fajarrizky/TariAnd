@@ -18,6 +18,10 @@ public class AwardManager {
 		
 	}
 	
+	public ArrayList<Award> getListAward(){
+		return this.listAward;
+	}
+	
 	public Award getAward(String name){
 		
 		

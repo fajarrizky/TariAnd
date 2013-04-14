@@ -15,14 +15,10 @@ import android.widget.TextView;
 
 public class PlayQuizActivity extends Activity {
 
-
-	    Button but;
-
-
 	    public void onCreate(Bundle savedInstanceState) {
 	        super.onCreate(savedInstanceState);
 
-	        but = (Button) findViewById(R.id.StartQuiz);
+	        Button but = (Button) findViewById(R.id.StartQuiz);
 	        but.setOnClickListener(new View.OnClickListener() {
 				
 				public void onClick(View arg0) {
