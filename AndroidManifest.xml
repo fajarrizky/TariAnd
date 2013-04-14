@@ -57,6 +57,14 @@
             android:name=".PlayQuizActivity"
             android:label="@string/title_activity_play_quiz" >
         </activity>
+        <activity
+            android:name=".AwardListViewActivity"
+            android:label="@string/title_activity_award_list_view" >
+        </activity>
+        <activity
+            android:name=".QuizLevelActivity"
+            android:label="@string/title_activity_quiz_level" >
+        </activity>
     </application>
 
 </manifest>

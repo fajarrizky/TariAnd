@@ -1,5 +1,7 @@
 package control;
 
+import helper.CustomHttpClient;
+
 import java.util.ArrayList;
 import java.util.ListIterator;
 import org.apache.http.NameValuePair;

@@ -18,5 +18,7 @@
     <string name="title_activity_show_gambar">ShowGambarActivity</string>
     <string name="title_activity_show_video">ShowVideoActivity</string>
     <string name="title_activity_play_quiz">PlayQuizActivity</string>
+    <string name="title_activity_award_list_view">AwardListViewActivity</string>
+    <string name="title_activity_quiz_level">QuizLevelActivity</string>
 
 </resources>

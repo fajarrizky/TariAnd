@@ -13,7 +13,6 @@
         android:layout_alignParentTop="true"
         android:layout_marginTop="16dp"
         android:background="@drawable/menu_btn"
-        android:onClick="cariTarian"
         android:text="Cari Tarian" />
 
     <Button
