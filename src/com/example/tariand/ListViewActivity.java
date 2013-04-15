@@ -1,9 +1,7 @@
 package com.example.tariand;
 
 import java.util.ArrayList;
-
 import control.TarianManager;
-
 import helper.ListViewAdapter;
 import model.Tarian;
 import android.os.Bundle;
@@ -23,9 +21,10 @@ public class ListViewActivity extends Activity {
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
-    	
-    	StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder().detectDiskReads().detectDiskWrites().detectNetwork().penaltyLog().build());
-        super.onCreate(savedInstanceState);
+    	StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+		.detectDiskReads().detectDiskWrites().detectNetwork()
+		.penaltyLog().build());
+    	super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list_view);
         
         bun = new Bundle();
@@ -45,7 +44,6 @@ public class ListViewActivity extends Activity {
         
         
         ListViewAdapter adapter = new ListViewAdapter(getApplicationContext(), arrayTari);
-        
         ListView listview = (ListView) findViewById(R.id.listView1);
         listview.setAdapter(adapter);
     

@@ -1,11 +1,9 @@
 package control;
 
 import helper.CustomHttpClient;
-
 import java.util.ArrayList;
 import java.util.ListIterator;
 import org.apache.http.NameValuePair;
-import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -43,12 +41,14 @@ public class TarianManager {
 	//niatnya ini buat ngeretrieve dari database, masukin semua tarian ke list.
 	public void retrieve(){
 		ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();  
-		postParameters.add(new BasicNameValuePair("Nama", "asd"));
-		
 		String response = null;
+		StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+		.detectDiskReads().detectDiskWrites().detectNetwork()
+		.penaltyLog().build());
 		try {
-			response = CustomHttpClient.executeHttpGet("http://192.168.6.54/android/daftar_tarian.php");
+			response = CustomHttpClient.executeHttpPost("http://10.0.2.2/android/lala.php", postParameters);
 		    String result = response.toString();  
+		    Log.e("debug", "result = " + result);
 		    try{
 		    	JSONArray jArray = new JSONArray(result);
 		        int [] ID = new int [jArray.length()];

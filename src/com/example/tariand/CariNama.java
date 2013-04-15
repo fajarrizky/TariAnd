@@ -1,6 +1,7 @@
 package com.example.tariand;
 
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.app.Fragment;
 import android.content.Intent;
 import android.util.Log;
@@ -21,7 +22,6 @@ public class CariNama extends Fragment {
 		View FragView = inflater.inflate(R.layout.activity_cari_nama, container, false);
 		ImageButton b = (ImageButton) FragView.findViewById(R.id.searchButton);
 		textview = (TextView) FragView.findViewById(R.id.SearchField);
-		
 		b.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
