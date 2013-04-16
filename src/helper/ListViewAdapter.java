@@ -67,7 +67,7 @@ public class ListViewAdapter extends BaseAdapter {
 				
 				public void onClick(View arg0) {
 					// TODO Auto-generated method stub
-					Intent i = new Intent(arg0.getContext(), CariTarianActivity.class);
+					Intent i = new Intent(arg0.getContext(), ShowTarianActivity.class);
 					i.putExtra("tarian", tarianArray.get(thisposition));
 					i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 					arg0.getContext().startActivity(i);

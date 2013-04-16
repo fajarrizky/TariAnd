@@ -1,19 +1,20 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
-    android:layout_height="match_parent" >
+    android:layout_height="match_parent"
+    android:orientation="horizontal"
+    tools:context=".ShowDeskripsiActivity" >
 
     <TabHost
         android:id="@android:id/tabhost"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true" >
+        android:layout_height="match_parent" >
 
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical" >
+            android:orientation="horizontal" >
 
             <TabWidget
                 android:id="@android:id/tabs"
@@ -27,19 +28,19 @@
                 android:layout_height="match_parent" >
 
                 <LinearLayout
-                    android:id="@+id/tab1"
+                    android:id="@+id/desc"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" >
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/tab2"
+                    android:id="@+id/pic"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" >
                 </LinearLayout>
 
                 <LinearLayout
-                    android:id="@+id/tab3"
+                    android:id="@+id/vid"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" >
                 </LinearLayout>
@@ -47,4 +48,4 @@
         </LinearLayout>
     </TabHost>
 
-</RelativeLayout>
+</FrameLayout>

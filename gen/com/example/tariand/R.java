@@ -61,6 +61,7 @@ public final class R {
         public static final int button2=0x7f090033;
         public static final int container=0x7f090026;
         public static final int customlistview=0x7f09003a;
+        public static final int desc=0x7f090036;
         public static final int descTari=0x7f090034;
         public static final int editText1=0x7f090028;
         public static final int gorontalo=0x7f09001d;
@@ -90,6 +91,7 @@ public final class R {
         public static final int ntt=0x7f09001b;
         public static final int pabar=0x7f090024;
         public static final int papua=0x7f090025;
+        public static final int pic=0x7f090037;
         public static final int riau=0x7f090007;
         public static final int searchButton=0x7f090002;
         public static final int sulbar=0x7f09001c;
@@ -100,10 +102,8 @@ public final class R {
         public static final int sumbar=0x7f090006;
         public static final int sumsel=0x7f09000b;
         public static final int sumut=0x7f090005;
-        public static final int tab1=0x7f090036;
-        public static final int tab2=0x7f090037;
-        public static final int tab3=0x7f090038;
         public static final int textView1=0x7f090031;
+        public static final int vid=0x7f090038;
         public static final int videoView1=0x7f090039;
     }
     public static final class layout {
