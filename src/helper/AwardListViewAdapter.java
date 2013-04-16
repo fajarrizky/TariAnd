@@ -5,6 +5,7 @@ import java.util.List;
 
 import model.Award;
 import model.Tarian;
+import android.R;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -40,7 +41,7 @@ public class AwardListViewAdapter extends BaseAdapter {
 	public View getView(int arg0, View arg1, ViewGroup arg2) {
 		// TODO Auto-generated method stub
 		if (arg1==null){
-			
+			arg1 = mInflater.inflate(R.layout.simple_list_item_1, null);
 		}
 		
 		return null;

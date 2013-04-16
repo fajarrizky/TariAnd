@@ -16,6 +16,7 @@ public class AwardListViewActivity extends Activity {
 
 	AwardManager awardManage;
 	ArrayList<Award> listAward;
+	ArrayList<String> namaAward;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -28,14 +29,17 @@ public class AwardListViewActivity extends Activity {
         
         
         for (Award aw : listAward) {
-			if (aw.isAchieved())
+			if (aw.isAchieved()){
 				aw.setName(aw.getName() + " (Sudah Dicapai)");
-			else
+			}
+			else{
 				aw.setName(aw.getName() + " (Belum Dicapai)");
+			}
+			namaAward.add(aw.getName());
 		}
         
         ListView awardListView = (ListView) findViewById(R.id.awardListView);
-        ArrayAdapter<Award> adapt = new ArrayAdapter<Award>(getApplicationContext(), android.R.layout.simple_list_item_1, listAward); 
+        ArrayAdapter<String> adapt = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, namaAward); 
         
         
         awardListView.setAdapter(adapt);
