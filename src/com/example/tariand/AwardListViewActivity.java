@@ -1,10 +1,11 @@
 package com.example.tariand;
 
+import helper.ListViewAdapter;
+
 import java.util.ArrayList;
 
 import model.Award;
 
-import helper.ListViewAdapter;
 import control.AwardManager;
 import android.os.Bundle;
 import android.app.Activity;
@@ -25,6 +26,7 @@ public class AwardListViewActivity extends Activity {
         awardManage = new AwardManager();
         awardManage.createAward();
         listAward = awardManage.getListAward();
+        namaAward = new ArrayList<String>();
         
         
         
@@ -38,12 +40,10 @@ public class AwardListViewActivity extends Activity {
 			namaAward.add(aw.getName());
 		}
         
-        ListView awardListView = (ListView) findViewById(R.id.awardListView);
-        ArrayAdapter<String> adapt = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, namaAward); 
-        
-        
+        ListView awardListView = (ListView) findViewById(com.example.tariand.R.id.awardListView);
+        ArrayAdapter<String> adapt = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, namaAward);
         awardListView.setAdapter(adapt);
-        
+    
     }
 
     @Override
