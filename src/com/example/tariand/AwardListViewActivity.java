@@ -21,7 +21,7 @@ public class AwardListViewActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_award_list_view);
-        
+        awardManage = new AwardManager();
         awardManage.createAward();
         listAward = awardManage.getListAward();
         
