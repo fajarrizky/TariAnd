@@ -30,9 +30,9 @@ public class ListViewActivity extends Activity {
         
         bun = new Bundle();
         tariManager = new TarianManager();
-        tariManager.testCode();
+        //tariManager.testCode();
         arrayTari = new ArrayList<Tarian>(); 
-        //tariManager.retrieve();
+        tariManager.retrieve();
         
         
         if((bun = this.getIntent().getBundleExtra("namatarian"))!=null){
