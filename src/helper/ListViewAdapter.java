@@ -76,6 +76,7 @@ public class ListViewAdapter extends BaseAdapter {
 			
 			if (tarianArray.get(thisposition).isBookmarked()){
 				bukmark.setVisibility(1);
+				anbukmark.setVisibility(View.INVISIBLE);
 				bukmark.setOnClickListener(new View.OnClickListener() {
 					
 					public void onClick(View v) {
@@ -97,14 +98,12 @@ public class ListViewAdapter extends BaseAdapter {
 						// TODO Auto-generated method stub
 						tarianArray.get(thisposition).setBookmark(true);
 						ImageButton book = (ImageButton) v.findViewById(com.example.tariand.R.id.noBookmark);
-						book.setImageResource(com.example.tariand.R.drawable.star);
+						book.setImageResource(com.example.tariand.R.drawable.star);						
 						notifyDataSetChanged();
 						//v.findViewById(com.example.tariand.R.id.noBookmark).setVisibility(View.INVISIBLE);
 						//v.findViewById(com.example.tariand.R.id.bookmark).setVisibility(View.VISIBLE);
-						
 					}
 				});
-				
 			}
 		}
 

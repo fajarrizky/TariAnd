@@ -50,11 +50,17 @@ public class ListViewActivity extends Activity {
         }
         
         
-        ListViewAdapter adapter = new ListViewAdapter(getApplicationContext(), arrayTari);
+        final ListViewAdapter adapter = new ListViewAdapter(getApplicationContext(), arrayTari);
         //adapter.notifyDataSetChanged();
         ListView listview = (ListView) findViewById(R.id.TarianListView);
         listview.setAdapter(adapter);
-        
+        this.runOnUiThread(new Runnable() {
+			
+			public void run() {
+				// TODO Auto-generated method stub
+				adapter.notifyDataSetChanged();
+			}
+		}); 
         
         }
     
