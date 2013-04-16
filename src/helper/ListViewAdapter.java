@@ -81,9 +81,11 @@ public class ListViewAdapter extends BaseAdapter {
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
 						tarianArray.get(thisposition).setBookmark(false);
-						v.findViewById(com.example.tariand.R.id.bookmark).setVisibility(View.GONE);
-						
+						//v.findViewById(com.example.tariand.R.id.bookmark).setVisibility(View.INVISIBLE);
+						ImageButton book = (ImageButton) v.findViewById(com.example.tariand.R.id.bookmark);
+						book.setImageResource(com.example.tariand.R.drawable.nostar);
 						//v.findViewById(com.example.tariand.R.id.noBookmark).setVisibility(View.VISIBLE);
+						notifyDataSetChanged();
 					}
 				});
 			}
@@ -93,9 +95,12 @@ public class ListViewAdapter extends BaseAdapter {
 					
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
-						//v.findViewById(com.example.tariand.R.id.noBookmark).setVisibility(View.GONE);
 						tarianArray.get(thisposition).setBookmark(true);
-						v.findViewById(com.example.tariand.R.id.bookmark).setVisibility(View.VISIBLE);
+						ImageButton book = (ImageButton) v.findViewById(com.example.tariand.R.id.noBookmark);
+						book.setImageResource(com.example.tariand.R.drawable.star);
+						notifyDataSetChanged();
+						//v.findViewById(com.example.tariand.R.id.noBookmark).setVisibility(View.INVISIBLE);
+						//v.findViewById(com.example.tariand.R.id.bookmark).setVisibility(View.VISIBLE);
 						
 					}
 				});
