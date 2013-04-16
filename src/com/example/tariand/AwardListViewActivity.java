@@ -16,23 +16,31 @@ public class AwardListViewActivity extends Activity {
 
 	AwardManager awardManage;
 	ArrayList<Award> listAward;
+	ArrayList<String> namaAward;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_award_list_view);
-        
+        awardManage = new AwardManager();
         awardManage.createAward();
         listAward = awardManage.getListAward();
         
-        ListView awardListView = (ListView) findViewById(R.id.awardListView);
-        ArrayAdapter<Award> adapt = new ArrayAdapter<Award>(getApplicationContext(), android.R.layout.simple_list_item_checked, listAward); 
-        awardListView.setChoiceMode(ListView.CHOICE_MODE_MULTIPLE);
+        
         
         for (Award aw : listAward) {
-			if (aw.isAchieved())
-				awardListView.setSelection(listAward.indexOf(aw));
+			if (aw.isAchieved()){
+				aw.setName(aw.getName() + " (Sudah Dicapai)");
+			}
+			else{
+				aw.setName(aw.getName() + " (Belum Dicapai)");
+			}
+			namaAward.add(aw.getName());
 		}
+        
+        ListView awardListView = (ListView) findViewById(R.id.awardListView);
+        ArrayAdapter<String> adapt = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, namaAward); 
+        
         
         awardListView.setAdapter(adapt);
         

@@ -49,6 +49,7 @@ public final class R {
         public static final int SearchField=0x7f090001;
         public static final int StarButton=0x7f09003c;
         public static final int StartQuiz=0x7f090030;
+        public static final int TarianListView=0x7f09002a;
         public static final int aceh=0x7f090004;
         public static final int action_settings=0x7f090041;
         public static final int awardListView=0x7f090000;
@@ -80,7 +81,6 @@ public final class R {
         public static final int kalut=0x7f090018;
         public static final int kepriau=0x7f090008;
         public static final int lampung=0x7f09000d;
-        public static final int listView1=0x7f09002a;
         public static final int maluku=0x7f090022;
         public static final int malut=0x7f090023;
         public static final int menuImage=0x7f09002f;

@@ -18,6 +18,7 @@ public class ListViewActivity extends Activity {
 	Bundle bun;
 	ArrayList<Tarian> arrayTari;
 	TarianManager tariManager;
+<<<<<<< HEAD
 
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
@@ -54,4 +55,44 @@ public class ListViewActivity extends Activity {
 		getMenuInflater().inflate(R.menu.activity_list_view, menu);
 		return true;
 	}
+=======
+	
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+    	StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+		.detectDiskReads().detectDiskWrites().detectNetwork()
+		.penaltyLog().build());
+    	super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_list_view);
+        
+        bun = new Bundle();
+        tariManager = new TarianManager();
+        tariManager.testCode();
+        arrayTari = new ArrayList<Tarian>(); 
+        tariManager.retrieve();
+        
+        if((bun = this.getIntent().getBundleExtra("namatarian"))!=null){
+        	String nama = bun.getString("tarianName");
+         	arrayTari = tariManager.searchByName(nama);
+         	Log.d("size array", arrayTari.size() +" " + nama + "");	
+			}
+        if (this.getIntent().getBooleanExtra("bookmark", false)){
+        	arrayTari = tariManager.getBookmarkedTarian();
+        }
+        
+        
+        ListViewAdapter adapter = new ListViewAdapter(getApplicationContext(), arrayTari);
+        ListView listview = (ListView) findViewById(R.id.TarianListView);
+        listview.setAdapter(adapter);
+    
+        
+        }
+    
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        getMenuInflater().inflate(R.menu.activity_list_view, menu);
+        return true;
+    }
+>>>>>>> 38c0b77c09b5642778edc6d002703cc5ade92575
 }
