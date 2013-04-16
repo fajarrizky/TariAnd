@@ -9,7 +9,7 @@ public class Tarian implements Parcelable {
 	private String location;
 	private String description;
 
-	private String[] imageURL;
+	private String imageURL;
 	private String videoURL;
 
 	private boolean isBookmark;
@@ -58,11 +58,11 @@ public class Tarian implements Parcelable {
 		this.isBookmark = bookmark;
 	}
 
-	public String[] getImageURL() {
+	public String getImageURL() {
 		return imageURL;
 	}
 
-	public void setImageURL(String[] imageURL) {
+	public void setImageURL(String imageURL) {
 		this.imageURL = imageURL;
 	}
 

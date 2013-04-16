@@ -14,9 +14,11 @@ public class AwardManager {
 	public void createAward(){
 		
 		//list award juga hardcode ae. soalnya kan sedikit. paling 10 biji gitu...
-		listAward.add(new Award(1, "Menang Quiz", "Pemain sudah memenangkan quiz setidaknya sekali"));
-		
+		listAward.add(new Award(1, "Perfect Answer", "User berhasil menjawab seluruh pertanyaan dengan benar"));
+		listAward.add(new Award(1, "Power Share", "User berhasil menshare 5 buah tarian"));
+		listAward.add(new Award(1, "Golden Bookmark", "User berhasil membookmark 10 tarian"));
 	}
+	
 	
 	public ArrayList<Award> getListAward(){
 		return this.listAward;
