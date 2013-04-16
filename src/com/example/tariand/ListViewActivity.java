@@ -44,7 +44,7 @@ public class ListViewActivity extends Activity {
         
         
         ListViewAdapter adapter = new ListViewAdapter(getApplicationContext(), arrayTari);
-        ListView listview = (ListView) findViewById(R.id.listView1);
+        ListView listview = (ListView) findViewById(R.id.TarianListView);
         listview.setAdapter(adapter);
     
         

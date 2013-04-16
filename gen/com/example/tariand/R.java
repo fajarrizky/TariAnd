@@ -39,7 +39,6 @@ public final class R {
         public static final int tombol=0x7f020007;
     }
     public static final class id {
-        public static final int AwardListView=0x7f09002a;
         public static final int CariTarianButton=0x7f09002b;
         public static final int LihatAwardButton=0x7f09002c;
         public static final int LihatBookmarkButton=0x7f09002e;
@@ -50,6 +49,7 @@ public final class R {
         public static final int SearchField=0x7f090001;
         public static final int StarButton=0x7f09003c;
         public static final int StartQuiz=0x7f090030;
+        public static final int TarianListView=0x7f09002a;
         public static final int aceh=0x7f090004;
         public static final int action_settings=0x7f090041;
         public static final int awardListView=0x7f090000;
