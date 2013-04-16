@@ -4,14 +4,13 @@
     android:layout_height="fill_parent"
     android:gravity="start"
     android:orientation="horizontal" >
-
+
     <ListView
         android:id="@+id/listViewProvinsi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true" >
-
     </ListView>
 
 </RelativeLayout>

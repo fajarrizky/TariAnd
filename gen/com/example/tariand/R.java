@@ -122,6 +122,8 @@ public final class R {
         public static final int title_section1=0x7f060006;
         public static final int title_section2=0x7f060005;
         public static final int title_section3=0x7f060004;
+        public static final int title_tarian_detail=0x7f060014;
+        public static final int title_tarian_list=0x7f060013;
     }
     public static final class style {
         public static final int AppTheme=0x7f070000;

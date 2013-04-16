@@ -3,7 +3,9 @@
     package="com.example.tariand"
     android:versionCode="1"
     android:versionName="1.0" >
-<uses-permission android:name="android.permission.INTERNET" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <uses-sdk
         android:minSdkVersion="14"
         android:targetSdkVersion="15" />
@@ -34,36 +36,52 @@
             android:label="@string/title_activity_cari_provinsi" >
         </activity>
         <activity
-            android:name=".ListViewActivity"
+            android:name="com.example.tariand.ListViewActivity"
             android:label="@string/title_activity_list_view" >
         </activity>
         <activity
-            android:name=".ShowTarianActivity"
+            android:name="com.example.tariand.ShowTarianActivity"
             android:label="@string/title_activity_show_tarian" >
         </activity>
         <activity
-            android:name=".ShowDeskripsiActivity"
+            android:name="com.example.tariand.ShowDeskripsiActivity"
             android:label="@string/title_activity_show_deskripsi" >
         </activity>
         <activity
-            android:name=".ShowGambarActivity"
+            android:name="com.example.tariand.ShowGambarActivity"
             android:label="@string/title_activity_show_gambar" >
         </activity>
         <activity
-            android:name=".ShowVideoActivity"
+            android:name="com.example.tariand.ShowVideoActivity"
             android:label="@string/title_activity_show_video" >
         </activity>
         <activity
-            android:name=".PlayQuizActivity"
+            android:name="com.example.tariand.PlayQuizActivity"
             android:label="@string/title_activity_play_quiz" >
         </activity>
         <activity
-            android:name=".AwardListViewActivity"
+            android:name="com.example.tariand.AwardListViewActivity"
             android:label="@string/title_activity_award_list_view" >
         </activity>
         <activity
-            android:name=".QuizLevelActivity"
+            android:name="com.example.tariand.QuizLevelActivity"
             android:label="@string/title_activity_quiz_level" >
+        </activity>
+        <activity
+            android:name="com.example.tariand.TarianListActivity"
+            android:label="@string/title_tarian_list" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="com.example.tariand.TarianDetailActivity"
+            android:label="@string/title_tarian_detail" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".TarianListActivity" />
         </activity>
     </application>
 
