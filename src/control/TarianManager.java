@@ -26,11 +26,13 @@ public class TarianManager {
         aa.setDescription("Tarian dari Bali");
         aa.setLocation("Bali");
         listTarian.add(aa);
+        
         Tarian bb = new Tarian(2, "Harlem Shake");
         bb.setBookmark(true);
         bb.setDescription("orang2an kejang2");
-        bb.setLocation("internet");
+        bb.setLocation("Internet");
         listTarian.add(bb);
+        
         
         for (Tarian asd : listTarian) {
 			Log.d("Nama Tarian", asd.getName());
@@ -101,11 +103,10 @@ public class TarianManager {
 	public ArrayList<Tarian> searchByLocation(String targetLocation){
 		ArrayList<Tarian> target = new ArrayList<Tarian>();
 
-		ListIterator<Tarian> MainIterator = listTarian.listIterator();
-		while(MainIterator.hasNext()){
-			Tarian temp = MainIterator.next();
-			if(temp.getLocation().toLowerCase().equals(targetLocation)){
-				target.add(temp);
+		for (Tarian tarian : listTarian) {
+			if(tarian.getLocation().toLowerCase().equalsIgnoreCase(targetLocation)){
+				Log.d("equals?", tarian.getLocation().equalsIgnoreCase(targetLocation) + "hai");
+				target.add(tarian);
 			}
 		}
 		return target;
