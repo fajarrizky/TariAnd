@@ -39,6 +39,7 @@ public final class R {
         public static final int tombol=0x7f020007;
     }
     public static final class id {
+        public static final int AwardListView=0x7f09002a;
         public static final int CariTarianButton=0x7f09002b;
         public static final int LihatAwardButton=0x7f09002c;
         public static final int LihatBookmarkButton=0x7f09002e;
@@ -79,7 +80,6 @@ public final class R {
         public static final int kalut=0x7f090018;
         public static final int kepriau=0x7f090008;
         public static final int lampung=0x7f09000d;
-        public static final int listView1=0x7f09002a;
         public static final int maluku=0x7f090022;
         public static final int malut=0x7f090023;
         public static final int menuImage=0x7f09002f;
