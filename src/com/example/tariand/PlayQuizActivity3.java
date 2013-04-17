@@ -1,5 +1,6 @@
 package com.example.tariand;
 
+import control.QuestionManager;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -12,10 +13,14 @@ import android.support.v4.app.NavUtils;
 
 public class PlayQuizActivity3 extends Activity {
 
+	QuestionManager qmj = new QuestionManager();
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_play_quiz_activity3);
+        
+        qmj.createQuestion();
+        qmj.cekcobacoba(qmj.getForQuiz());
         
         TextView tv = (TextView) findViewById(R.id.editText3);
         tv.setTextColor(getResources().getColor(R.color.blue));
