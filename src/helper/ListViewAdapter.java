@@ -63,6 +63,7 @@ public class ListViewAdapter extends BaseAdapter {
 			ImageButton anbukmark = (ImageButton) convertView.findViewById(com.example.tariand.R.id.noBookmark);
 			tv.setText(tarianArray.get(position).getName());
 			tv.setClickable(true);
+			tv.setTextColor(convertView.getResources().getColor(R.color.black));
 			tv.setOnClickListener(new View.OnClickListener() {
 				
 				public void onClick(View arg0) {

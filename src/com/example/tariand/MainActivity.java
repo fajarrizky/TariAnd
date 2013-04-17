@@ -48,7 +48,7 @@ public class MainActivity extends Activity {
 	
 					public void onClick(View arg0) {
 						// TODO Auto-generated method stub
-						startActivity(new Intent(getApplicationContext(), PlayQuizActivity.class));
+						startActivity(new Intent(getApplicationContext(), PlayQuizActivity2.class));
 					}
 			});
         
