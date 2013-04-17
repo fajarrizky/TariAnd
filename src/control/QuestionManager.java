@@ -96,4 +96,9 @@ public class QuestionManager {
 		}
 		
 	}
+	
+	public Question getOne(){
+		int i = (int) (Math.random()*listQuestion.size());
+		return listQuestion.get(i);
+	}
 }
