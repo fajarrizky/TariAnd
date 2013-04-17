@@ -20,11 +20,9 @@
     <string name="title_activity_play_quiz">PlayQuizActivity</string>
     <string name="title_activity_award_list_view">AwardListViewActivity</string>
     <string name="title_activity_quiz_level">QuizLevelActivity</string>
-
     <string name="title_tarian_list">Tarians</string>
     <string name="title_tarian_detail">Tarian Detail</string>
-
     <string name="title_activity_play_quiz_activity2">PlayQuizActivity2</string>
-
+    <string name="title_activity_play_quiz_activity3">PlayQuizActivity3</string>
 
 </resources>

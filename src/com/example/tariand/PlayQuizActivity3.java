@@ -10,16 +10,16 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.support.v4.app.NavUtils;
 
-public class PlayQuizActivity2 extends Activity {
+public class PlayQuizActivity3 extends Activity {
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_play_quiz_activity2);
+        setContentView(R.layout.activity_play_quiz_activity3);
         
-        TextView tv = (TextView) findViewById(R.id.editText2);
+        TextView tv = (TextView) findViewById(R.id.editText3);
         tv.setTextColor(getResources().getColor(R.color.blue));
-        Button b = (Button) findViewById(R.id.StartQuiz2);
+        Button b = (Button) findViewById(R.id.StartQuiz3);
         b.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
@@ -30,7 +30,7 @@ public class PlayQuizActivity2 extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_play_quiz_activity2, menu);
+        getMenuInflater().inflate(R.menu.activity_play_quiz_activity3, menu);
         return true;
     }
 
