@@ -7,8 +7,12 @@ import model.Tarian;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.app.Activity;
+import android.content.Intent;
 import android.util.Log;
 import android.view.Menu;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
@@ -49,25 +53,12 @@ public class ListViewActivity extends Activity {
 			Log.d("size array", arrayTari.size() + " dari search lokasi");
 		}
 
-		final ListViewAdapter adapter = new ListViewAdapter(
-				getApplicationContext(), arrayTari);
+		ListViewAdapter adapter = new ListViewAdapter(getApplicationContext(),
+				arrayTari);
 		// adapter.notifyDataSetChanged();
 		ListView listview = (ListView) findViewById(R.id.TarianListView);
+
 		listview.setAdapter(adapter);
-		this.runOnUiThread(new Runnable() {
-
-			public void run() {
-				// TODO Auto-generated method stub
-				adapter.notifyDataSetChanged();
-			}
-		});
 
 	}
-
-	@Override
-	public boolean onCreateOptionsMenu(Menu menu) {
-		getMenuInflater().inflate(R.menu.activity_list_view, menu);
-		return true;
-	}
-
 }

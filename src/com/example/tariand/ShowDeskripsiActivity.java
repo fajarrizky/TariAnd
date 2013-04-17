@@ -8,13 +8,13 @@ import android.view.ViewGroup;
 
 public class ShowDeskripsiActivity extends Fragment {
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+	@Override
+	public View onCreateView(LayoutInflater inflater, ViewGroup container,
 			Bundle savedInstanceState) {
-		View FragView = inflater.inflate(R.layout.activity_show_deskripsi, container, false);
+		View FragView = inflater.inflate(R.layout.activity_show_deskripsi,
+				container, false);
 		return FragView;
-        
-    }
 
-   
+	}
+
 }

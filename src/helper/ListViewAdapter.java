@@ -45,7 +45,7 @@ public class ListViewAdapter extends BaseAdapter {
 
 	public Object getItem(int arg0) {
 		// TODO Auto-generated method stub
-		return tarianArray.get(arg0);
+		return tarianArray.get(arg0).getName();
 	}
 
 	public long getItemId(int arg0) {
@@ -68,7 +68,7 @@ public class ListViewAdapter extends BaseAdapter {
 				public void onClick(View arg0) {
 					// TODO Auto-generated method stub
 					Intent i = new Intent(arg0.getContext(), ShowTarianActivity.class);
-					i.putExtra("tarian", tarianArray.get(thisposition));
+					i.putExtra("tarian", (String) getItem(thisposition));
 					i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 					arg0.getContext().startActivity(i);
 				}
