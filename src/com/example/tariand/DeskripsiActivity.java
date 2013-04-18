@@ -21,6 +21,8 @@ public class DeskripsiActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_deskripsi);
         
+        tmng = new TarianManager();
+        tmng.testCode();
         String tarianku = getIntent().getStringExtra("namatarian");
         tarianList = tmng.getListTarian();
         

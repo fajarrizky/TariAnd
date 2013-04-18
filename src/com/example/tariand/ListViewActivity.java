@@ -58,7 +58,21 @@ public class ListViewActivity extends Activity {
 		// adapter.notifyDataSetChanged();
 		ListView listview = (ListView) findViewById(R.id.TarianListView);
 
+		
+		
 		listview.setAdapter(adapter);
+		listview.setClickable(true);
+		listview.setOnItemClickListener(new OnItemClickListener() {
+
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				Log.d("tampil", "hai hai aku kepangggil");
+				Intent i = new Intent(arg0.getContext(), TampilTarianActivity.class);
+				i.putExtra("tarian", arg0.getItemAtPosition(arg2).toString());
+				startActivity(i);
+			}
+		});
 
 	}
 }

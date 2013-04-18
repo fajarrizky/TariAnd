@@ -1,9 +1,15 @@
 package model;
 
+import java.io.Serializable;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Tarian implements Parcelable {
+public class Tarian implements Parcelable, Serializable {
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 8781724562703465639L;
 	private int id;
 	private String name;
 	private String location;

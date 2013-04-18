@@ -8,6 +8,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import android.R;
 import android.os.StrictMode;
 import android.util.Log;
 import model.Tarian;
@@ -29,12 +30,14 @@ public class TarianManager {
         aa.setBookmark(false);
         aa.setDescription("Tarian dari Bali");
         aa.setLocation("Bali");
+        aa.setImageURL(""+com.example.tariand.R.drawable.pendet);
         listTarian.add(aa);
         
-        Tarian bb = new Tarian(2, "Harlem Shake");
+        Tarian bb = new Tarian(2, "Tari Gambyong");
         bb.setBookmark(true);
-        bb.setDescription("orang2an kejang2");
-        bb.setLocation("Internet");
+        bb.setDescription("Salah satu tarian dari Sumatera Utara");
+        bb.setLocation("Sumatera Utara");
+        bb.setImageURL(""+ com.example.tariand.R.drawable.gambyong);
         listTarian.add(bb);
         
         

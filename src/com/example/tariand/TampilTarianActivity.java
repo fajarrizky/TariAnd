@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.util.Log;
 import android.view.Menu;
 import android.view.View;
 import android.widget.AdapterView;
@@ -23,7 +24,7 @@ public class TampilTarianActivity extends Activity {
         taritari.add("Deskripsi");
         taritari.add("Gambar");
         taritari.add("video");
-        
+        Log.d("masuk", "hai hai lo lagi di TampilTarian cyn");
         ArrayAdapter<String> adapt = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, taritari);
         
         ListView tarian = (ListView) findViewById(R.id.detarian);
@@ -37,12 +38,32 @@ public class TampilTarianActivity extends Activity {
 					long arg3) {
 				// TODO Auto-generated method stub
 				if (arg0.getItemAtPosition(arg2).toString().equalsIgnoreCase("Deskripsi") && namatarian!=null){
+					
+					
+					Intent i = new Intent(getApplicationContext(), DeskripsiActivity.class);
+					i.putExtra("namatarian", namatarian);
+					
+					startActivity(i);
+				}
+				
+				if (arg0.getItemAtPosition(arg2).toString().equalsIgnoreCase("Gambar") && namatarian!=null){
+					
+					
+					Intent i = new Intent(getApplicationContext(), GambarActivity.class);
+					i.putExtra("namatarian", namatarian);
+					startActivity(i);
+				}
+				
+				if (arg0.getItemAtPosition(arg2).toString().equalsIgnoreCase("Video") && namatarian!=null){
+					
+					
 					Intent i = new Intent(getApplicationContext(), DeskripsiActivity.class);
 					i.putExtra("namatarian", namatarian);
 					startActivity(i);
 				}
 			}
 		});
+        tarian.setAdapter(adapt);
         
     }
 
