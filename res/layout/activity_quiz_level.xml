@@ -3,44 +3,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <TextView
-        android:id="@+id/textView1"
+    <Button
+        android:id="@+id/True"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:text="Level XX"
-        android:textAppearance="?android:attr/textAppearanceLarge" />
+        android:layout_marginBottom="20dp"
+        android:layout_marginLeft="57dp"
+        android:text="Benar" />
 
-    <EditText
-        android:id="@+id/editText1"
+    <Button
+        android:id="@+id/False"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/True"
+        android:layout_alignBottom="@+id/True"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="110dp"
+        android:text="Salah" />
+
+    <TextView
+        android:id="@+id/isi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentRight="true"
-        android:layout_below="@+id/textView1"
-        android:layout_marginTop="20dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="36dp"
         android:ems="10"
         android:inputType="textMultiLine"
         android:singleLine="false"
         android:text="Pertanyaaan blalalalsaldalsdlda" />
-
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="39dp"
-        android:layout_toRightOf="@+id/textView1"
-        android:text="Benar" />
-
-    <Button
-        android:id="@+id/button2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/button1"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="145dp"
-        android:text="Salah" />
 
 </RelativeLayout>

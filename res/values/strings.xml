@@ -24,5 +24,6 @@
     <string name="title_tarian_detail">Tarian Detail</string>
     <string name="title_activity_play_quiz_activity2">PlayQuizActivity2</string>
     <string name="title_activity_play_quiz_activity3">PlayQuizActivity3</string>
+    <string name="title_activity_answer_question">AnswerQuestion</string>
 
 </resources>

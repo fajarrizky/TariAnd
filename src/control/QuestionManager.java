@@ -10,7 +10,11 @@ import model.Question;
 public class QuestionManager {
 	ArrayList<Question> listQuestion;
 	
-	public void createQuestion(){
+	public QuestionManager(){
+		createQuestion();
+	}
+	
+	private void createQuestion(){
 		listQuestion = new ArrayList<Question>();
 
 		//question nya bikin sendiri yak. hardcode ae.
