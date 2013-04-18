@@ -18,6 +18,10 @@ public class TarianManager {
 	public TarianManager(){
 		listTarian = new ArrayList<Tarian>();
 	}
+	
+	public ArrayList<Tarian> getListTarian(){
+		return this.listTarian;
+	}
 
 	public void testCode(){
         //test code
@@ -111,6 +115,8 @@ public class TarianManager {
 		}
 		return target;
 	}
+	
+	
 
 	//yang ini buat nyari yang udah d bookmark ae
 	public ArrayList<Tarian> getBookmarkedTarian(){

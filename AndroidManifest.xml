@@ -71,7 +71,7 @@
             android:name="com.example.tariand.TarianListActivity"
             android:label="@string/title_tarian_list" >
             android:name=".PlayQuizActivity2"
-            android:label="@string/title_activity_play_quiz_activity2" >
+            android:label="@string/title_activity_play_quiz_activity2" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -97,6 +97,33 @@
         <activity
             android:name=".AnswerQuestion"
             android:label="@string/title_activity_answer_question" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".TampilTarianActivity"
+            android:label="@string/title_activity_tampil_tarian" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".DeskripsiActivity"
+            android:label="@string/title_activity_deskripsi" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name=".GambarActivity"
+            android:label="@string/title_activity_gambar" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
