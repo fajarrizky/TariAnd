@@ -27,6 +27,6 @@
         android:layout_above="@+id/Selesai"
         android:layout_alignLeft="@+id/Selesai"
         android:layout_alignRight="@+id/Selesai"
-        android:text="Lanjut" />
+        android:text="Ulangi" />
 
 </RelativeLayout>

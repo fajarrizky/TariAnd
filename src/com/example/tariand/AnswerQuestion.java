@@ -11,20 +11,16 @@ import android.widget.TextView;
 import android.support.v4.app.NavUtils;
 
 public class AnswerQuestion extends Activity {
-	boolean answer;
+	
+	int score;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_answer_question);
         
-        answer = getIntent().getBooleanExtra("answer", false);
-        
+        score = getIntent().getIntExtra("score", 0);
         TextView result = (TextView) findViewById(R.id.Hasil);
-        if(answer){
-        	result.setText("Selamat! Anda menjawab pertanyaan dengan benar!");
-        } else {
-        	result.setText("Jawaban Anda masih salah! Coba lagi.");
-        }
+        result.setText("Anda telah selesai menjawab 10 pertanyaan. \nScore Anda adalah "+score);
         
         Button cont = (Button) findViewById(R.id.Kontinyu);
         cont.setOnClickListener(new View.OnClickListener() {
