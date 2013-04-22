@@ -63,7 +63,7 @@ public final class R {
         public static final int StartQuiz3=0x7f090017;
         public static final int TarianListView=0x7f09000d;
         public static final int True=0x7f090018;
-        public static final int action_settings=0x7f09002a;
+        public static final int action_settings=0x7f090029;
         public static final int awardListView=0x7f090003;
         public static final int bookmark=0x7f090027;
         public static final int container=0x7f090007;
@@ -79,9 +79,8 @@ public final class R {
         public static final int isi=0x7f09001a;
         public static final int listViewProvinsi=0x7f090006;
         public static final int menuImage=0x7f090012;
-        public static final int menu_settings=0x7f090029;
+        public static final int menu_settings=0x7f090028;
         public static final int namaTarian=0x7f090026;
-        public static final int noBookmark=0x7f090028;
         public static final int pic=0x7f09001f;
         public static final int qNumber=0x7f09001b;
         public static final int searchButton=0x7f090005;

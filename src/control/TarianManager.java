@@ -8,7 +8,10 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import com.example.tariand.MainActivity;
+
 import android.R;
+import android.content.SharedPreferences;
 import android.os.StrictMode;
 import android.util.Log;
 import model.Tarian;
@@ -27,14 +30,14 @@ public class TarianManager {
 	public void testCode(){
         //test code
         Tarian aa = new Tarian(1, "Tari Pendet");
-        aa.setBookmark(false);
+        aa.setBookmark(MainActivity.shpr.getBoolean(""+aa.getName(), false));
         aa.setDescription("Tarian dari Bali");
         aa.setLocation("Bali");
         aa.setImageURL(""+com.example.tariand.R.drawable.pendet);
         listTarian.add(aa);
         
         Tarian bb = new Tarian(2, "Tari Gambyong");
-        bb.setBookmark(true);
+        bb.setBookmark(MainActivity.shpr.getBoolean(""+bb.getName(), false));
         bb.setDescription("Salah satu tarian dari Sumatera Utara");
         bb.setLocation("Sumatera Utara");
         bb.setImageURL(""+ com.example.tariand.R.drawable.gambyong);

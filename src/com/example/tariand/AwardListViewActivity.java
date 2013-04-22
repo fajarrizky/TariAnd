@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import model.Award;
 
 import control.AwardManager;
+import android.R;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
@@ -22,7 +23,7 @@ public class AwardListViewActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_award_list_view);
+        setContentView(com.example.tariand.R.layout.activity_award_list_view);
         awardManage = new AwardManager();
         awardManage.createAward();
         listAward = awardManage.getListAward();
@@ -41,6 +42,8 @@ public class AwardListViewActivity extends Activity {
 		}
         
         ListView awardListView = (ListView) findViewById(com.example.tariand.R.id.awardListView);
+        
+        awardListView.setBackgroundColor(getResources().getColor(R.color.black));
         ArrayAdapter<String> adapt = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, namaAward);
         awardListView.setAdapter(adapt);
     
@@ -48,7 +51,7 @@ public class AwardListViewActivity extends Activity {
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_award_list_view, menu);
+        getMenuInflater().inflate(com.example.tariand.R.menu.activity_award_list_view, menu);
         return true;
     }
 }

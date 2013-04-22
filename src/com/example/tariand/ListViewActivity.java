@@ -33,11 +33,9 @@ public class ListViewActivity extends Activity {
 		setContentView(R.layout.activity_list_view);
 
 		bun = new Bundle();
-		tariManager = new TarianManager();
-		tariManager.testCode();
+		tariManager = MainActivity.tariManager;
 		arrayTari = new ArrayList<Tarian>();
-		tariManager.retrieve();
-
+		
 		if ((bun = this.getIntent().getBundleExtra("namatarian")) != null) {
 			String nama = bun.getString("tarianName");
 			arrayTari = tariManager.searchByName(nama);

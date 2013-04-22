@@ -11,10 +11,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Parcelable;
 import android.sax.StartElementListener;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 
@@ -22,8 +24,9 @@ import com.example.tariand.*;
 
 public class ListViewAdapter extends BaseAdapter {
 
-	private ArrayList<Tarian> tarianArray;
-	private LayoutInflater mInflater;
+	ArrayList<Tarian> tarianArray;
+	LayoutInflater mInflater;
+	ImageButton bukmark;
 	
 	public void setVisibleFalse(ImageButton i){
 		i.setVisibility(View.GONE);
@@ -56,16 +59,22 @@ public class ListViewAdapter extends BaseAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
 		final int thisposition = position;
+		Tarian tarian = tarianArray.get(position);
 		if (convertView == null) {
 			convertView = mInflater.inflate(com.example.tariand.R.layout.list_view, null);
 			TextView tv = (TextView) convertView.findViewById(com.example.tariand.R.id.namaTarian);
-			ImageButton bukmark = (ImageButton) convertView.findViewById(com.example.tariand.R.id.bookmark);
-			ImageButton anbukmark = (ImageButton) convertView.findViewById(com.example.tariand.R.id.noBookmark);
-			tv.setText(tarianArray.get(position).getName());
+			bukmark = (ImageButton) convertView.findViewById(com.example.tariand.R.id.bookmark);
+			//ImageButton anbukmark = (ImageButton) convertView.findViewById(com.example.tariand.R.id.noBookmark);
+			if(tarian.isBookmarked()){
+				bukmark.setImageResource(com.example.tariand.R.drawable.star);
+			} else {
+				bukmark.setImageResource(com.example.tariand.R.drawable.nostar);
+				
+			}
+			tv.setText(tarian.getName());
 			tv.setClickable(true);
 			tv.setTextColor(convertView.getResources().getColor(R.color.black));
-			tv.setOnClickListener(new View.OnClickListener() {
-				
+			tv.setOnClickListener(new View.OnClickListener() {				
 				public void onClick(View arg0) {
 					// TODO Auto-generated method stub
 					Intent i = new Intent(arg0.getContext(), TampilTarianActivity.class);
@@ -75,6 +84,30 @@ public class ListViewAdapter extends BaseAdapter {
 				}
 			});
 			
+			bukmark.setOnClickListener(new View.OnClickListener() {
+				
+				public void onClick(View v) {
+					// TODO Auto-generated method stub
+					Tarian aaa = tarianArray.get(thisposition);
+					if(aaa.isBookmarked()){
+						aaa.setBookmark(false);
+						//bukmark.setImageResource(com.example.tariand.R.drawable.nostar);
+						ImageButton book = (ImageButton) v.findViewById(com.example.tariand.R.id.bookmark);
+						book.setImageResource(com.example.tariand.R.drawable.nostar);
+						notifyDataSetChanged();
+						Log.d(""+aaa.getName(), "setBookmark dari true ke "+aaa.isBookmarked());
+					} else {
+						aaa.setBookmark(true);
+						//bukmark.setImageResource(com.example.tariand.R.drawable.star);
+						ImageButton book = (ImageButton) v.findViewById(com.example.tariand.R.id.bookmark);
+						book.setImageResource(com.example.tariand.R.drawable.star);
+						notifyDataSetChanged();
+						Log.d(""+aaa.getName(), "setBookmark dari false ke "+aaa.isBookmarked());
+					}
+				}
+			});
+			
+			/*
 			if (tarianArray.get(thisposition).isBookmarked()){
 				bukmark.setVisibility(1);
 				anbukmark.setVisibility(View.INVISIBLE);
@@ -82,12 +115,14 @@ public class ListViewAdapter extends BaseAdapter {
 					
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
-						tarianArray.get(thisposition).setBookmark(false);
+						Tarian aaa = tarianArray.get(thisposition);
+						aaa.setBookmark(false);
 						//v.findViewById(com.example.tariand.R.id.bookmark).setVisibility(View.INVISIBLE);
 						ImageButton book = (ImageButton) v.findViewById(com.example.tariand.R.id.bookmark);
 						book.setImageResource(com.example.tariand.R.drawable.nostar);
 						//v.findViewById(com.example.tariand.R.id.noBookmark).setVisibility(View.VISIBLE);
 						notifyDataSetChanged();
+						Log.d(""+aaa.getName(), "setBookmark dari true ke "+aaa.isBookmarked());
 					}
 				});
 			}
@@ -97,18 +132,25 @@ public class ListViewAdapter extends BaseAdapter {
 					
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
-						tarianArray.get(thisposition).setBookmark(true);
+						Tarian aaa = tarianArray.get(thisposition);
+						aaa.setBookmark(true);
 						ImageButton book = (ImageButton) v.findViewById(com.example.tariand.R.id.noBookmark);
 						book.setImageResource(com.example.tariand.R.drawable.star);						
 						notifyDataSetChanged();
+						Log.d(""+aaa.getName(), "setBookmark dari false ke "+aaa.isBookmarked());
 						//v.findViewById(com.example.tariand.R.id.noBookmark).setVisibility(View.INVISIBLE);
 						//v.findViewById(com.example.tariand.R.id.bookmark).setVisibility(View.VISIBLE);
 					}
 				});
-			}
+			} 
+			*/
 		}
 
 		return convertView;
+	}
+	
+	public void changeImageSrc(ImageButton a, int b){
+		a.setImageResource(b);
 	}
 
 }

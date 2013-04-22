@@ -2,6 +2,8 @@ package model;
 
 import java.io.Serializable;
 
+import com.example.tariand.MainActivity;
+
 import android.os.Parcel;
 import android.os.Parcelable;
 
@@ -62,6 +64,8 @@ public class Tarian implements Parcelable, Serializable {
 
 	public void setBookmark(boolean bookmark){
 		this.isBookmark = bookmark;
+		MainActivity.shedtr.putBoolean(""+this.name, this.isBookmark);
+		MainActivity.shedtr.commit();
 	}
 
 	public String getImageURL() {

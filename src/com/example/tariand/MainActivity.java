@@ -1,14 +1,18 @@
 package com.example.tariand;
 
+import control.TarianManager;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends Activity {
-
+	public static TarianManager tariManager;
+	public static SharedPreferences shpr;
+	public static SharedPreferences.Editor shedtr;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,6 +22,13 @@ public class MainActivity extends Activity {
         Button bookmark = (Button) findViewById(R.id.LihatBookmarkButton);
         Button play = (Button) findViewById(R.id.MainkanQuizButton);
         
+        shpr = getSharedPreferences("TariAnd", MODE_PRIVATE );
+        shedtr = shpr.edit();
+        
+        tariManager = new TarianManager();
+		tariManager.testCode();
+		tariManager.retrieve();
+		
         cari.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View arg0) {
