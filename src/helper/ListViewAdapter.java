@@ -25,6 +25,7 @@ import com.example.tariand.*;
 public class ListViewAdapter extends BaseAdapter {
 
 	ArrayList<Tarian> tarianArray;
+	Tarian tarian;
 	LayoutInflater mInflater;
 	ImageButton bukmark;
 	
@@ -59,7 +60,7 @@ public class ListViewAdapter extends BaseAdapter {
 	public View getView(int position, View convertView, ViewGroup parent) {
 		// TODO Auto-generated method stub
 		final int thisposition = position;
-		Tarian tarian = tarianArray.get(position);
+		tarian = tarianArray.get(position);
 		if (convertView == null) {
 			convertView = mInflater.inflate(com.example.tariand.R.layout.list_view, null);
 			TextView tv = (TextView) convertView.findViewById(com.example.tariand.R.id.namaTarian);
@@ -79,6 +80,7 @@ public class ListViewAdapter extends BaseAdapter {
 					// TODO Auto-generated method stub
 					Intent i = new Intent(arg0.getContext(), TampilTarianActivity.class);
 					i.putExtra("tarian", (String) getItem(thisposition));
+					i.putExtra("tariannya", tarianArray.get(thisposition));
 					i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 					arg0.getContext().startActivity(i);
 				}

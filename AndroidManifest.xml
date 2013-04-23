@@ -99,7 +99,7 @@
         <activity
             android:name=".TampilTarianActivity"
             android:label="@string/title_activity_tampil_tarian" >
-         </activity>
+        </activity>
         <activity
             android:name=".DeskripsiActivity"
             android:label="@string/title_activity_deskripsi" >
@@ -107,6 +107,15 @@
         <activity
             android:name=".GambarActivity"
             android:label="@string/title_activity_gambar" >
+        </activity>
+        <activity
+            android:name=".VideoActivity"
+            android:label="@string/title_activity_video" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
     </application>
 

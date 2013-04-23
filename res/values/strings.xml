@@ -28,5 +28,6 @@
     <string name="title_activity_tampil_tarian">TampilTarianActivity</string>
     <string name="title_activity_deskripsi">DeskripsiActivity</string>
     <string name="title_activity_gambar">GambarActivity</string>
+    <string name="title_activity_video">VideoActivity</string>
 
 </resources>

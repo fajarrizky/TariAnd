@@ -12,32 +12,31 @@ import android.widget.TextView;
 
 public class DeskripsiActivity extends Activity {
 
-	TarianManager tmng;
-	ArrayList<Tarian> tarianList;
-	
-	
-    @Override
-    public void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_deskripsi);
-        
-        tmng = new TarianManager();
-        tmng.testCode();
-        String tarianku = getIntent().getStringExtra("namatarian");
-        tarianList = tmng.getListTarian();
-        
-        for (Tarian tari : tarianList) {
+	@Override
+	public void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.activity_deskripsi);
+
+		/*
+		tmng = MainActivity.tariManager;
+		String tarianku = getIntent().getStringExtra("namatarian");
+		tarianList = tmng.getListTarian();
+
+		for (Tarian tari : tarianList) {
 			if (tari.getName().equalsIgnoreCase(tarianku)){
 				TextView tv = (TextView) findViewById(R.id.deskripsiTarian);
 				tv.setText(tari.getDescription());
 			}
 		}
-        
-    }
+		*/
+		Tarian asd =(Tarian) getIntent().getSerializableExtra("tariannya");
+		TextView tv = (TextView) findViewById(R.id.deskripsiTarian);
+		tv.setText(asd.getDescription());
+	}
 
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        getMenuInflater().inflate(R.menu.activity_deskripsi, menu);
-        return true;
-    }
+	@Override
+	public boolean onCreateOptionsMenu(Menu menu) {
+		getMenuInflater().inflate(R.menu.activity_deskripsi, menu);
+		return true;
+	}
 }

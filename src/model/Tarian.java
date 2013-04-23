@@ -7,7 +7,7 @@ import com.example.tariand.MainActivity;
 import android.os.Parcel;
 import android.os.Parcelable;
 
-public class Tarian implements Parcelable, Serializable {
+public class Tarian implements Serializable {
 	/**
 	 * 
 	 */

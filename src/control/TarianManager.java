@@ -33,6 +33,7 @@ public class TarianManager {
         aa.setBookmark(MainActivity.shpr.getBoolean(""+aa.getName(), false));
         aa.setDescription("Tarian dari Bali");
         aa.setLocation("Bali");
+        aa.setVideoURL("QARV4YeH3dE");
         aa.setImageURL(""+com.example.tariand.R.drawable.pendet);
         listTarian.add(aa);
         
@@ -40,6 +41,7 @@ public class TarianManager {
         bb.setBookmark(MainActivity.shpr.getBoolean(""+bb.getName(), false));
         bb.setDescription("Salah satu tarian dari Sumatera Utara");
         bb.setLocation("Sumatera Utara");
+        bb.setVideoURL("yewkOTbxY30");
         bb.setImageURL(""+ com.example.tariand.R.drawable.gambyong);
         listTarian.add(bb);
         

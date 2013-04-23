@@ -13,14 +13,15 @@ import android.widget.TextView;
 
 public class GambarActivity extends Activity {
 
-	TarianManager tmng;
-	ArrayList<Tarian> tariArray;
+	//TarianManager tmng;
+	//ArrayList<Tarian> tariArray;
+	Tarian bcc;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_gambar);
-        
+        /*
         tmng = new TarianManager();
         tmng.testCode();
         
@@ -34,6 +35,10 @@ public class GambarActivity extends Activity {
 				img.setImageResource(Integer.parseInt(tari.getImageURL()));			
 			}
 		}
+        */
+        bcc = (Tarian) getIntent().getSerializableExtra("tariannya");
+        ImageView img = (ImageView) findViewById(R.id.Img1);
+		img.setImageResource(Integer.parseInt(bcc.getImageURL()));
         
        // ImageView asd = (ImageView) findViewById(R.id.Img1);
         //asd.setImageResource(R.drawable.gambyong);

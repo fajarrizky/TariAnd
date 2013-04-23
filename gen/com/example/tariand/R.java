@@ -53,25 +53,25 @@ public final class R {
         public static final int LihatBookmarkButton=0x7f090011;
         public static final int MainkanQuizButton=0x7f090010;
         public static final int Nama=0x7f090008;
-        public static final int NamaTarian=0x7f090024;
+        public static final int NamaTarian=0x7f090023;
         public static final int Provinsi=0x7f09000a;
         public static final int SearchField=0x7f090004;
         public static final int Selesai=0x7f090000;
-        public static final int StarButton=0x7f090025;
+        public static final int StarButton=0x7f090024;
         public static final int StartQuiz=0x7f090013;
         public static final int StartQuiz2=0x7f090015;
         public static final int StartQuiz3=0x7f090017;
         public static final int TarianListView=0x7f09000d;
         public static final int True=0x7f090018;
-        public static final int action_settings=0x7f090029;
+        public static final int action_settings=0x7f090028;
         public static final int awardListView=0x7f090003;
-        public static final int bookmark=0x7f090027;
+        public static final int bookmark=0x7f090026;
         public static final int container=0x7f090007;
-        public static final int customlistview=0x7f090023;
+        public static final int customlistview=0x7f090022;
         public static final int desc=0x7f09001e;
         public static final int descTari=0x7f09001c;
         public static final int deskripsiTarian=0x7f09000b;
-        public static final int detarian=0x7f090022;
+        public static final int detarian=0x7f090021;
         public static final int editText1=0x7f090009;
         public static final int editText2=0x7f090014;
         public static final int editText3=0x7f090016;
@@ -79,13 +79,12 @@ public final class R {
         public static final int isi=0x7f09001a;
         public static final int listViewProvinsi=0x7f090006;
         public static final int menuImage=0x7f090012;
-        public static final int menu_settings=0x7f090028;
-        public static final int namaTarian=0x7f090026;
+        public static final int menu_settings=0x7f090027;
+        public static final int namaTarian=0x7f090025;
         public static final int pic=0x7f09001f;
         public static final int qNumber=0x7f09001b;
         public static final int searchButton=0x7f090005;
         public static final int vid=0x7f090020;
-        public static final int videoView1=0x7f090021;
     }
     public static final class layout {
         public static final int activity_answer_question=0x7f030000;
@@ -106,8 +105,9 @@ public final class R {
         public static final int activity_show_tarian=0x7f03000f;
         public static final int activity_show_video=0x7f030010;
         public static final int activity_tampil_tarian=0x7f030011;
-        public static final int customlistviewlayout=0x7f030012;
-        public static final int list_view=0x7f030013;
+        public static final int activity_video=0x7f030012;
+        public static final int customlistviewlayout=0x7f030013;
+        public static final int list_view=0x7f030014;
     }
     public static final class menu {
         public static final int activity_answer_question=0x7f080000;
@@ -126,8 +126,9 @@ public final class R {
         public static final int activity_show_tarian=0x7f08000d;
         public static final int activity_show_video=0x7f08000e;
         public static final int activity_tampil_tarian=0x7f08000f;
-        public static final int cari_nama=0x7f080010;
-        public static final int cari_provinsi=0x7f080011;
+        public static final int activity_video=0x7f080010;
+        public static final int cari_nama=0x7f080011;
+        public static final int cari_provinsi=0x7f080012;
     }
     public static final class string {
         public static final int action_settings=0x7f060009;
@@ -152,6 +153,7 @@ public final class R {
         public static final int title_activity_show_tarian=0x7f06000c;
         public static final int title_activity_show_video=0x7f06000f;
         public static final int title_activity_tampil_tarian=0x7f060018;
+        public static final int title_activity_video=0x7f06001b;
         public static final int title_section1=0x7f060006;
         public static final int title_section2=0x7f060005;
         public static final int title_section3=0x7f060004;

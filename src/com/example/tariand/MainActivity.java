@@ -27,7 +27,7 @@ public class MainActivity extends Activity {
         
         tariManager = new TarianManager();
 		tariManager.testCode();
-		tariManager.retrieve();
+		//tariManager.retrieve();
 		
         cari.setOnClickListener(new View.OnClickListener() {
 			
