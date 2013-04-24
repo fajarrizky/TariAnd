@@ -60,7 +60,7 @@ public class TarianManager {
 		.detectDiskReads().detectDiskWrites().detectNetwork()
 		.penaltyLog().build());
 		try {
-			response = CustomHttpClient.executeHttpPost("http://192.168.42.243/android/lala.php", postParameters);
+			response = CustomHttpClient.executeHttpPost("http://192.168.42.51/android/lala.php", postParameters);
 		    String result = response.toString();  
 		    Log.e("debug", "result = " + result);
 		    try{
