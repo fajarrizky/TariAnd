@@ -29,9 +29,10 @@ public class VideoActivity extends Activity {
         setContentView(R.layout.activity_video);
         
         bcc = (Tarian) getIntent().getSerializableExtra("tariannya");
+        setTitle("Video "+bcc.getName());
         if(bcc != null){
         Intent intent = YouTubeStandalonePlayer.createVideoIntent(
-                this, DeveloperKey.DEVELOPER_KEY, bcc.getVideoURL(), 0, false, false);
+                this, DeveloperKey.DEVELOPER_KEY, bcc.getVideoURL(), 0, false, true);
         
         if (intent != null) {
             if (canResolveIntent(intent)) {

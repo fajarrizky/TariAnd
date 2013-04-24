@@ -24,10 +24,10 @@ public class MainActivity extends Activity {
         
         shpr = getSharedPreferences("TariAnd", MODE_PRIVATE );
         shedtr = shpr.edit();
-        
+        setTitle("TariAnd");
         tariManager = new TarianManager();
-		tariManager.testCode();
-		//tariManager.retrieve();
+		//tariManager.testCode();
+		tariManager.retrieve();
 		
         cari.setOnClickListener(new View.OnClickListener() {
 			

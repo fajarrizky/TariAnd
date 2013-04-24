@@ -14,6 +14,7 @@ public class CariTarianActivity extends Activity {
 		super.onCreate(savedInstanceState);
 
 		final ActionBar actionBar = getActionBar();
+		setTitle("Cari Tarian");
 		actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_TABS);
 
 		Tab nama = actionBar.newTab();

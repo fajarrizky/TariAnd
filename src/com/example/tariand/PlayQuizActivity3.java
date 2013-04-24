@@ -21,6 +21,7 @@ public class PlayQuizActivity3 extends Activity {
         TextView tv = (TextView) findViewById(R.id.editText3);
         tv.setTextColor(getResources().getColor(R.color.blue));
         Button b = (Button) findViewById(R.id.StartQuiz3);
+        setTitle("Quiz!");
         b.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {

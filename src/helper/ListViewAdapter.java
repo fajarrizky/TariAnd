@@ -28,11 +28,11 @@ public class ListViewAdapter extends BaseAdapter {
 	Tarian tarian;
 	LayoutInflater mInflater;
 	ImageButton bukmark;
-	
+
 	public void setVisibleFalse(ImageButton i){
 		i.setVisibility(View.GONE);
 	}
-	
+
 	public void setVisibleTrue(ImageButton i){
 		i.setVisibility(View.VISIBLE);
 	}
@@ -63,58 +63,59 @@ public class ListViewAdapter extends BaseAdapter {
 		tarian = tarianArray.get(position);
 		if (convertView == null) {
 			convertView = mInflater.inflate(com.example.tariand.R.layout.list_view, null);
-			TextView tv = (TextView) convertView.findViewById(com.example.tariand.R.id.namaTarian);
-			bukmark = (ImageButton) convertView.findViewById(com.example.tariand.R.id.bookmark);
-			//ImageButton anbukmark = (ImageButton) convertView.findViewById(com.example.tariand.R.id.noBookmark);
-			if(tarian.isBookmarked()){
-				bukmark.setImageResource(com.example.tariand.R.drawable.star);
-			} else {
-				bukmark.setImageResource(com.example.tariand.R.drawable.nostar);
-				
+		}
+		TextView tv = (TextView) convertView.findViewById(com.example.tariand.R.id.namaTarian);
+		bukmark = (ImageButton) convertView.findViewById(com.example.tariand.R.id.bookmark);
+		//ImageButton anbukmark = (ImageButton) convertView.findViewById(com.example.tariand.R.id.noBookmark);
+		if(tarian.isBookmarked()){
+			bukmark.setImageResource(com.example.tariand.R.drawable.star);
+		} else {
+			bukmark.setImageResource(com.example.tariand.R.drawable.nostar);
+
+		}
+		tv.setText(tarian.getName());
+		tv.setClickable(true);
+		tv.setTextColor(convertView.getResources().getColor(R.color.black));
+		tv.setOnClickListener(new View.OnClickListener() {				
+			public void onClick(View arg0) {
+				// TODO Auto-generated method stub
+				Intent i = new Intent(arg0.getContext(), TampilTarianActivity.class);
+				i.putExtra("tarian", (String) getItem(thisposition));
+				i.putExtra("tariannya", tarianArray.get(thisposition));
+				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				arg0.getContext().startActivity(i);
 			}
-			tv.setText(tarian.getName());
-			tv.setClickable(true);
-			tv.setTextColor(convertView.getResources().getColor(R.color.black));
-			tv.setOnClickListener(new View.OnClickListener() {				
-				public void onClick(View arg0) {
-					// TODO Auto-generated method stub
-					Intent i = new Intent(arg0.getContext(), TampilTarianActivity.class);
-					i.putExtra("tarian", (String) getItem(thisposition));
-					i.putExtra("tariannya", tarianArray.get(thisposition));
-					i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-					arg0.getContext().startActivity(i);
+		});
+
+		bukmark.setOnClickListener(new View.OnClickListener() {
+
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Tarian aaa = tarianArray.get(thisposition);
+				if(aaa.isBookmarked()){
+					aaa.setBookmark(false);
+					//bukmark.setImageResource(com.example.tariand.R.drawable.nostar);
+					ImageButton book = (ImageButton) v.findViewById(com.example.tariand.R.id.bookmark);
+					book.setImageResource(com.example.tariand.R.drawable.nostar);
+					notifyDataSetChanged();
+					Log.d(""+aaa.getName(), "setBookmark dari true ke "+aaa.isBookmarked());
+				} else {
+					aaa.setBookmark(true);
+					//bukmark.setImageResource(com.example.tariand.R.drawable.star);
+					ImageButton book = (ImageButton) v.findViewById(com.example.tariand.R.id.bookmark);
+					book.setImageResource(com.example.tariand.R.drawable.star);
+					notifyDataSetChanged();
+					Log.d(""+aaa.getName(), "setBookmark dari false ke "+aaa.isBookmarked());
 				}
-			});
-			
-			bukmark.setOnClickListener(new View.OnClickListener() {
-				
-				public void onClick(View v) {
-					// TODO Auto-generated method stub
-					Tarian aaa = tarianArray.get(thisposition);
-					if(aaa.isBookmarked()){
-						aaa.setBookmark(false);
-						//bukmark.setImageResource(com.example.tariand.R.drawable.nostar);
-						ImageButton book = (ImageButton) v.findViewById(com.example.tariand.R.id.bookmark);
-						book.setImageResource(com.example.tariand.R.drawable.nostar);
-						notifyDataSetChanged();
-						Log.d(""+aaa.getName(), "setBookmark dari true ke "+aaa.isBookmarked());
-					} else {
-						aaa.setBookmark(true);
-						//bukmark.setImageResource(com.example.tariand.R.drawable.star);
-						ImageButton book = (ImageButton) v.findViewById(com.example.tariand.R.id.bookmark);
-						book.setImageResource(com.example.tariand.R.drawable.star);
-						notifyDataSetChanged();
-						Log.d(""+aaa.getName(), "setBookmark dari false ke "+aaa.isBookmarked());
-					}
-				}
-			});
-			
-			/*
+			}
+		});
+
+		/*
 			if (tarianArray.get(thisposition).isBookmarked()){
 				bukmark.setVisibility(1);
 				anbukmark.setVisibility(View.INVISIBLE);
 				bukmark.setOnClickListener(new View.OnClickListener() {
-					
+
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
 						Tarian aaa = tarianArray.get(thisposition);
@@ -131,7 +132,7 @@ public class ListViewAdapter extends BaseAdapter {
 			else {
 				anbukmark.setVisibility(1);
 				anbukmark.setOnClickListener(new View.OnClickListener() {
-					
+
 					public void onClick(View v) {
 						// TODO Auto-generated method stub
 						Tarian aaa = tarianArray.get(thisposition);
@@ -145,12 +146,12 @@ public class ListViewAdapter extends BaseAdapter {
 					}
 				});
 			} 
-			*/
-		}
+		 */
+
 
 		return convertView;
 	}
-	
+
 	public void changeImageSrc(ImageButton a, int b){
 		a.setImageResource(b);
 	}

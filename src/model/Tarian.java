@@ -25,6 +25,7 @@ public class Tarian implements Serializable {
 	public Tarian(int id, String name){
 		setID(id);
 		setName(name);
+		isBookmark = MainActivity.shpr.getBoolean(""+this.getName(), false);
 	}
 	
 	public int getId(){
@@ -59,6 +60,7 @@ public class Tarian implements Serializable {
 	}
 	
 	public boolean isBookmarked(){
+		//isBookmark = MainActivity.shpr.getBoolean(""+this.getName(), false);
 		return this.isBookmark;
 	}
 

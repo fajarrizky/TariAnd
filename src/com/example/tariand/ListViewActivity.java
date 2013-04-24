@@ -31,7 +31,8 @@ public class ListViewActivity extends Activity {
 				.penaltyLog().build());
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_list_view);
-
+		setTitle("Daftar Tarian");
+		
 		bun = new Bundle();
 		tariManager = MainActivity.tariManager;
 		arrayTari = new ArrayList<Tarian>();
@@ -44,11 +45,14 @@ public class ListViewActivity extends Activity {
 		}
 		if (this.getIntent().getBooleanExtra("bookmark", false)) {
 			arrayTari = tariManager.getBookmarkedTarian();
+			setTitle("Bookmark");
 		}
 		if ((provinsi = this.getIntent().getStringExtra("Provinsi")) != null) {
 			Log.d("Nama Tarian", "Nama Provinsi " + provinsi);
 			arrayTari = tariManager.searchByLocation(provinsi);
 			Log.d("size array", arrayTari.size() + " dari search lokasi");
+			setTitle("Provinsi "+provinsi);
+			
 		}
 
 		ListViewAdapter adapter = new ListViewAdapter(getApplicationContext(),

@@ -42,6 +42,7 @@ public class TampilTarianActivity extends Activity {
 		bcc = (Tarian) getIntent().getSerializableExtra("tariannya");
 		if(bcc != null){
 			Log.d(""+bcc.getId()+" , "+bcc.getName(), ""+bcc.getVideoURL());
+	        setTitle(bcc.getName());
 		}
 		ListView tarian = (ListView) findViewById(R.id.detarian);
 		tarian.setBackgroundColor(getResources().getColor(R.color.blue));

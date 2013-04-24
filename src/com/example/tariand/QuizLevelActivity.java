@@ -29,7 +29,7 @@ public class QuizLevelActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_quiz_level);
-     
+        
         score = 0;
         jj = 0;
         q2 = qmj.getForQuiz();
@@ -38,8 +38,10 @@ public class QuizLevelActivity extends Activity {
         tv.setText("	"+q1.getQuestion());
         
         qnumb = (TextView) findViewById(R.id.qNumber);
+        //////
         qnumb.setText("Pertanyaan ke "+(jj+1));
-        
+        qnumb.setVisibility(View.GONE);
+        //////
         Button trueButton = (Button) findViewById(R.id.True);
         Button falseButton = (Button) findViewById(R.id.False);
         trueButton.setOnClickListener(new View.OnClickListener() {
@@ -79,6 +81,7 @@ public class QuizLevelActivity extends Activity {
     		q1 = q2.get(jj);
     		tv.setText("	"+q1.getQuestion());
     		qnumb.setText("Pertanyaan ke "+(jj+1));
+    		setTitle("Pertanyaan ke "+(jj+1));
     	}
     }
     private void pindah(){

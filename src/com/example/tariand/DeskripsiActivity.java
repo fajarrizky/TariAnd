@@ -7,6 +7,7 @@ import model.Tarian;
 import control.TarianManager;
 import android.os.Bundle;
 import android.app.Activity;
+import android.text.method.ScrollingMovementMethod;
 import android.view.Menu;
 import android.widget.TextView;
 
@@ -30,8 +31,10 @@ public class DeskripsiActivity extends Activity {
 		}
 		*/
 		Tarian asd =(Tarian) getIntent().getSerializableExtra("tariannya");
+        setTitle("Deskripsi "+asd.getName());
 		TextView tv = (TextView) findViewById(R.id.deskripsiTarian);
 		tv.setText(asd.getDescription());
+		tv.setMovementMethod(new ScrollingMovementMethod());
 	}
 
 	@Override

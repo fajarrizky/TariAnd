@@ -28,7 +28,7 @@ public class AwardListViewActivity extends Activity {
         awardManage.createAward();
         listAward = awardManage.getListAward();
         namaAward = new ArrayList<String>();
-        
+        setTitle("Award");
         
         
         for (Award aw : listAward) {

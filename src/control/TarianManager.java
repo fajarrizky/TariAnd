@@ -20,7 +20,7 @@ public class TarianManager {
 	ArrayList<Tarian> listTarian;
 
 	public TarianManager(){
-		listTarian = new ArrayList<Tarian>();
+		listTarian = new ArrayList<Tarian>(300);
 	}
 	
 	public ArrayList<Tarian> getListTarian(){
@@ -60,7 +60,7 @@ public class TarianManager {
 		.detectDiskReads().detectDiskWrites().detectNetwork()
 		.penaltyLog().build());
 		try {
-			response = CustomHttpClient.executeHttpPost("http://192.168.43.108/android/lala.php", postParameters);
+			response = CustomHttpClient.executeHttpPost("http://192.168.42.243/android/lala.php", postParameters);
 		    String result = response.toString();  
 		    Log.e("debug", "result = " + result);
 		    try{
@@ -98,7 +98,7 @@ public class TarianManager {
 		
 	//yang ini buat nyari dari nama
 	public ArrayList<Tarian> searchByName(String targetName){
-		ArrayList<Tarian> target = new ArrayList<Tarian>();
+		ArrayList<Tarian> target = new ArrayList<Tarian>(300);
 
 		for (Tarian tarian : listTarian) {
 			if(tarian.getName().toLowerCase().contains(targetName)){
@@ -113,7 +113,7 @@ public class TarianManager {
 
 	//yang ini buat nyari dari lokasi
 	public ArrayList<Tarian> searchByLocation(String targetLocation){
-		ArrayList<Tarian> target = new ArrayList<Tarian>();
+		ArrayList<Tarian> target = new ArrayList<Tarian>(300);
 
 		for (Tarian tarian : listTarian) {
 			if(tarian.getLocation().toLowerCase().equalsIgnoreCase(targetLocation)){
@@ -128,7 +128,7 @@ public class TarianManager {
 
 	//yang ini buat nyari yang udah d bookmark ae
 	public ArrayList<Tarian> getBookmarkedTarian(){
-		ArrayList<Tarian> target = new ArrayList<Tarian>();
+		ArrayList<Tarian> target = new ArrayList<Tarian>(300);
 
 		ListIterator<Tarian> MainIterator = listTarian.listIterator();
 		while(MainIterator.hasNext()){
