@@ -10,8 +10,6 @@ import org.json.JSONObject;
 
 import com.example.tariand.MainActivity;
 
-import android.R;
-import android.content.SharedPreferences;
 import android.os.StrictMode;
 import android.util.Log;
 import model.Tarian;
@@ -60,7 +58,7 @@ public class TarianManager {
 		.detectDiskReads().detectDiskWrites().detectNetwork()
 		.penaltyLog().build());
 		try {
-			response = CustomHttpClient.executeHttpPost("http://192.168.42.51/android/lala.php", postParameters);
+			response = CustomHttpClient.executeHttpPost("http://192.168.42.110/android/lala.php", postParameters);
 		    String result = response.toString();  
 		    Log.e("debug", "result = " + result);
 		    try{

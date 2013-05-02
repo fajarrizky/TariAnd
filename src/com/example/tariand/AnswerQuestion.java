@@ -4,11 +4,9 @@ import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.support.v4.app.NavUtils;
 
 public class AnswerQuestion extends Activity {
 	
@@ -23,11 +21,13 @@ public class AnswerQuestion extends Activity {
         result.setText("Anda telah selesai menjawab 10 pertanyaan. \nScore Anda adalah "+score);
         
         Button cont = (Button) findViewById(R.id.Kontinyu);
+        setTitle("Hasil Quiz");
         cont.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				startActivity(new Intent(getApplicationContext(), QuizLevelActivity.class));
+				finish();
 			}
 		});
         
@@ -37,6 +37,7 @@ public class AnswerQuestion extends Activity {
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				startActivity(new Intent(getApplicationContext(), MainActivity.class));
+				finish();
 			}
 		});
     }

@@ -1,7 +1,6 @@
 package control;
 
 import java.util.ArrayList;
-import java.util.ListIterator;
 
 import android.util.Log;
 
@@ -18,46 +17,46 @@ public class QuestionManager {
 		listQuestion = new ArrayList<Question>();
 
 		//question nya bikin sendiri yak. hardcode ae.
-		listQuestion.add(new Question(1, "Tari Kecak adalah tarian tradisional yang berasal dari Provinsi Bali", true));
-		listQuestion.add(new Question(2, "Salah satu tarian tradisional yang berasal dari daerah Jawa Barat adalah Tari Tor-Tor", false));
-		listQuestion.add(new Question(3, "Tari Gambyong berasal dari Provinsi Sumatera Utara", true));
-		listQuestion.add(new Question(4, "Tidak ada tarian tradisional yang berasal dari Provinsi Bali", false));
-		listQuestion.add(new Question(5, "question 5", true));
-		listQuestion.add(new Question(6, "question 6", true));
-		listQuestion.add(new Question(7, "question 7", true));
-		listQuestion.add(new Question(8, "question 8", true));
-		listQuestion.add(new Question(9, "question 9", true));
-		listQuestion.add(new Question(10, "question 10", true));
-		listQuestion.add(new Question(11, "question 11", true));
-		listQuestion.add(new Question(12, "question 12", true));
-		listQuestion.add(new Question(13, "question 13", true));
-		listQuestion.add(new Question(14, "question 14", true));
-		listQuestion.add(new Question(15, "question 15", true));
-		listQuestion.add(new Question(16, "question 16", true));
-		listQuestion.add(new Question(17, "question 17", true));
-		listQuestion.add(new Question(18, "question 18", true));
-		listQuestion.add(new Question(19, "question 19", true));
-		listQuestion.add(new Question(20, "question 20", true));
-		listQuestion.add(new Question(21, "question 21", true));
-		listQuestion.add(new Question(22, "question 22", true));
-		listQuestion.add(new Question(23, "question 23", true));
-		listQuestion.add(new Question(24, "question 24", true));
-		listQuestion.add(new Question(25, "question 25", true));
-		listQuestion.add(new Question(26, "question 26", true));
-		listQuestion.add(new Question(27, "question 27", true));
-		listQuestion.add(new Question(28, "question 28", true));
-		listQuestion.add(new Question(29, "question 29", true));
-		listQuestion.add(new Question(30, "question 30", true));
-		listQuestion.add(new Question(31, "question 31", true));
-		listQuestion.add(new Question(32, "question 32", true));
-		listQuestion.add(new Question(33, "question 33", true));
-		listQuestion.add(new Question(34, "question 34", true));
-		listQuestion.add(new Question(35, "question 35", true));
-		listQuestion.add(new Question(36, "question 36", true));
-		listQuestion.add(new Question(37, "question 37", true));
-		listQuestion.add(new Question(38, "question 38", true));
-		listQuestion.add(new Question(39, "question 39", true));
-		listQuestion.add(new Question(40, "question 40", true));
+		listQuestion.add(new Question(1, "Tari Kecak adalah tarian tradisional yang berasal dari Provinsi Bali.", true));
+		listQuestion.add(new Question(2, "Salah satu tarian tradisional yang berasal dari daerah Jawa Barat adalah Tari Tor-Tor.", false));
+		listQuestion.add(new Question(3, "Tari Gambyong berasal dari Provinsi Sumatera Utara.", true));
+		listQuestion.add(new Question(4, "Tidak ada tarian tradisional yang berasal dari Provinsi Bali.", false));
+		listQuestion.add(new Question(5, "Tari Pendet menceritakan tentang dewi-dewi yang turun dari kayangan ke bumi.", true));
+		listQuestion.add(new Question(6, "Tari Pendet adalah tarian yang dibawakan oleh satu orang penari.", false));
+		listQuestion.add(new Question(7, "Pada Tari Pendet, penarinya masing-masing membawa sesajian dan mengenakan pakaian upacara.", true));
+		listQuestion.add(new Question(8, "Tari Saman adalah salah satu tarian yang berasal dari D.I Yogyakarta.", false));
+		listQuestion.add(new Question(9, "Tari Saman merupakan media untuk menyampaikan kekecewaan terhadap suatu hal.", false));
+		listQuestion.add(new Question(10, "Tari Pendet berasal dari Bali.", true));
+		listQuestion.add(new Question(11, "Tari Tortor berasal dari Sumatera Utara.", true));
+		listQuestion.add(new Question(12, "Salah satu tarian yang berasal dari Jawa Tengah adalah tari Gambyong.", true));
+		listQuestion.add(new Question(13, "Tari Piring berasal dari Minangkabau.", true));
+		listQuestion.add(new Question(14, "Tari Jaipong berasal dari Banten.", false));
+		listQuestion.add(new Question(15, "Tari Maengket berasal dari Sulawesi Tenggara.", false));
+		listQuestion.add(new Question(16, "Tari Seudati adalah salah satu tarian dari Aceh.", true));
+		listQuestion.add(new Question(17, "Salah satu tarian dari Papua Barat adalah tari Perang Papua.", true));
+		listQuestion.add(new Question(18, "Tari Jepen Berasal dari Kalimantan Barat.", false));
+		listQuestion.add(new Question(19, "Tari Hudoq Berasal dari Kalimantan Barat.", false));
+		listQuestion.add(new Question(20, "Tarian yang berasal dari Sulawesi Utara salah satunya adalah tari Katrili.", true));
+		listQuestion.add(new Question(21, "Tari Laweut berasal dari Jambi.", false));
+		listQuestion.add(new Question(22, "Tari Pakarena berasal dari Sulawesi Tengah.", false));
+		listQuestion.add(new Question(23, "Tari Saman, Seudati, dan Tortor adalah tarian yang berasal dari Aceh.", false));
+		listQuestion.add(new Question(24, "Ciri khas dari tari Kecak adalah seruan \"cak\" dari para penarinya.", true));
+		listQuestion.add(new Question(25, "Tari Tortor pada awalnya merupakan tarian yang berhubungan dengan roh-roh.", true));
+		listQuestion.add(new Question(26, "Kendang dan gong adalah instrumen yang digunakan dalam tari Gambyong.", true));
+		listQuestion.add(new Question(27, "Jumlah penari pada tari Piring harus genap", false));
+		listQuestion.add(new Question(28, "Tari Maengket terdiri dari 2 babak.", false));
+		listQuestion.add(new Question(29, "Ciri dari Tari Seudati adalah adanya 2 kelompok yang saling bersaing.", true));
+		listQuestion.add(new Question(30, "Tari Perang Papua melambangkan kegagahan dan perjuangan bekas penjajah.", false));
+		listQuestion.add(new Question(31, "Tari Jepen adalah perpaduan dari budaya kerajaan Kutai, kerajaan Majapahit, dan agama Islam.", false));
+		listQuestion.add(new Question(32, "Gerakan menghentakkan kaki dengan tumit serta mengibaskan tangan bermakna mengusir hama dari padi.", true));
+		listQuestion.add(new Question(33, "Tari katrili termasuk tari tradisional yang sifatnya kerakyatan.", false));
+		listQuestion.add(new Question(34, "Tari  Laweut berasal dari kata Selawat, yaitu suatu sanjungan yang ditujukan kepada junjungan Nabi Muhammad SAW.", true));
+		listQuestion.add(new Question(35, "Drum dan gitar adalah instrumen yang digunakan dalam Tari Pakarena.", false));
+		listQuestion.add(new Question(36, "Tari Piring melambangkan rasa bersyukur kepada Tuhan atas karunia yang diberikan.", true));
+		listQuestion.add(new Question(37, "Tari Kecak diciptakan pada tahun 1830-an.", false));
+		listQuestion.add(new Question(38, "Tari Saman dipimpin oleh seorang pemimpin yang disebut Syech.", true));
+		listQuestion.add(new Question(39, "Tari Perang Papua dimainkan oleh 14 laki-laki dan 2 perempuan.", false));
+		listQuestion.add(new Question(40, "Para penari duduk melingkar pada Tari Kecak.", true));
 		
 	}
 	

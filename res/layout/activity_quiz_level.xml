@@ -22,19 +22,6 @@
         android:layout_alignParentRight="true"
         android:layout_marginRight="110dp"
         android:text="Salah" />
-
-    <TextView
-        android:id="@+id/isi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="60dp"
-        android:ems="10"
-        android:inputType="textMultiLine"
-        android:singleLine="false"
-        android:text="Pertanyaaan blalalalsaldalsdlda" />
 
     <TextView
         android:id="@+id/qNumber"
@@ -45,5 +32,17 @@
         android:layout_marginTop="15dp"
         android:text="Small Text"
         android:textAppearance="?android:attr/textAppearanceSmall" />
+
+    <TextView
+        android:id="@+id/isi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/qNumber"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="34dp"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:singleLine="false"
+        android:text="Pertanyaaan" />
 
 </RelativeLayout>

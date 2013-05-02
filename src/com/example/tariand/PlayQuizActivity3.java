@@ -1,16 +1,12 @@
 package com.example.tariand;
 
-import control.QuestionManager;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-import android.support.v4.app.NavUtils;
 
 public class PlayQuizActivity3 extends Activity {
     @Override
@@ -26,6 +22,7 @@ public class PlayQuizActivity3 extends Activity {
 			
 			public void onClick(View v) {
 				startActivity(new Intent(getApplicationContext(), QuizLevelActivity.class));
+				finish();
 			}
 		});
     }

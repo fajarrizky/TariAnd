@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 import model.Question;
 import control.QuestionManager;
-import control.TarianManager;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
@@ -40,6 +39,7 @@ public class QuizLevelActivity extends Activity {
         qnumb = (TextView) findViewById(R.id.qNumber);
         //////
         qnumb.setText("Pertanyaan ke "+(jj+1));
+        setTitle("Pertanyaan ke "+(jj+1));
         qnumb.setVisibility(View.GONE);
         //////
         Button trueButton = (Button) findViewById(R.id.True);
@@ -84,10 +84,12 @@ public class QuizLevelActivity extends Activity {
     		setTitle("Pertanyaan ke "+(jj+1));
     	}
     }
+    
     private void pindah(){
     	Log.d("score ", ""+score);
     	Intent i = new Intent(getApplicationContext(), AnswerQuestion.class);
     	i.putExtra("score", score);
     	startActivity(i);
+    	finish();
     }
 }

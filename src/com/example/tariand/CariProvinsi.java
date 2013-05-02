@@ -21,10 +21,10 @@ public class CariProvinsi extends Fragment {
 		View FragView = inflater.inflate(R.layout.activity_cari_provinsi, container, false);
 		
 		ArrayList<String> provinsi = new ArrayList<String>();
-		provinsi.add("Aceh");
-		provinsi.add("Sumut");
-		provinsi.add("Sumbar");
-		provinsi.add("Sumsel");
+		provinsi.add("D.I Aceh");
+		provinsi.add("Sumatera Utara");
+		provinsi.add("Sumatera Barat");
+		provinsi.add("Sumatera Selatan");
 		provinsi.add("Jambi");
 		provinsi.add("Riau");
 		provinsi.add("Kepulauan Riau");

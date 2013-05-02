@@ -1,7 +1,5 @@
 package com.example.tariand;
 
-import helper.ListViewAdapter;
-
 import java.util.ArrayList;
 
 import model.Award;
