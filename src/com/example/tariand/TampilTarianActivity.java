@@ -84,10 +84,16 @@ public class TampilTarianActivity extends Activity {
 				
 				if (arg0.getItemAtPosition(arg2).toString().equalsIgnoreCase("Share") && namatarian!=null){
 
-					Intent intent = new Intent(getApplicationContext(), VideoActivity.class);
+					//Intent intent = new Intent(getApplicationContext(), VideoActivity.class);
 					//intent.putExtra("namatarian", namatarian);
-					intent.putExtra("tariannya", bcc);
-					startActivity(intent);
+					//intent.putExtra("tariannya", bcc);
+					//startActivity(intent);
+					
+					Intent share = new Intent(android.content.Intent.ACTION_SEND);
+					share.setType("text/plain");
+					share.putExtra(Intent.EXTRA_SUBJECT, "Name of the thing to share");
+					share.putExtra(Intent.EXTRA_TEXT, bcc.getDescription());
+					startActivity(Intent.createChooser(share, "Title of the dialog that will show up"));
 				}
 				
 				if (arg0.getItemAtPosition(arg2).toString().equalsIgnoreCase("Rating dan Komentar") && namatarian!=null){
