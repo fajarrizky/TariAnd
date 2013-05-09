@@ -77,13 +77,13 @@ public final class R {
         public static final int editText3=0x7f090017;
         public static final int gridView1=0x7f09001e;
         public static final int imgError=0x7f09000d;
-        public static final int isi=0x7f09001b;
+        public static final int isi=0x7f09001c;
         public static final int listViewProvinsi=0x7f090006;
         public static final int menuImage=0x7f090013;
         public static final int menu_settings=0x7f090028;
         public static final int namaTarian=0x7f090026;
         public static final int pic=0x7f090020;
-        public static final int qNumber=0x7f09001c;
+        public static final int qNumber=0x7f09001b;
         public static final int searchButton=0x7f090005;
         public static final int vid=0x7f090021;
     }
