@@ -15,6 +15,7 @@ public class MainActivity extends Activity {
 	public static TarianManager tariManager;
 	public static SharedPreferences shpr;
 	public static SharedPreferences.Editor shedtr;
+	public static final String target = "http://192.168.91.50/";
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -23,6 +24,7 @@ public class MainActivity extends Activity {
         Button award = (Button) findViewById(R.id.LihatAwardButton);
         Button bookmark = (Button) findViewById(R.id.LihatBookmarkButton);
         Button play = (Button) findViewById(R.id.MainkanQuizButton);
+        Button contribute = (Button) findViewById(R.id.UserContribution);
         
         shpr = getSharedPreferences("TariAnd", MODE_PRIVATE );
         shedtr = shpr.edit();
@@ -64,6 +66,13 @@ public class MainActivity extends Activity {
 						startActivity(new Intent(getApplicationContext(), PlayQuizActivity3.class));
 					}
 			});
+		contribute.setOnClickListener(new View.OnClickListener() {
+			
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				startActivity(new Intent(getApplicationContext(), UserContribution.class));
+			}
+		});
         
     }
 

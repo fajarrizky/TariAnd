@@ -4,56 +4,83 @@
     android:layout_height="match_parent"
     android:orientation="horizontal" >
 
-    <Button
-        android:id="@+id/CariTarianButton"
-        style="@style/main_menu"
+    <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/menu_btn"
-        android:text="Cari Tarian" />
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="163dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+            <Button
+                android:id="@+id/CariTarianButton"
+                style="@style/main_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="0dip"
+                android:layout_marginTop="10dip"
+                android:background="@drawable/menu_btn"
+                android:text="Cari Tarian" />
+
+            <Button
+                android:id="@+id/LihatBookmarkButton"
+                style="@style/main_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="0dip"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/menu_btn"
+                android:text="Lihat Bookmark" />
+
+            <Button
+                android:id="@+id/LihatAwardButton"
+                style="@style/main_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="0dip"
+                android:layout_marginTop="10dip"
+                android:background="@drawable/menu_btn"
+                android:text="Lihat Award" />
+
+            <Button
+                android:id="@+id/MainkanQuizButton"
+                style="@style/main_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="0dip"
+                android:layout_marginTop="10dip"
+                android:background="@drawable/menu_btn"
+                android:text="Mainkan Quiz" />
+
+            <Button
+                android:id="@+id/UserContribution"
+                style="@style/main_menu"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="0dip"
+                android:layout_marginLeft="5dip"
+                android:layout_marginRight="0dip"
+                android:layout_marginTop="10dip"
+                android:background="@drawable/menu_btn"
+                android:text="Kontribusi Pengguna" />
 
-    <Button
-        android:id="@+id/LihatAwardButton"
-        style="@style/main_menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/MainkanQuizButton"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="8dp"
-        android:background="@drawable/menu_btn"
-        android:text="Lihat Award" />
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/menuImage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="100dip"
+            android:layout_marginTop="50dip"
+            android:src="@drawable/menu" />
 
-    <Button
-        android:id="@+id/LihatBookmarkButton"
-        style="@style/main_menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_below="@+id/CariTarianButton"
-        android:layout_marginTop="10dp"
-        android:background="@drawable/menu_btn"
-        android:text="Lihat Bookmark" />
-
-    <Button
-        android:id="@+id/MainkanQuizButton"
-        style="@style/main_menu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="20dp"
-        android:background="@drawable/menu_btn"
-        android:text="Mainkan Quiz" />
-
-    <ImageView
-        android:id="@+id/menuImage"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_toRightOf="@+id/CariTarianButton"
-        android:src="@drawable/menu" />
+    </LinearLayout>
 
 </RelativeLayout>

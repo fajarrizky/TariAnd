@@ -29,5 +29,7 @@
     <string name="title_activity_deskripsi">DeskripsiActivity</string>
     <string name="title_activity_gambar">GambarActivity</string>
     <string name="title_activity_video">VideoActivity</string>
+    <string name="title_activity_rate_comment">RateComment</string>
+    <string name="title_activity_user_contribution">UserContribution</string>
 
 </resources>

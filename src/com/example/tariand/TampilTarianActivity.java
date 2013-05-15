@@ -98,7 +98,7 @@ public class TampilTarianActivity extends Activity {
 				
 				if (arg0.getItemAtPosition(arg2).toString().equalsIgnoreCase("Rating dan Komentar") && namatarian!=null){
 
-					Intent intent = new Intent(getApplicationContext(), VideoActivity.class);
+					Intent intent = new Intent(getApplicationContext(), RateComment.class);
 					//intent.putExtra("namatarian", namatarian);
 					intent.putExtra("tariannya", bcc);
 					startActivity(intent);

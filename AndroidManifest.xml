@@ -102,6 +102,15 @@
             android:name=".VideoActivity"
             android:label="@string/title_activity_video" >
         </activity>
+        <activity
+            android:name=".RateComment"
+            android:label="@string/title_activity_rate_comment" >
+
+        </activity>
+        <activity
+            android:name=".UserContribution"
+            android:label="@string/title_activity_user_contribution" >
+        </activity>
     </application>
 
 </manifest>
