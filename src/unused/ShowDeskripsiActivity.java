@@ -1,5 +1,6 @@
-package com.example.tariand;
+package unused;
 
+import com.example.tariand.R;
 import android.os.Bundle;
 import android.app.Fragment;
 import android.view.LayoutInflater;

@@ -40,19 +40,19 @@
             android:label="@string/title_activity_list_view" >
         </activity>
         <activity
-            android:name="com.example.tariand.ShowTarianActivity"
+            android:name="unused.ShowTarianActivity"
             android:label="@string/title_activity_show_tarian" >
         </activity>
         <activity
-            android:name="com.example.tariand.ShowDeskripsiActivity"
+            android:name="unused.ShowDeskripsiActivity"
             android:label="@string/title_activity_show_deskripsi" >
         </activity>
         <activity
-            android:name="com.example.tariand.ShowGambarActivity"
+            android:name="unused.ShowGambarActivity"
             android:label="@string/title_activity_show_gambar" >
         </activity>
         <activity
-            android:name="com.example.tariand.ShowVideoActivity"
+            android:name="unused.ShowVideoActivity"
             android:label="@string/title_activity_show_video" >
         </activity>
         <activity

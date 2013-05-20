@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import model.Tarian;
 
-import org.apache.http.HttpResponse;
+//import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
@@ -42,7 +42,9 @@ public class UserContributionManager {
             HttpClient httpclient = new DefaultHttpClient();
             HttpPost httppost = new HttpPost(MainActivity.target+"android/usercontrib.php");
             httppost.setEntity(new UrlEncodedFormEntity(data));
-            HttpResponse response = httpclient.execute(httppost);
+            //HttpResponse response = 
+            httpclient.execute(httppost);
+            
         }
         catch(Exception e)
         {

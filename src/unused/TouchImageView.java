@@ -1,4 +1,4 @@
-package com.example.tariand;
+package unused;
 
 import android.content.Context;
 import android.graphics.Matrix;

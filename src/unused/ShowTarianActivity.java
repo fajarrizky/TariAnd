@@ -1,4 +1,4 @@
-package com.example.tariand;
+package unused;
 
 import android.os.Bundle;
 import android.app.ActionBar;

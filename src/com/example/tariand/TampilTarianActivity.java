@@ -1,19 +1,13 @@
 package com.example.tariand;
 
-import helper.DeveloperKey;
 
 import java.util.ArrayList;
-import java.util.List;
-
-import com.google.android.youtube.player.YouTubeInitializationResult;
-import com.google.android.youtube.player.YouTubeStandalonePlayer;
 
 import model.Tarian;
 
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
-import android.content.pm.ResolveInfo;
 import android.util.Log;
 import android.view.Menu;
 import android.view.View;

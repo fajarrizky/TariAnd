@@ -5,8 +5,6 @@ import java.util.ArrayList;
 
 import com.example.tariand.MainActivity;
 
-import android.os.Parcel;
-import android.os.Parcelable;
 
 public class Tarian implements Serializable {
 	/**
@@ -126,10 +124,6 @@ public class Tarian implements Serializable {
 	public int describeContents() {
 		// TODO Auto-generated method stub
 		return 0;
-	}
-
-	public void writeToParcel(Parcel arg0, int arg1) {
-		// TODO Auto-generated method stub
 	}
 
 	public boolean isPublished() {

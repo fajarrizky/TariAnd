@@ -5,12 +5,9 @@ import model.Tarian;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
-import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
-import android.support.v4.app.NavUtils;
 
 public class UserContribution extends Activity {
 	EditText namaTarian, provinsi, urlvideo, urlgambar, deskripsi;
@@ -47,7 +44,6 @@ public class UserContribution extends Activity {
 				
 				
 				finish();
-				Toast.makeText(UserContribution.this, "Terima kasih atas partisipasi anda!", Toast.LENGTH_SHORT);
 			}
 		});
         

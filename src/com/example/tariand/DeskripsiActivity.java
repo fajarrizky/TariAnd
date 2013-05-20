@@ -1,10 +1,7 @@
 package com.example.tariand;
 
-import java.util.ArrayList;
-
 import model.Tarian;
 
-import control.TarianManager;
 import android.os.Bundle;
 import android.app.Activity;
 import android.text.method.ScrollingMovementMethod;

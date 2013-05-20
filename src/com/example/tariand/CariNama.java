@@ -1,7 +1,6 @@
 package com.example.tariand;
 
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.app.Fragment;
 import android.content.Intent;
 import android.util.Log;
@@ -10,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.TextView;
-import android.widget.Toast;
 
 public class CariNama extends Fragment {
 

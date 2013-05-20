@@ -1,21 +1,17 @@
 package com.example.tariand;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubeStandalonePlayer;
 
 import model.Tarian;
-import control.TarianManager;
 import helper.DeveloperKey;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
 import android.view.Menu;
-import android.view.MenuItem;
-import android.support.v4.app.NavUtils;
 
 public class VideoActivity extends Activity {
 	private static final int REQ_START_STANDALONE_PLAYER = 1;
