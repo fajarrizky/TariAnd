@@ -1,16 +1,43 @@
 package com.example.tariand;
 
+import model.Tarian;
 import android.os.Bundle;
 import android.app.Activity;
 import android.view.Menu;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.RatingBar;
 
 public class RateComment extends Activity {
 
+	RatingBar eRate;
+	Button eSubmit;
+	EditText userName, eMail, comment;
+	Tarian bcc;
+	
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rate_comment);
         setTitle("Rating dan Komentar");
+        
+        eRate = (RatingBar) findViewById(R.id.eRate);
+        eRate.setNumStars(5);
+        eSubmit = (Button) findViewById(R.id.submit);
+        userName = (EditText) findViewById(R.id.username);
+        eMail = (EditText) findViewById(R.id.email);
+        comment = (EditText) findViewById(R.id.comment);
+        bcc = (Tarian) getIntent().getSerializableExtra("tariannya");
+        
+        eSubmit.setOnClickListener(new View.OnClickListener(
+        		) {
+			
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				process();
+			}
+		});
     }
 
     @Override
@@ -19,5 +46,9 @@ public class RateComment extends Activity {
         return true;
     }
 
+    private void process() {
+		// TODO Auto-generated method stub
+		
+	}
     
 }

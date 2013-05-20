@@ -24,11 +24,22 @@
                 android:text="Rate:"
                 android:textAppearance="?android:attr/textAppearanceLarge" />
 
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_weight="1.09"
+                android:orientation="vertical" >
+
+                <Space
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
             <RatingBar
-                android:id="@+id/ratingBar1"
+                android:id="@+id/eRate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
-
         </LinearLayout>
 
         <LinearLayout
@@ -83,11 +94,47 @@
             <EditText
                 android:id="@+id/comment"
                 android:layout_width="match_parent"
-                android:layout_height="302dp"
+                android:layout_height="208dp"
                 android:gravity="top|left"
                 android:inputType="textMultiLine" />
 
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" >
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.78"
+                    android:orientation="vertical" >
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/submit"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="left|center_vertical|center_horizontal"
+                    android:text="Submit" />
+
+                <Space
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent" />
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_weight="0.78"
+                    android:orientation="vertical" >
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
         </LinearLayout>
+
     </LinearLayout>
 
 </RelativeLayout>
