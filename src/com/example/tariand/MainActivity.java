@@ -2,6 +2,7 @@ package com.example.tariand;
 
 import control.TarianManager;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -14,7 +15,8 @@ public class MainActivity extends Activity {
 	public static SharedPreferences shpr;
 	public static SharedPreferences.Editor shedtr;
 	public static final String target = "http://192.168.91.50/";
-    @Override
+	String deviceId = Settings.System.getString(getContentResolver(),Settings.System.ANDROID_ID);
+	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
