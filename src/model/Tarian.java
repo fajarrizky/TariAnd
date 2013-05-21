@@ -23,7 +23,7 @@ public class Tarian implements Serializable {
 
 	// tambahan variabel dari iterasi 2
 	private ArrayList<Comment> comments;
-	private double rate;
+	private float rate;
 	private int nrate;
 	private boolean published;
 
@@ -97,11 +97,11 @@ public class Tarian implements Serializable {
 		this.videoURL = videoURL;
 	}
 
-	public double getRate() {
+	public float getRate() {
 		return this.rate;
 	}
 
-	public void addRate(double inp) {
+	public void addRate(float inp) {
 		if (nrate == 0) {
 			nrate = 1;
 			rate = inp;
@@ -110,6 +110,10 @@ public class Tarian implements Serializable {
 			nrate++;
 			sum = (sum + inp) / nrate;
 		}
+	}
+	
+	public int getNRate(){
+		return this.nrate;
 	}
 
 	public void addComment(Comment newComment) {

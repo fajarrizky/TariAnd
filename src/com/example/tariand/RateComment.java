@@ -1,5 +1,7 @@
 package com.example.tariand;
 
+import control.RateAndCommentManager;
+import model.Comment;
 import model.Tarian;
 import android.os.Bundle;
 import android.app.Activity;
@@ -15,6 +17,7 @@ public class RateComment extends Activity {
 	Button eSubmit;
 	EditText userName, eMail, comment;
 	Tarian bcc;
+	RateAndCommentManager rncm;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -30,6 +33,7 @@ public class RateComment extends Activity {
         comment = (EditText) findViewById(R.id.comment);
         bcc = (Tarian) getIntent().getSerializableExtra("tariannya");
         
+        rncm = new RateAndCommentManager();
         eSubmit.setOnClickListener(new View.OnClickListener(
         		) {
 			
@@ -48,6 +52,14 @@ public class RateComment extends Activity {
 
     private void process() {
 		// TODO Auto-generated method stub
+		Comment cmnt = new Comment(bcc.getId(), userName.getText().toString(), eMail.getText().toString(), comment.getText().toString());
+		float irate = eRate.getRating();
+		if(irate != 0){
+			cmnt.setRate(irate);
+			bcc.addRate(irate);			
+		}
+		bcc.addComment(cmnt);
+		rncm = new RateAndCommentManager(cmnt, bcc.getNRate(), bcc.getRate());
 		
 	}
     
