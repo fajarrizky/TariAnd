@@ -60,7 +60,7 @@ public class TarianManager {
 		try {
 			response = CustomHttpClient.executeHttpPost(MainActivity.target+"android/lala.php", postParameters);
 		    String result = response.toString();  
-		    Log.e("debug", "result = " + result);
+		    //Log.e("debug", "result = " + result);
 		    try{
 		    	JSONArray jArray = new JSONArray(result);
 		        int [] ID = new int [jArray.length()];

@@ -52,18 +52,13 @@ public class RateComment extends Activity {
 
     private void process() {
 		// TODO Auto-generated method stub
-		Comment cmnt = new Comment(bcc.getId(), userName.getText().toString(), eMail.getText().toString(), comment.getText().toString());
-
-        
-        
-		float irate = eRate.getRating();
+		Comment cmnt = new Comment(bcc.getId(), userName.getText().toString(), eMail.getText().toString(), comment.getText().toString());       
+        float irate = eRate.getRating();
 		if(irate != 0){
 			cmnt.setRate(irate);
 			bcc.addRate(irate);			
 		}
 		bcc.addComment(cmnt);
-		Log.d("nRate", ""+bcc.getNRate());
-		Log.d("eRate", ""+bcc.getRate());
 		rncm.setComment(cmnt);
 		rncm.setERate(bcc.getRate());
 		rncm.setNRate(bcc.getNRate());

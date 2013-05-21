@@ -128,6 +128,10 @@ public class Tarian implements Serializable {
 	public void addComment(Comment newComment) {
 		comments.add(newComment);
 	}
+	
+	public void setComments(ArrayList<Comment> comments){
+		this.comments = comments;
+	}
 
 	public ArrayList<Comment> getComments(){
 		return this.comments;
