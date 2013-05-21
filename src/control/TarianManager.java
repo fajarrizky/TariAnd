@@ -69,6 +69,9 @@ public class TarianManager {
 		        String [] Deskripsi = new String [jArray.length()];
 		        String [] Foto = new String [jArray.length()];
 		        String [] URL = new String [jArray.length()];
+		        String [] published = new String[jArray.length()];
+		        String [] eRate = new String[jArray.length()];
+		        String [] nRate = new String[jArray.length()];
 		        for(int i=0;i<jArray.length();i++){
 		        	JSONObject json_data = jArray.getJSONObject(i);
 			        ID[i] = Integer.parseInt(json_data.getString("ID"));
@@ -77,11 +80,17 @@ public class TarianManager {
 			        Deskripsi[i] = json_data.getString("Deskripsi");
 			        Foto[i] = json_data.getString("Lokasi");
 			        URL[i] = json_data.getString("URL");
+			        published[i] = json_data.getString("published");
+			        eRate[i] = json_data.getString("eRate");
+			        nRate[i] = json_data.getString("nRate");
 			        Tarian tarian = new Tarian(ID[i], Nama[i]);
 			        tarian.setDescription(Deskripsi[i]);
 			        tarian.setLocation(Provinsi[i]);
 			        tarian.setImageURL(Foto[i]);
 			        tarian.setVideoURL(URL[i]);
+			        tarian.setPublished(published[i].equals("1"));
+			        tarian.setRate(Float.valueOf(eRate[i]));
+			        tarian.setNRate(Integer.parseInt(nRate[i]));
 			        listTarian.add(tarian);
 			        }
 		    } 

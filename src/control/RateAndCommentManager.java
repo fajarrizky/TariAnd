@@ -1,6 +1,7 @@
 package control;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.client.HttpClient;
@@ -30,9 +31,9 @@ public class RateAndCommentManager {
 	}
 	
 	public RateAndCommentManager(Comment tr, int nR,float eR){
-		this(tr);
-		setNRate(nR);
-		setERate(eR);
+		this.setComment(tr);
+		this.setNRate(nR);
+		this.setERate(eR);
 	}
 	
 	public RateAndCommentManager() {
@@ -49,7 +50,7 @@ public class RateAndCommentManager {
 
 	public void post() {
 		// TODO Auto-generated method stub
-		 ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(7);
+		 ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(9);
 		 nameValuePairs.add(new BasicNameValuePair("idTarian", ""+comment.getIdTarian()));
          nameValuePairs.add(new BasicNameValuePair("username", comment.getUserName()));
          nameValuePairs.add(new BasicNameValuePair("email", comment.getEmail()));
@@ -57,6 +58,7 @@ public class RateAndCommentManager {
          nameValuePairs.add(new BasicNameValuePair("irate", ""+comment.getRate()));
          nameValuePairs.add(new BasicNameValuePair("erate", ""+eRate));
          nameValuePairs.add(new BasicNameValuePair("nrate", ""+nRate));
+         nameValuePairs.add(new BasicNameValuePair("devID", MainActivity.UNIQUE_ID));
          sendData(nameValuePairs);
 	}
 
@@ -67,7 +69,7 @@ public class RateAndCommentManager {
             HttpClient httpclient = new DefaultHttpClient();
             
             ///ganti ininya dulu, inget!
-            HttpPost httppost = new HttpPost(MainActivity.target+"android/rateandcomment.php");
+            HttpPost httppost = new HttpPost(MainActivity.target+"android/ratecomment.php");
             httppost.setEntity(new UrlEncodedFormEntity(data));
             //HttpResponse response = 
             httpclient.execute(httppost);

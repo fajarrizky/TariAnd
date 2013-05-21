@@ -6,81 +6,82 @@
 
     <LinearLayout
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" >
-
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true" >
+
         <LinearLayout
             android:layout_width="163dp"
             android:layout_height="match_parent"
             android:orientation="vertical" >
-
+
             <Button
                 android:id="@+id/CariTarianButton"
                 style="@style/main_menu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
                 android:layout_marginLeft="5dip"
                 android:layout_marginRight="0dip"
                 android:layout_marginTop="10dip"
                 android:background="@drawable/menu_btn"
                 android:text="Cari Tarian" />
-
+
             <Button
                 android:id="@+id/LihatBookmarkButton"
                 style="@style/main_menu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="31dp"
                 android:layout_marginLeft="5dip"
                 android:layout_marginRight="0dip"
                 android:layout_marginTop="10dp"
                 android:background="@drawable/menu_btn"
-                android:text="Lihat Bookmark" />
-
+                android:text="Bookmark" />
+
             <Button
                 android:id="@+id/LihatAwardButton"
                 style="@style/main_menu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
                 android:layout_marginBottom="0dip"
                 android:layout_marginLeft="5dip"
                 android:layout_marginRight="0dip"
                 android:layout_marginTop="10dip"
                 android:background="@drawable/menu_btn"
-                android:text="Lihat Award" />
-
+                android:text="Award" />
+
             <Button
                 android:id="@+id/MainkanQuizButton"
                 style="@style/main_menu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
                 android:layout_marginBottom="0dip"
                 android:layout_marginLeft="5dip"
                 android:layout_marginRight="0dip"
                 android:layout_marginTop="10dip"
                 android:background="@drawable/menu_btn"
-                android:text="Mainkan Quiz" />
-
+                android:text="Quiz" />
+
             <Button
                 android:id="@+id/UserContribution"
                 style="@style/main_menu"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
                 android:layout_marginBottom="0dip"
                 android:layout_marginLeft="5dip"
                 android:layout_marginRight="0dip"
                 android:layout_marginTop="10dip"
                 android:background="@drawable/menu_btn"
-                android:text="Kontribusi Pengguna" />
-
+                android:text="Kontribusi" />
         </LinearLayout>
-
+
         <ImageView
             android:id="@+id/menuImage"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="100dip"
-            android:layout_marginTop="50dip"
+            android:layout_height="202dp"
+            android:layout_gravity="right"
+            android:layout_marginBottom="140dip"
+            android:layout_marginTop="0dip"
             android:src="@drawable/menu" />
-
     </LinearLayout>
 
 </RelativeLayout>

@@ -55,7 +55,7 @@ public class TampilTarianActivity extends Activity {
 
 					intent = new Intent(getApplicationContext(), DeskripsiActivity.class);
 					//intent.putExtra("namatarian", namatarian);
-					intent.putExtra("tariannya", bcc);					
+					intent.putExtra("tariannya", bcc);
 					startActivity(intent);
 				}
 

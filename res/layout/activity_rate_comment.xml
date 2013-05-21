@@ -90,11 +90,11 @@
                 android:layout_height="wrap_content"
                 android:text="Comment : "
                 android:textAppearance="?android:attr/textAppearanceLarge" />
-
+
             <EditText
                 android:id="@+id/comment"
                 android:layout_width="match_parent"
-                android:layout_height="208dp"
+                android:layout_height="wrap_content"
                 android:gravity="top|left"
                 android:inputType="textMultiLine" />
 
