@@ -30,8 +30,6 @@ public class TampilTarianActivity extends Activity {
 		taritari.add("Deskripsi");
 		taritari.add("Gambar");
 		taritari.add("video");
-		taritari.add("Share");
-		taritari.add("Rating dan Komentar");
 		Log.d("masuk", "hai hai lo lagi di TampilTarian cyn");
 		ArrayAdapter<String> adapt = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, taritari);
 

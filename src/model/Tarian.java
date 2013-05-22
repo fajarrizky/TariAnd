@@ -19,6 +19,7 @@ public class Tarian implements Serializable {
 	private String imageURL;
 	private String videoURL;
 
+	private String link;
 	private boolean isBookmark;
 
 	// tambahan variabel dari iterasi 2
@@ -149,6 +150,12 @@ public class Tarian implements Serializable {
 
 	public void setPublished(boolean published) {
 		this.published = published;
+	}
+	public String getLink() {
+		return link;
+	}
+	public void setLink(String link) {
+		this.link = link;
 	}
 
 }

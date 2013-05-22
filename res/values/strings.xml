@@ -31,5 +31,12 @@
     <string name="title_activity_video">VideoActivity</string>
     <string name="title_activity_rate_comment">RateComment</string>
     <string name="title_activity_user_contribution">UserContribution</string>
+    <string name="title_activity_face_book_share">FaceBookShareActivity</string>
+    <string name="title_activity_share_face_book">ShareFaceBookActivity</string>
+    <string name="title_activity_share_twitter_book">ShareTwitterBookActivity</string>
+    <string name="title_activity_share_twitter">ShareTwitterActivity</string>
+    <string name="app_id">497700816950999</string>
+    <string name="title_activity_share_facebook">ShareFacebookActivity</string>
+    <string name="title_activity_transfer">Transfer</string>
 
 </resources>

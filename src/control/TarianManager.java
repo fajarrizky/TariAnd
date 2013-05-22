@@ -60,7 +60,7 @@ public class TarianManager {
 		try {
 			response = CustomHttpClient.executeHttpPost(MainActivity.target+"android/lala.php", postParameters);
 		    String result = response.toString();  
-		    //Log.e("debug", "result = " + result);
+		    Log.e("debug", "result = " + result);
 		    try{
 		    	JSONArray jArray = new JSONArray(result);
 		        int [] ID = new int [jArray.length()];
@@ -72,6 +72,7 @@ public class TarianManager {
 		        String [] published = new String[jArray.length()];
 		        String [] eRate = new String[jArray.length()];
 		        String [] nRate = new String[jArray.length()];
+		        String [] link = new String[jArray.length()];
 		        for(int i=0;i<jArray.length();i++){
 		        	JSONObject json_data = jArray.getJSONObject(i);
 			        ID[i] = Integer.parseInt(json_data.getString("ID"));
@@ -80,9 +81,12 @@ public class TarianManager {
 			        Deskripsi[i] = json_data.getString("Deskripsi");
 			        Foto[i] = json_data.getString("Lokasi");
 			        URL[i] = json_data.getString("URL");
+			        //published[i] = json_data.getString("isPublished");
 			        published[i] = json_data.getString("published");
 			        eRate[i] = json_data.getString("eRate");
 			        nRate[i] = json_data.getString("nRate");
+			        //link[i] = json_data.getString("Link");
+			        link[i] = json_data.getString("link");
 			        Tarian tarian = new Tarian(ID[i], Nama[i]);
 			        tarian.setDescription(Deskripsi[i]);
 			        tarian.setLocation(Provinsi[i]);
@@ -91,6 +95,7 @@ public class TarianManager {
 			        tarian.setPublished(published[i].equals("1"));
 			        tarian.setRate(Float.valueOf(eRate[i]));
 			        tarian.setNRate(Integer.parseInt(nRate[i]));
+			        tarian.setLink(link[i]);
 			        listTarian.add(tarian);
 			        }
 		    } 

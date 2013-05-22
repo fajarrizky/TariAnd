@@ -24,11 +24,12 @@ public class MainActivity extends Activity {
 	public static TarianManager tariManager;
 	public static SharedPreferences shpr;
 	public static SharedPreferences.Editor shedtr;
-	public static final String target = "http://192.168.91.50/";
+	public static final String target = "http://tariand.id1945.com/";
+	//public static final String target = "http://192.168.91.50/";
 	public static String UNIQUE_ID;
 	//@SuppressWarnings("deprecation")
 	//String deviceId = Settings.System.getString(getContentResolver(),Settings.System.ANDROID_ID);
-
+ 
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
