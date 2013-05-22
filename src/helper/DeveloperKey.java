@@ -11,6 +11,8 @@ public class DeveloperKey {
    * <a href="https://code.google.com/apis/console/">Google APIs Console</a> to
    * register a new developer key.
    */
-  public static final String DEVELOPER_KEY = "AIzaSyCz76QUHSzkzXEP8KI0vgIe9rxIg_IgxFc";
+  public static final String YOUTUBE_DEVELOPER_KEY = "AIzaSyCz76QUHSzkzXEP8KI0vgIe9rxIg_IgxFc";
+  public static final String TWITTER_CONSUMER_KEY = "gJKXLdNpVUXx1GuYS20QA";
+  public static final String TWITTER_CONSUMER_SECRET = "aup8mh03lbOuGQGOqd5pX0ldbMi5zLqwBvbKzGcNY";
 
 }

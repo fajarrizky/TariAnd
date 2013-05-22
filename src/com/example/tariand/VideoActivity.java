@@ -28,7 +28,7 @@ public class VideoActivity extends Activity {
         setTitle("Video "+bcc.getName());
         if(bcc != null){
         Intent intent = YouTubeStandalonePlayer.createVideoIntent(
-                this, DeveloperKey.DEVELOPER_KEY, bcc.getVideoURL(), 0, false, true);
+                this, DeveloperKey.YOUTUBE_DEVELOPER_KEY, bcc.getVideoURL(), 0, false, true);
         
         if (intent != null) {
             if (canResolveIntent(intent)) {

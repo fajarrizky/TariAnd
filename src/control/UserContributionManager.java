@@ -25,9 +25,10 @@ public class UserContributionManager {
 
 	public void post() {
 		// TODO Auto-generated method stub
-		 ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(5);
+		 ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(6);
 		 nameValuePairs.add(new BasicNameValuePair("namaTarian", post.getName()));
          nameValuePairs.add(new BasicNameValuePair("provinsi",post.getLocation()));
+         nameValuePairs.add(new BasicNameValuePair("link",post.getLink()));
          nameValuePairs.add(new BasicNameValuePair("urlgambar",post.getImageURL()));
          nameValuePairs.add(new BasicNameValuePair("urlvideo",post.getVideoURL()));
          nameValuePairs.add(new BasicNameValuePair("deskripsi",post.getDescription()));
@@ -42,7 +43,6 @@ public class UserContributionManager {
             HttpClient httpclient = new DefaultHttpClient();
             HttpPost httppost = new HttpPost(MainActivity.target+"android/usercontrib.php");
             httppost.setEntity(new UrlEncodedFormEntity(data));
-            //HttpResponse response = 
             httpclient.execute(httppost);
             
         }

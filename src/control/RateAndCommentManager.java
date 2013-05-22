@@ -70,7 +70,7 @@ public class RateAndCommentManager {
 	}
 
 	private void sendData(ArrayList<NameValuePair> data) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stub 
 		try
         {
             HttpClient httpclient = new DefaultHttpClient();
@@ -109,27 +109,28 @@ public class RateAndCommentManager {
 		.penaltyLog().build());
 		try {
 			response = CustomHttpClient.executeHttpPost(MainActivity.target+"android/getcomments.php", postParameters);
-			String result = response.toString();  
-		    Log.e("debug", "result = " + result);
+			
+			String result = response.toString(); 
+			Log.e("debug", "result = " + result);
 		    JSONArray jArray = new JSONArray(result);
-		    //int [] IDtarian = new int [jArray.length()];
+		    int [] IDtarian = new int [jArray.length()];
 	        String [] userName = new String [jArray.length()];
 	        String [] email = new String [jArray.length()];
 	        String [] comment = new String [jArray.length()];
 	        float [] iRate = new float [jArray.length()];
-	        String [] devID = new String[jArray.length()];
+	        //String [] devID = new String[jArray.length()];
 	        for(int i=0;i<jArray.length();i++){
 	        	JSONObject json_data = jArray.getJSONObject(i);
-	        	//IDtarian[i] = Integer.parseInt(json_data.getString("IDTarian"));
+	        	IDtarian[i] = Integer.parseInt(json_data.getString("IDTarian"));
 	        	userName[i] = json_data.getString("username");
 	        	email[i] = json_data.getString("email");
 	        	comment[i] = json_data.getString("comment");
 	        	iRate[i] = Float.parseFloat(json_data.getString("iRate"));
-	        	devID[i] = json_data.getString("Device_ID");
-	        	Comment cmnt = new Comment(tarianID, userName[i], email[i], comment[i]);
+	        	//devID[i] = json_data.getString("Device_ID");
+	        	Comment cmnt = new Comment(IDtarian[i], userName[i], email[i], comment[i]);
 	        	cmnt.setRate(iRate[i]);
 	        	commentss.add(cmnt);
-	        	devIDss.add(devID[i]);
+	        	//devIDss.add(devID[i]);
 	        }
 	        this.comments = commentss;
 	        this.devIDs = devIDss;
