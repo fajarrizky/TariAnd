@@ -31,7 +31,7 @@ public class TampilTarianActivity extends Activity {
 		ArrayList<String> taritari = new ArrayList<String>();
 		taritari.add("Deskripsi");
 		taritari.add("Gambar");
-		taritari.add("video");
+		taritari.add("Video");
 		Log.d("masuk", "hai hai lo lagi di TampilTarian cyn");
 		ArrayAdapter<String> adapt = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, taritari);
 

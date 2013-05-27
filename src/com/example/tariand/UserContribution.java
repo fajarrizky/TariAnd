@@ -94,6 +94,7 @@ public class UserContribution extends Activity {
 				urlvideo.setText("");
 				urlgambar.setText("");
 				deskripsi.setText("");
+				linkSumber.setText("");
 			}
 		});
 	}
