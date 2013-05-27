@@ -2,13 +2,12 @@ package control;
 
 import helper.CustomHttpClient;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.ListIterator;
 import org.apache.http.NameValuePair;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
-import com.example.tariand.MainActivity;
 
 import android.os.StrictMode;
 import android.util.Log;
@@ -28,7 +27,7 @@ public class TarianManager {
 	public void testCode(){
         //test code
         Tarian aa = new Tarian(1, "Tari Pendet");
-        aa.setBookmark(MainActivity.shpr.getBoolean(""+aa.getName(), false));
+        aa.setBookmark(V.shpr.getBoolean(""+aa.getName(), false));
         aa.setDescription("Tarian dari Bali");
         aa.setLocation("Bali");
         aa.setVideoURL("QARV4YeH3dE");
@@ -36,7 +35,7 @@ public class TarianManager {
         listTarian.add(aa);
         
         Tarian bb = new Tarian(2, "Tari Gambyong");
-        bb.setBookmark(MainActivity.shpr.getBoolean(""+bb.getName(), false));
+        bb.setBookmark(V.shpr.getBoolean(""+bb.getName(), false));
         bb.setDescription("Salah satu tarian dari Sumatera Utara");
         bb.setLocation("Sumatera Utara");
         bb.setVideoURL("yewkOTbxY30");
@@ -58,7 +57,7 @@ public class TarianManager {
 		.detectDiskReads().detectDiskWrites().detectNetwork()
 		.penaltyLog().build());
 		try {
-			response = CustomHttpClient.executeHttpPost(MainActivity.target+"android/lala.php", postParameters);
+			response = CustomHttpClient.executeHttpPost(V.target+"android/lala.php", postParameters);
 		    String result = response.toString();  
 		    Log.e("debug", "result = " + result);
 		    try{
@@ -106,6 +105,7 @@ public class TarianManager {
 		catch (Exception e) {
 			Log.e("log_tag","Error in http connection!!" + e.toString());     
 		}
+		Collections.sort(listTarian);
 	}         
 		
 	//yang ini buat nyari dari nama
@@ -150,5 +150,9 @@ public class TarianManager {
 			}
 		}
 		return target;
+	}
+	
+	public void sortList(){
+		Collections.sort(listTarian);
 	}
 }

@@ -18,6 +18,8 @@ import android.widget.TextView;
 
 import com.example.tariand.*;
 
+import control.V;
+
 public class ListViewAdapter extends BaseAdapter {
 
 	ArrayList<Tarian> tarianArray;
@@ -77,7 +79,8 @@ public class ListViewAdapter extends BaseAdapter {
 				// TODO Auto-generated method stub
 				Intent i = new Intent(arg0.getContext(), TampilTarianActivity.class);
 				i.putExtra("tarian", (String) getItem(thisposition));
-				i.putExtra("tariannya", tarianArray.get(thisposition));
+				//i.putExtra("tariannya", tarianArray.get(thisposition));
+				V.current = tarianArray.get(thisposition);
 				i.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 				arg0.getContext().startActivity(i);
 			}
@@ -94,6 +97,10 @@ public class ListViewAdapter extends BaseAdapter {
 					ImageButton book = (ImageButton) v.findViewById(com.example.tariand.R.id.bookmark);
 					book.setImageResource(com.example.tariand.R.drawable.nostar);
 					notifyDataSetChanged();
+					int bkmark = V.shpr.getInt("BOOKMARKING", 0);
+					bkmark--;
+					V.shedtr.putInt("BOOKMARKING", bkmark);
+					V.shedtr.commit();
 					Log.d(""+aaa.getName(), "setBookmark dari true ke "+aaa.isBookmarked());
 				} else {
 					aaa.setBookmark(true);
@@ -101,6 +108,10 @@ public class ListViewAdapter extends BaseAdapter {
 					ImageButton book = (ImageButton) v.findViewById(com.example.tariand.R.id.bookmark);
 					book.setImageResource(com.example.tariand.R.drawable.star);
 					notifyDataSetChanged();
+					int bkmark = V.shpr.getInt("BOOKMARKING", 0);
+					bkmark++;
+					V.shedtr.putInt("BOOKMARKING", bkmark);
+					V.shedtr.commit();
 					Log.d(""+aaa.getName(), "setBookmark dari false ke "+aaa.isBookmarked());
 				}
 			}

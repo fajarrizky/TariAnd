@@ -21,6 +21,8 @@ import com.facebook.Settings;
 import com.facebook.widget.LoginButton;
 
 import control.RateAndCommentManager;
+import control.V;
+import model.Award;
 import model.Comment;
 import model.Tarian;
 
@@ -28,6 +30,7 @@ import android.R.attr;
 import android.R.color;
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -66,7 +69,7 @@ public class DeskripsiActivity extends Activity {
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_deskripsi);
-		
+
 		/*
 		 * ini bagian sulit, mesti di tulis biar inget:
 		 * dibagi jadi 3 part:
@@ -101,7 +104,7 @@ public class DeskripsiActivity extends Activity {
 		 * ?? gimana handle nya? 
 		 * || pelajarin sendiri aja yah!
 		 */
-		
+
 		/*
 		tmng = MainActivity.tariManager;
 		String tarianku = getIntent().getStringExtra("namatarian");
@@ -113,26 +116,27 @@ public class DeskripsiActivity extends Activity {
 				tv.setText(tari.getDescription());
 			}
 		}
-		*/
-		
-		
-		
+		 */
+
+
+
 		//part 1
-		bcc =(Tarian) getIntent().getSerializableExtra("tariannya");
+		//bcc =(Tarian) getIntent().getSerializableExtra("tariannya");
+		bcc = V.current;
 		setTitle("Deskripsi "+bcc.getName());
 		rerataRating = (RatingBar) findViewById(R.id.ratingTarian);        
-        rerataRating.setIsIndicator(true);
-        rerataRating.setRating(bcc.getRate());
+		rerataRating.setIsIndicator(true);
+		rerataRating.setRating(bcc.getRate());
 		deskripsiTarian = (TextView) findViewById(R.id.deskripsiTarian);
 		deskripsiTarian.setText(bcc.getDescription());
 		//kode di bawah ini mungkin suspicious, kalo terjadi sesuatu sama anu2 coba cek yg ini.
 		deskripsiTarian.setMovementMethod(new ScrollingMovementMethod());
-		
+
 		//part 2
 		rncm = new RateAndCommentManager();
-		
+
 		rncm.retrieveComments(bcc.getId());
-		
+
 		comments = rncm.getComments();
 		ArrayList<Comment> taken = new ArrayList<Comment>();
 		for(int i = 0; i<comments.size(); i++){
@@ -141,7 +145,7 @@ public class DeskripsiActivity extends Activity {
 				taken.add(comments.get(i));
 			}
 		}
-		
+
 		TableLayout tbleLayout = (TableLayout) findViewById(R.id.commentsView);
 		int tsize = taken.size();
 		if(tsize==0){
@@ -222,34 +226,34 @@ public class DeskripsiActivity extends Activity {
 		komentar = (EditText) findViewById(R.id.komentar);
 		submitKomentar = (Button) findViewById(R.id.submitKomentar);
 		this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
-				
-//		for(int i = 0; i<comments.size(); i++){
-//			Comment k = comments.get(i);
-//			TableRow y = new TableRow(this);
-//			TableRow y2 = new TableRow(this);
-//			TableRow y3 = new TableRow(this);
-//			TableRow y4 = new TableRow(this);
-//			TextView rating = new TextView(getApplicationContext());
-//			rating.setText("Rating : ");
-//			y.addView(rating);
-//			RatingBar rcc = new RatingBar(getApplicationContext());
-//			rcc.setIsIndicator(true);
-//			rcc.setRating(k.getRate());
-//			y2.addView(rcc);
-//			TextView ecc = new TextView(getApplicationContext());
-//			ecc.setText(k.getUserName());
-//			y3.addView(ecc);
-//			TextView ekk = new TextView(getApplicationContext());
-//			ekk.setText(k.getComment());
-//			y4.addView(ekk);
-//			x.addView(y);
-//			x.addView(y2);
-//			x.addView(y3);
-//			x.addView(y4);
-//		}
-		
+
+		//		for(int i = 0; i<comments.size(); i++){
+		//			Comment k = comments.get(i);
+		//			TableRow y = new TableRow(this);
+		//			TableRow y2 = new TableRow(this);
+		//			TableRow y3 = new TableRow(this);
+		//			TableRow y4 = new TableRow(this);
+		//			TextView rating = new TextView(getApplicationContext());
+		//			rating.setText("Rating : ");
+		//			y.addView(rating);
+		//			RatingBar rcc = new RatingBar(getApplicationContext());
+		//			rcc.setIsIndicator(true);
+		//			rcc.setRating(k.getRate());
+		//			y2.addView(rcc);
+		//			TextView ecc = new TextView(getApplicationContext());
+		//			ecc.setText(k.getUserName());
+		//			y3.addView(ecc);
+		//			TextView ekk = new TextView(getApplicationContext());
+		//			ekk.setText(k.getComment());
+		//			y4.addView(ekk);
+		//			x.addView(y);
+		//			x.addView(y2);
+		//			x.addView(y3);
+		//			x.addView(y4);
+		//		}
+
 		submitKomentar.setOnClickListener(new View.OnClickListener() {
-			
+
 			public void onClick(View v) {
 				// TODO Auto-generated method stub
 				process();
@@ -260,11 +264,11 @@ public class DeskripsiActivity extends Activity {
 				//finish();
 			}
 		}); 
-		
+
 		//part 4: share dan twitter
 		sfb = (ImageButton) findViewById(R.id.sfb);
 		sfb.setOnClickListener(new View.OnClickListener() {
-			
+
 			public void onClick(View v) {
 				// TODO Auto-generated method stub 
 				Intent sendIntent = new Intent();
@@ -272,21 +276,28 @@ public class DeskripsiActivity extends Activity {
 				sendIntent.putExtra(Intent.EXTRA_TEXT, bcc.getLink());
 				sendIntent.setType("text/plain");
 				startActivity(Intent.createChooser(sendIntent, "Share With"));
+				int shares = V.shpr.getInt("SHARE", 0);
+				shares++;
+				if(shares == 5){
+					V.awrdMngr.getAward(2).setAsAchieved();
+				} else if (shares == 10){
+					V.awrdMngr.getAward(5).setAsAchieved();
+				}
 				//Intent i = new Intent(getApplicationContext(), ShareFacebookActivity.class);
 				//i.putExtra("tariannya", bcc);
 				//startActivity(i);
 			}
 		});
-		
-//		stw.setOnClickListener(new View.OnClickListener() {
-//			
-//			public void onClick(View v) {
-//				// TODO Auto-generated method stub
-//				Intent i = new Intent(getApplicationContext(), ShareTwitterActivity.class);
-//				i.putExtra("tariannya", bcc);
-//				startActivity(i);
-//			}
-//		});
+
+		//		stw.setOnClickListener(new View.OnClickListener() {
+		//			
+		//			public void onClick(View v) {
+		//				// TODO Auto-generated method stub
+		//				Intent i = new Intent(getApplicationContext(), ShareTwitterActivity.class);
+		//				i.putExtra("tariannya", bcc);
+		//				startActivity(i);
+		//			}
+		//		});
 	}
 
 	@Override
@@ -294,11 +305,11 @@ public class DeskripsiActivity extends Activity {
 		getMenuInflater().inflate(R.menu.activity_deskripsi, menu);
 		return true;
 	}
-	
+
 	private void process() {
 		// TODO Auto-generated method stub
 		Comment cmnt = new Comment(bcc.getId(), namaKomenter.getText().toString(), emailKomenter.getText().toString(), komentar.getText().toString());       
-        float irate = beriRating.getRating();
+		float irate = beriRating.getRating();
 		if(irate != 0){
 			cmnt.setRate(irate);
 			bcc.addRate(irate);			
@@ -308,8 +319,28 @@ public class DeskripsiActivity extends Activity {
 		rncm.setERate(bcc.getRate());
 		rncm.setNRate(bcc.getNRate());
 		rncm.post();
-		Toast.makeText(this, "Komentar Anda sudah dikirim", Toast.LENGTH_SHORT).show();
+		int comments = V.shpr.getInt("KOMENTATOR", 0);
+		comments++;
+		Award x = V.awrdMngr.getAward(1);
+		Award y = V.awrdMngr.getAward(4);
+		if(comments == 5 && !x.isAchieved()){
+			x.setAsAchieved();
+			//Toast.makeText(getApplicationContext(), "Selamat! Anda mendapatkan Award: "+x.getName(), Toast.LENGTH_SHORT).show();
+			new AlertDialog.Builder(getApplicationContext()).setTitle("Selamat!").setMessage("Anda mendapatkan Award : "+x.getName()).setNeutralButton("Close", null).show();
+			
+		} else if (comments == 10 && !y.isAchieved()) {
+			y.setAsAchieved();
+			//Toast.makeText(getApplicationContext(), "Selamat! Anda mendapatkan Award: "+y.getName(), Toast.LENGTH_SHORT).show();
+			new AlertDialog.Builder(getApplicationContext()).setTitle("Selamat!").setMessage("Anda mendapatkan Award : "+y.getName()).setNeutralButton("Close", null).show();
+			
+		} else {
+			//Toast.makeText(this, "Komentar Anda sudah dikirim", Toast.LENGTH_SHORT).show();
+			new AlertDialog.Builder(getApplicationContext()).setTitle("Pemberitahuan").setMessage("Komentar Anda sudah dikirim.").setNeutralButton("Close", null).show();
+			
+		}
+		V.shedtr.putInt("KOMENTATOR", comments);
+		V.shedtr.commit();
 		beriKomentarLayout.setVisibility(View.GONE);
 	}
-	
+
 }

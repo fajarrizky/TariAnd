@@ -23,6 +23,9 @@ public class UserContributionManager {
 		this.post = tr;
 	}
 
+	public UserContributionManager(){
+		
+	}
 	public void post() {
 		// TODO Auto-generated method stub
 		 ArrayList<NameValuePair> nameValuePairs = new ArrayList<NameValuePair>(6);
@@ -41,7 +44,7 @@ public class UserContributionManager {
 		try
         {
             HttpClient httpclient = new DefaultHttpClient();
-            HttpPost httppost = new HttpPost(MainActivity.target+"android/usercontrib.php");
+            HttpPost httppost = new HttpPost(V.target+"android/usercontrib.php");
             httppost.setEntity(new UrlEncodedFormEntity(data));
             httpclient.execute(httppost);
             

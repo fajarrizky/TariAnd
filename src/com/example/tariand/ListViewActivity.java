@@ -1,12 +1,17 @@
 package com.example.tariand;
 
 import java.util.ArrayList;
+import java.util.Collections;
+
 import control.TarianManager;
+import control.V;
 import helper.ListViewAdapter;
+import model.Award;
 import model.Tarian;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.util.Log;
 import android.view.View;
@@ -31,7 +36,7 @@ public class ListViewActivity extends Activity {
 		setTitle("Daftar Tarian");
 		
 		bun = new Bundle();
-		tariManager = MainActivity.tariManager;
+		tariManager = V.tariManager;
 		arrayTari = new ArrayList<Tarian>();
 		
 		if ((bun = this.getIntent().getBundleExtra("namatarian")) != null) {
@@ -39,19 +44,28 @@ public class ListViewActivity extends Activity {
 			arrayTari = tariManager.searchByName(nama);
 			Log.d("size array", arrayTari.size() + " " + nama
 					+ " dari search nama");
+			Collections.sort(arrayTari);
 		}
 		if (this.getIntent().getBooleanExtra("bookmark", false)) {
 			arrayTari = tariManager.getBookmarkedTarian();
 			setTitle("Bookmark");
+			Collections.sort(arrayTari);
+			
 		}
 		if ((provinsi = this.getIntent().getStringExtra("Provinsi")) != null) {
 			Log.d("Nama Tarian", "Nama Provinsi " + provinsi);
 			arrayTari = tariManager.searchByLocation(provinsi);
 			Log.d("size array", arrayTari.size() + " dari search lokasi");
 			setTitle("Provinsi "+provinsi);
+			Collections.sort(arrayTari);
 			
 		}
 
+//		Award x = V.awrdMngr.getAward(6);
+//		if(V.shpr.getInt("BOOKMARKING", 0)>= 5 && !x.isAchieved()){
+//			x.setAsAchieved();
+//			new AlertDialog.Builder(getApplicationContext()).setTitle("Selamat!").setMessage("Anda mendapatkan Award : "+x.getName()).setNeutralButton("Close", null).show();
+//		}
 		ListViewAdapter adapter = new ListViewAdapter(getApplicationContext(),
 				arrayTari);
 		// adapter.notifyDataSetChanged();

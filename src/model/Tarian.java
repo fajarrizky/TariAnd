@@ -2,11 +2,10 @@ package model;
 
 import java.io.Serializable;
 import java.util.ArrayList;
+import control.V;
 
-import com.example.tariand.MainActivity;
 
-
-public class Tarian implements Serializable {
+public class Tarian implements Serializable, Comparable<Tarian> {
 	/**
 	 * 
 	 */
@@ -36,7 +35,7 @@ public class Tarian implements Serializable {
 		setID(id);
 		setName(name);
 		comments = new ArrayList<Comment>();
-		isBookmark = MainActivity.shpr.getBoolean("" + this.getName(), false);
+		isBookmark = V.shpr.getBoolean("" + this.getName(), false);
 	}
 
 	public int getId() {
@@ -78,8 +77,8 @@ public class Tarian implements Serializable {
 
 	public void setBookmark(boolean bookmark) {
 		this.isBookmark = bookmark;
-		MainActivity.shedtr.putBoolean("" + this.name, this.isBookmark);
-		MainActivity.shedtr.commit();
+		V.shedtr.putBoolean("" + this.name, this.isBookmark);
+		V.shedtr.commit();
 	}
 
 	public String getImageURL() {
@@ -93,6 +92,12 @@ public class Tarian implements Serializable {
 	public String getVideoURL() {
 		return videoURL;
 	}
+	
+	public String getYoutubeVideoHash(){
+		String url = videoURL;
+		String youtubeURL = url.substring(url.length()-11, url.length());
+		return youtubeURL;
+	}
 
 	public void setVideoURL(String videoURL) {
 		this.videoURL = videoURL;
@@ -105,7 +110,7 @@ public class Tarian implements Serializable {
 	public float getRate() {
 		return this.eRate;
 	}
-
+ 
 	public void addRate(float inp) {
 		if (nRate == 0) {
 			nRate = 1;
@@ -156,6 +161,15 @@ public class Tarian implements Serializable {
 	}
 	public void setLink(String link) {
 		this.link = link;
+	}
+	public int compareTo(Tarian another) {
+		if(this.isBookmark && !another.isBookmarked()){
+			return -1;
+		} else if (!this.isBookmark && another.isBookmarked()){
+			return 1;
+		} else {
+			return this.name.compareTo(another.getName());
+		}
 	}
 
 }

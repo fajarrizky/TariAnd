@@ -1,12 +1,16 @@
 package com.example.tariand;
 
+import model.Award;
+import control.V;
 import android.os.Bundle;
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.view.Menu;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class AnswerQuestion extends Activity {
 	
@@ -19,6 +23,11 @@ public class AnswerQuestion extends Activity {
         score = getIntent().getIntExtra("score", 0);
         TextView result = (TextView) findViewById(R.id.Hasil);
         result.setText("Anda telah selesai menjawab 10 pertanyaan. \nScore Anda adalah "+score);
+        Award x = V.awrdMngr.getAward(0);
+        if(score == 100 && !x.isAchieved()){
+        	x.setAsAchieved();
+        	new AlertDialog.Builder(getApplicationContext()).setTitle("Selamat!").setMessage("Anda mendapatkan Award : "+x.getName()).setNeutralButton("Close", null).show();
+		}
         
         Button cont = (Button) findViewById(R.id.Kontinyu);
         setTitle("Hasil Quiz");

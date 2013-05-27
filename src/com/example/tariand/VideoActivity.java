@@ -5,12 +5,15 @@ import java.util.List;
 import com.google.android.youtube.player.YouTubeInitializationResult;
 import com.google.android.youtube.player.YouTubeStandalonePlayer;
 
+import control.V;
+
 import model.Tarian;
 import helper.DeveloperKey;
 import android.os.Bundle;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.pm.ResolveInfo;
+import android.util.Log;
 import android.view.Menu;
 
 public class VideoActivity extends Activity {
@@ -24,12 +27,13 @@ public class VideoActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video);
         
-        bcc = (Tarian) getIntent().getSerializableExtra("tariannya");
+        //bcc = (Tarian) getIntent().getSerializableExtra("tariannya");
+        bcc = V.current;
         setTitle("Video "+bcc.getName());
         if(bcc != null){
         Intent intent = YouTubeStandalonePlayer.createVideoIntent(
-                this, DeveloperKey.YOUTUBE_DEVELOPER_KEY, bcc.getVideoURL(), 0, false, true);
-        
+                this, DeveloperKey.YOUTUBE_DEVELOPER_KEY, bcc.getYoutubeVideoHash(), 0, false, true);
+        Log.e("kenapa ini e", bcc.getYoutubeVideoHash());
         if (intent != null) {
             if (canResolveIntent(intent)) {
               startActivityForResult(intent, REQ_START_STANDALONE_PLAYER);

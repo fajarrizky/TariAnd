@@ -1,5 +1,7 @@
 package model;
 
+import control.V;
+
 public class Award {
 	private int id;
 	private String name;
@@ -12,11 +14,13 @@ public class Award {
 		this.setId(id);
 		this.setName(name);
 		this.setDescription(description);
-		setAchieved(false);
+		isAchieved = V.shpr.getBoolean("" + this.getName(), false);
 	}
 	
 	public void setAsAchieved(){
 		this.setAchieved(true);
+		V.shedtr.putBoolean("" + this.name, this.isAchieved);
+		V.shedtr.commit();
 	}
 
 	public int getId() {
@@ -49,6 +53,8 @@ public class Award {
 
 	public void setAchieved(boolean isAchieved) {
 		this.isAchieved = isAchieved;
+		V.shedtr.putBoolean("" + this.name, this.isAchieved);
+		V.shedtr.commit();
 	}
 	
 	

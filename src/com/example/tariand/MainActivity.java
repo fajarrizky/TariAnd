@@ -4,6 +4,7 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 
 import control.TarianManager;
+import control.V;
 import android.net.wifi.WifiManager;
 import android.os.Build;
 import android.os.Bundle;
@@ -21,12 +22,12 @@ import android.view.View;
 import android.widget.Button;
 
 public class MainActivity extends Activity {
-	public static TarianManager tariManager;
-	public static SharedPreferences shpr;
-	public static SharedPreferences.Editor shedtr;
-	public static final String target = "http://tariand.id1945.com/";
+//	public static TarianManager tariManager;
+//	public static SharedPreferences shpr;
+//	public static SharedPreferences.Editor shedtr;
+//	public static final String target = "http://tariand.id1945.com/";
 	//public static final String target = "http://192.168.91.50/";
-	public static String UNIQUE_ID;
+//	public static String UNIQUE_ID;
 	//@SuppressWarnings("deprecation")
 	//String deviceId = Settings.System.getString(getContentResolver(),Settings.System.ANDROID_ID);
  
@@ -39,21 +40,21 @@ public class MainActivity extends Activity {
         Button bookmark = (Button) findViewById(R.id.LihatBookmarkButton);
         Button play = (Button) findViewById(R.id.MainkanQuizButton);
         Button contribute = (Button) findViewById(R.id.UserContribution);
-        UNIQUE_ID = this.getDeviceID();
-        shpr = getSharedPreferences("TariAnd", MODE_PRIVATE );
-        shedtr = shpr.edit();
+        V.UNIQUE_ID = this.getDeviceID();
+        V.shpr = getSharedPreferences("TariAnd", MODE_PRIVATE );
+        V.shedtr = V.shpr.edit();
         setTitle("TariAnd");
-        tariManager = new TarianManager();
+        V.tariManager = new TarianManager();
 		//tariManager.testCode();
-		tariManager.retrieve();
-		
+		V.tariManager.retrieve();
+		V.initiateVariables();
         cari.setOnClickListener(new View.OnClickListener() {
 			
 			public void onClick(View arg0) {
 				// TODO Auto-generated method stub
 				startActivity(new Intent(getApplicationContext(), CariTarianActivity.class));
 			}
-		});
+		}); 
         
         award.setOnClickListener(new View.OnClickListener() {
 			
@@ -95,7 +96,6 @@ public class MainActivity extends Activity {
         getMenuInflater().inflate(R.menu.activity_main, menu);
         return true;
     }
-    
     public String getDeviceID() {
 
     	/*String Return_DeviceID = USERNAME_and_PASSWORD.getString(DeviceID_key,"Guest");
@@ -156,9 +156,5 @@ public class MainActivity extends Activity {
 
     	return m_szUniqueID;
 
-    	}
-   
-    
-    
-    
+    	}    
 }

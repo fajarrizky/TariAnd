@@ -5,6 +5,7 @@ import java.util.ArrayList;
 import model.Award;
 
 import control.AwardManager;
+import control.V;
 import android.R;
 import android.os.Bundle;
 import android.app.Activity;
@@ -22,8 +23,7 @@ public class AwardListViewActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(com.example.tariand.R.layout.activity_award_list_view);
-        awardManage = new AwardManager();
-        awardManage.createAward();
+        awardManage = V.awrdMngr;
         listAward = awardManage.getListAward();
         namaAward = new ArrayList<String>();
         setTitle("Award");
@@ -31,12 +31,13 @@ public class AwardListViewActivity extends Activity {
         
         for (Award aw : listAward) {
 			if (aw.isAchieved()){
-				aw.setName(aw.getName() + " (Sudah Dicapai)");
+
+				namaAward.add(aw.getName() + " (Sudah Didapatkan)");
 			}
 			else{
-				aw.setName(aw.getName() + " (Belum Dicapai)");
+
+				namaAward.add(aw.getName() + " (Belum Didapatkan)");
 			}
-			namaAward.add(aw.getName());
 		}
         
         ListView awardListView = (ListView) findViewById(com.example.tariand.R.id.awardListView);

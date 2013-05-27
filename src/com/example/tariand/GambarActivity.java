@@ -4,6 +4,8 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.MalformedURLException;
 import java.net.URL;
+
+import control.V;
 import model.Tarian;
 
 import android.os.Bundle;
@@ -41,8 +43,8 @@ public class GambarActivity extends Activity {
 			}
 		}
         */
-        bcc = (Tarian) getIntent().getSerializableExtra("tariannya");
-
+        //bcc = (Tarian) getIntent().getSerializableExtra("tariannya");
+        bcc = V.current;
         setTitle(bcc.getName());
         ImageView Image01 = (ImageView) findViewById(R.id.Img1);
 		//img.setImageResource(Integer.parseInt(bcc.getImageURL()));

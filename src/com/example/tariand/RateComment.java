@@ -1,6 +1,7 @@
 package com.example.tariand;
 
 import control.RateAndCommentManager;
+import control.V;
 import model.Comment;
 import model.Tarian;
 import android.os.Bundle;
@@ -30,7 +31,8 @@ public class RateComment extends Activity {
         userName = (EditText) findViewById(R.id.username);
         eMail = (EditText) findViewById(R.id.email);
         comment = (EditText) findViewById(R.id.comment);
-        bcc = (Tarian) getIntent().getSerializableExtra("tariannya");
+        //bcc = (Tarian) getIntent().getSerializableExtra("tariannya");
+        bcc = V.current;
         
         rncm = new RateAndCommentManager();
         eSubmit.setOnClickListener(new View.OnClickListener(

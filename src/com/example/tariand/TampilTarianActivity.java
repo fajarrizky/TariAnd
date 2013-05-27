@@ -3,6 +3,8 @@ package com.example.tariand;
 
 import java.util.ArrayList;
 
+import control.V;
+
 import model.Tarian;
 
 import android.os.Bundle;
@@ -33,7 +35,8 @@ public class TampilTarianActivity extends Activity {
 		Log.d("masuk", "hai hai lo lagi di TampilTarian cyn");
 		ArrayAdapter<String> adapt = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, taritari);
 
-		bcc = (Tarian) getIntent().getSerializableExtra("tariannya");
+		//bcc = (Tarian) getIntent().getSerializableExtra("tariannya");
+		bcc = V.current;
 		if(bcc != null){
 			Log.d(""+bcc.getId()+" , "+bcc.getName(), ""+bcc.getVideoURL());
 	        setTitle(bcc.getName());
@@ -53,7 +56,8 @@ public class TampilTarianActivity extends Activity {
 
 					intent = new Intent(getApplicationContext(), DeskripsiActivity.class);
 					//intent.putExtra("namatarian", namatarian);
-					intent.putExtra("tariannya", bcc);
+					//intent.putExtra("tariannya", bcc);
+					V.current = bcc;
 					startActivity(intent);
 				}
 
@@ -62,7 +66,8 @@ public class TampilTarianActivity extends Activity {
 
 					intent = new Intent(getApplicationContext(), GambarActivity.class);
 					//intent.putExtra("namatarian", namatarian);
-					intent.putExtra("tariannya", bcc);
+					//intent.putExtra("tariannya", bcc);
+					V.current = bcc;
 					startActivity(intent);
 				}
 
@@ -70,29 +75,8 @@ public class TampilTarianActivity extends Activity {
 
 					Intent intent = new Intent(getApplicationContext(), VideoActivity.class);
 					//intent.putExtra("namatarian", namatarian);
-					intent.putExtra("tariannya", bcc);
-					startActivity(intent);
-				}
-				
-				if (arg0.getItemAtPosition(arg2).toString().equalsIgnoreCase("Share") && namatarian!=null){
-
-					//Intent intent = new Intent(getApplicationContext(), VideoActivity.class);
-					//intent.putExtra("namatarian", namatarian);
 					//intent.putExtra("tariannya", bcc);
-					//startActivity(intent);
-					
-					Intent share = new Intent(android.content.Intent.ACTION_SEND);
-					share.setType("text/plain");
-					share.putExtra(Intent.EXTRA_SUBJECT, "Name of the thing to share");
-					share.putExtra(Intent.EXTRA_TEXT, bcc.getDescription());
-					startActivity(Intent.createChooser(share, "Title of the dialog that will show up"));
-				}
-				
-				if (arg0.getItemAtPosition(arg2).toString().equalsIgnoreCase("Rating dan Komentar") && namatarian!=null){
-
-					Intent intent = new Intent(getApplicationContext(), RateComment.class);
-					//intent.putExtra("namatarian", namatarian);
-					intent.putExtra("tariannya", bcc);
+					V.current = bcc;
 					startActivity(intent);
 				}
 			}

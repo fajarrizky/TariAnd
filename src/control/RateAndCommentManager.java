@@ -65,7 +65,7 @@ public class RateAndCommentManager {
          nameValuePairs.add(new BasicNameValuePair("irate", ""+comment.getRate()));
          nameValuePairs.add(new BasicNameValuePair("erate", ""+eRate));
          nameValuePairs.add(new BasicNameValuePair("nrate", ""+nRate));
-         nameValuePairs.add(new BasicNameValuePair("devID", MainActivity.UNIQUE_ID));
+         nameValuePairs.add(new BasicNameValuePair("devID", V.UNIQUE_ID));
          sendData(nameValuePairs);
 	}
 
@@ -76,7 +76,7 @@ public class RateAndCommentManager {
             HttpClient httpclient = new DefaultHttpClient();
             
             ///ganti ininya dulu, inget!
-            HttpPost httppost = new HttpPost(MainActivity.target+"android/ratecomment.php");
+            HttpPost httppost = new HttpPost(V.target+"android/ratecomment.php");
             httppost.setEntity(new UrlEncodedFormEntity(data));
             //HttpResponse response = 
             httpclient.execute(httppost);
@@ -108,7 +108,7 @@ public class RateAndCommentManager {
 		.detectDiskReads().detectDiskWrites().detectNetwork()
 		.penaltyLog().build());
 		try {
-			response = CustomHttpClient.executeHttpPost(MainActivity.target+"android/getcomments.php", postParameters);
+			response = CustomHttpClient.executeHttpPost(V.target+"android/getcomments.php", postParameters);
 			
 			String result = response.toString(); 
 			Log.e("debug", "result = " + result);
