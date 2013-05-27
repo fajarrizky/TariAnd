@@ -16,6 +16,7 @@ import android.content.Intent;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.Toast;
 import android.widget.AdapterView.OnItemClickListener;
 import android.widget.ListView;
 
@@ -61,11 +62,11 @@ public class ListViewActivity extends Activity {
 			
 		}
 
-//		Award x = V.awrdMngr.getAward(6);
-//		if(V.shpr.getInt("BOOKMARKING", 0)>= 5 && !x.isAchieved()){
-//			x.setAsAchieved();
-//			new AlertDialog.Builder(getApplicationContext()).setTitle("Selamat!").setMessage("Anda mendapatkan Award : "+x.getName()).setNeutralButton("Close", null).show();
-//		}
+		Award x = V.awrdMngr.getAward(6);
+		if(V.shpr.getInt("BOOKMARKING", 0)>= 5 && !x.isAchieved()){
+			x.setAsAchieved();
+			Toast.makeText(getApplicationContext(), "Selamat! Anda mendapat Award: "+x.getName(), Toast.LENGTH_SHORT).show();
+		}
 		ListViewAdapter adapter = new ListViewAdapter(getApplicationContext(),
 				arrayTari);
 		// adapter.notifyDataSetChanged();

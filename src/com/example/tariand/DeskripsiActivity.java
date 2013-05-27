@@ -1,10 +1,14 @@
 package com.example.tariand;
 
 import helper.CommentListViewAdapter;
+import helper.CustomHttpClient;
 
 import java.util.ArrayList;
 import java.util.List;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 import org.w3c.dom.Attr;
@@ -29,6 +33,7 @@ import model.Tarian;
 import android.R.attr;
 import android.R.color;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.Context;
@@ -63,8 +68,11 @@ public class DeskripsiActivity extends Activity {
 	ImageButton sfb;//, stw;
 	Button submitKomentar;
 	Tarian bcc;
+	float eRate;
+	int nRate;
 	RateAndCommentManager rncm;
 	ArrayList<Comment> comments;
+	private int comenne;
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
@@ -105,24 +113,10 @@ public class DeskripsiActivity extends Activity {
 		 * || pelajarin sendiri aja yah!
 		 */
 
-		/*
-		tmng = MainActivity.tariManager;
-		String tarianku = getIntent().getStringExtra("namatarian");
-		tarianList = tmng.getListTarian();
-
-		for (Tarian tari : tarianList) {
-			if (tari.getName().equalsIgnoreCase(tarianku)){
-				TextView tv = (TextView) findViewById(R.id.deskripsiTarian);
-				tv.setText(tari.getDescription());
-			}
-		}
-		 */
-
-
-
-		//part 1
-		//bcc =(Tarian) getIntent().getSerializableExtra("tariannya");
 		bcc = V.current;
+		getNewRate();
+		bcc.setRate(eRate);
+		bcc.setNRate(nRate);
 		setTitle("Deskripsi "+bcc.getName());
 		rerataRating = (RatingBar) findViewById(R.id.ratingTarian);        
 		rerataRating.setIsIndicator(true);
@@ -227,41 +221,21 @@ public class DeskripsiActivity extends Activity {
 		submitKomentar = (Button) findViewById(R.id.submitKomentar);
 		this.getWindow().setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN);
 
-		//		for(int i = 0; i<comments.size(); i++){
-		//			Comment k = comments.get(i);
-		//			TableRow y = new TableRow(this);
-		//			TableRow y2 = new TableRow(this);
-		//			TableRow y3 = new TableRow(this);
-		//			TableRow y4 = new TableRow(this);
-		//			TextView rating = new TextView(getApplicationContext());
-		//			rating.setText("Rating : ");
-		//			y.addView(rating);
-		//			RatingBar rcc = new RatingBar(getApplicationContext());
-		//			rcc.setIsIndicator(true);
-		//			rcc.setRating(k.getRate());
-		//			y2.addView(rcc);
-		//			TextView ecc = new TextView(getApplicationContext());
-		//			ecc.setText(k.getUserName());
-		//			y3.addView(ecc);
-		//			TextView ekk = new TextView(getApplicationContext());
-		//			ekk.setText(k.getComment());
-		//			y4.addView(ekk);
-		//			x.addView(y);
-		//			x.addView(y2);
-		//			x.addView(y3);
-		//			x.addView(y4);
-		//		}
-
 		submitKomentar.setOnClickListener(new View.OnClickListener() {
 
 			public void onClick(View v) {
-				// TODO Auto-generated method stub
-				process();
-				//Intent intent = new Intent(getApplicationContext(), Transfer.class);
-				//intent.putExtra("tariannya", bcc);
-				//intent.addFlags(Intent.FLAG_ACTIVITY_NO_ANIMATION);
-				//startActivity(intent);
-				//finish();
+				String name = namaKomenter.getText().toString();
+				String email = emailKomenter.getText().toString();
+				String comment = komentar.getText().toString();
+				if(name == null || name.equals("")){
+					Toast.makeText(getApplicationContext(), "Nama tidak boleh kosong", Toast.LENGTH_SHORT).show();
+				} else if(!isEmailValid(email)){
+					Toast.makeText(getApplicationContext(), "Email tidak valid", Toast.LENGTH_SHORT).show();
+				} else if(comment==null || comment.equals("")){
+					Toast.makeText(getApplicationContext(), "Komentar tidak boleh kosong", Toast.LENGTH_SHORT).show();
+				} else {
+					process();
+				}
 			}
 		}); 
 
@@ -273,7 +247,7 @@ public class DeskripsiActivity extends Activity {
 				// TODO Auto-generated method stub 
 				Intent sendIntent = new Intent();
 				sendIntent.setAction(Intent.ACTION_SEND);
-				sendIntent.putExtra(Intent.EXTRA_TEXT, bcc.getLink());
+				sendIntent.putExtra(Intent.EXTRA_TEXT, bcc.getName()+" : "+bcc.getLink());
 				sendIntent.setType("text/plain");
 				startActivity(Intent.createChooser(sendIntent, "Share With"));
 				int shares = V.shpr.getInt("SHARE", 0);
@@ -283,21 +257,21 @@ public class DeskripsiActivity extends Activity {
 				} else if (shares == 10){
 					V.awrdMngr.getAward(5).setAsAchieved();
 				}
-				//Intent i = new Intent(getApplicationContext(), ShareFacebookActivity.class);
-				//i.putExtra("tariannya", bcc);
-				//startActivity(i);
 			}
 		});
 
-		//		stw.setOnClickListener(new View.OnClickListener() {
-		//			
-		//			public void onClick(View v) {
-		//				// TODO Auto-generated method stub
-		//				Intent i = new Intent(getApplicationContext(), ShareTwitterActivity.class);
-		//				i.putExtra("tariannya", bcc);
-		//				startActivity(i);
-		//			}
-		//		});
+		comenne = V.shpr.getInt("KOMENTATOR", 0);
+		Award x = V.awrdMngr.getAward(1);
+		Award y = V.awrdMngr.getAward(4);
+		if(comenne == 5 && !x.isAchieved()){
+			x.setAsAchieved();
+			//Toast.makeText(getApplicationContext(), "Selamat! Anda mendapatkan Award: "+x.getName(), Toast.LENGTH_SHORT).show();
+			Toast.makeText(getApplicationContext(), "Selamat! Anda mendapat Award: "+x.getName(), Toast.LENGTH_SHORT).show();
+		} else if (comenne == 10 && !y.isAchieved()) {
+			y.setAsAchieved();
+			//Toast.makeText(getApplicationContext(), "Selamat! Anda mendapatkan Award: "+y.getName(), Toast.LENGTH_SHORT).show();
+			Toast.makeText(getApplicationContext(), "Selamat! Anda mendapat Award: "+y.getName(), Toast.LENGTH_SHORT).show();
+		}
 	}
 
 	@Override
@@ -319,28 +293,40 @@ public class DeskripsiActivity extends Activity {
 		rncm.setERate(bcc.getRate());
 		rncm.setNRate(bcc.getNRate());
 		rncm.post();
-		int comments = V.shpr.getInt("KOMENTATOR", 0);
-		comments++;
-		Award x = V.awrdMngr.getAward(1);
-		Award y = V.awrdMngr.getAward(4);
-		if(comments == 5 && !x.isAchieved()){
-			x.setAsAchieved();
-			//Toast.makeText(getApplicationContext(), "Selamat! Anda mendapatkan Award: "+x.getName(), Toast.LENGTH_SHORT).show();
-			new AlertDialog.Builder(getApplicationContext()).setTitle("Selamat!").setMessage("Anda mendapatkan Award : "+x.getName()).setNeutralButton("Close", null).show();
-			
-		} else if (comments == 10 && !y.isAchieved()) {
-			y.setAsAchieved();
-			//Toast.makeText(getApplicationContext(), "Selamat! Anda mendapatkan Award: "+y.getName(), Toast.LENGTH_SHORT).show();
-			new AlertDialog.Builder(getApplicationContext()).setTitle("Selamat!").setMessage("Anda mendapatkan Award : "+y.getName()).setNeutralButton("Close", null).show();
-			
-		} else {
-			//Toast.makeText(this, "Komentar Anda sudah dikirim", Toast.LENGTH_SHORT).show();
-			new AlertDialog.Builder(getApplicationContext()).setTitle("Pemberitahuan").setMessage("Komentar Anda sudah dikirim.").setNeutralButton("Close", null).show();
-			
-		}
-		V.shedtr.putInt("KOMENTATOR", comments);
+
+		comenne++;
+		//Toast.makeText(this, "Komentar Anda sudah dikirim", Toast.LENGTH_SHORT).show();
+		Toast.makeText(getApplicationContext(), "Komentar Anda sudah dikirim", Toast.LENGTH_SHORT).show();
+
+		V.shedtr.putInt("KOMENTATOR", comenne);
 		V.shedtr.commit();
 		beriKomentarLayout.setVisibility(View.GONE);
+		
+		Intent ii = new Intent(getApplicationContext(), DeskripsiActivity.class);
+		startActivity(ii);
+	}
+	
+	public void getNewRate(){
+		ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();
+		postParameters.add(new BasicNameValuePair("idTarian", ""+bcc.getId()));
+		String response = null;
+		StrictMode.setThreadPolicy(new StrictMode.ThreadPolicy.Builder()
+		.detectDiskReads().detectDiskWrites().detectNetwork()
+		.penaltyLog().build());
+		try {
+			response = CustomHttpClient.executeHttpPost(V.target+"android/cekRate.php", postParameters);
+		    String result = response.toString();  
+		    Log.e("debug", "result = " + result);
+			JSONArray jArray = new JSONArray(result);
+			JSONObject json_data = jArray.getJSONObject(0);
+			eRate = Float.parseFloat(json_data.getString("eRate"));
+			nRate = Integer.parseInt(json_data.getString("nRate"));
+		} catch (Exception e) {
+			Log.e("log_tag","Error in http connection!!" + e.toString());     
+		}
 	}
 
+	boolean isEmailValid(CharSequence email) {
+		   return android.util.Patterns.EMAIL_ADDRESS.matcher(email).matches();
+		}
 }

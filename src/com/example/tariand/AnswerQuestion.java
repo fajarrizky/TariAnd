@@ -26,8 +26,8 @@ public class AnswerQuestion extends Activity {
         Award x = V.awrdMngr.getAward(0);
         if(score == 100 && !x.isAchieved()){
         	x.setAsAchieved();
-        	new AlertDialog.Builder(getApplicationContext()).setTitle("Selamat!").setMessage("Anda mendapatkan Award : "+x.getName()).setNeutralButton("Close", null).show();
-		}
+        	Toast.makeText(getApplicationContext(), "Selamat! Anda mendapat Award: "+x.getName(), Toast.LENGTH_SHORT).show();
+        }
         
         Button cont = (Button) findViewById(R.id.Kontinyu);
         setTitle("Hasil Quiz");

@@ -31,12 +31,10 @@ public class AwardListViewActivity extends Activity {
         
         for (Award aw : listAward) {
 			if (aw.isAchieved()){
-
-				namaAward.add(aw.getName() + " (Sudah Didapatkan)");
+				namaAward.add(aw.getName() + " (Sudah Didapatkan) ");
 			}
 			else{
-
-				namaAward.add(aw.getName() + " (Belum Didapatkan)");
+				namaAward.add(aw.getName() + " (Belum Didapatkan) ");
 			}
 		}
         

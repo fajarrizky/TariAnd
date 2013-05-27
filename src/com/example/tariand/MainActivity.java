@@ -46,7 +46,13 @@ public class MainActivity extends Activity {
         setTitle("TariAnd");
         V.tariManager = new TarianManager();
 		//tariManager.testCode();
-		V.tariManager.retrieve();
+        new Thread(new Runnable(){
+
+			public void run() {
+				// TODO Auto-generated method stub
+				V.tariManager.retrieve();
+			}        	
+        }).run();
 		V.initiateVariables();
         cari.setOnClickListener(new View.OnClickListener() {
 			

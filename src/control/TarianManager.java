@@ -17,7 +17,11 @@ public class TarianManager {
 	ArrayList<Tarian> listTarian;
 
 	public TarianManager(){
-		listTarian = new ArrayList<Tarian>(300);
+		listTarian = new ArrayList<Tarian>();
+	}
+	
+	public void addTarian(Tarian x){
+		listTarian.add(x);
 	}
 	
 	public ArrayList<Tarian> getListTarian(){
@@ -50,6 +54,8 @@ public class TarianManager {
         //end of test code
 	}
 	//niatnya ini buat ngeretrieve dari database, masukin semua tarian ke list.
+	
+	
 	public void retrieve(){
 		ArrayList<NameValuePair> postParameters = new ArrayList<NameValuePair>();  
 		String response = null;
