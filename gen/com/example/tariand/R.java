@@ -89,6 +89,7 @@ public final class R {
         public static final int deskripsi=0x7f09004d;
         public static final int deskripsiTarian=0x7f090010;
         public static final int detarian=0x7f090047;
+        public static final int dropDownProvinsi=0x7f090049;
         public static final int eRate=0x7f090037;
         public static final int editText1=0x7f090009;
         public static final int editText2=0x7f09002f;
@@ -111,7 +112,6 @@ public final class R {
         public static final int namaTarian=0x7f090056;
         public static final int namaTarianUC=0x7f090048;
         public static final int pic=0x7f090045;
-        public static final int provinsi=0x7f090049;
         public static final int qNumber=0x7f090035;
         public static final int ratingPengguna=0x7f09004f;
         public static final int ratingTarian=0x7f09000f;

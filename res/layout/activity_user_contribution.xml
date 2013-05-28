@@ -53,14 +53,15 @@
                             android:layout_height="wrap_content"
                             android:text="Dari Provinsi : "
                             android:textAppearance="?android:attr/textAppearanceMedium" />
+
+                        <Spinner
+                            android:id="@+id/dropDownProvinsi"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content" 
+                            android:popupBackground="#5677AA"
+                            android:background="#56AA77" 
+                            />
 
-                        <EditText
-                            android:id="@+id/provinsi"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:layout_weight="1"
-                            android:ems="10"
-                             />
                     </TableRow>
 
                     <TableRow
@@ -185,6 +186,7 @@
                         android:layout_weight="0.50"
                         android:orientation="vertical" >
                     </LinearLayout>
+
                 </LinearLayout>
 
             </LinearLayout>
