@@ -7,7 +7,7 @@ public class Award {
 	private String name;
 	private String description;
 	private boolean isAchieved;
-	
+	private String link;
 	
 	
 	public Award(int id, String name, String description){
@@ -55,6 +55,14 @@ public class Award {
 		this.isAchieved = isAchieved;
 		V.shedtr.putBoolean("" + this.name, this.isAchieved);
 		V.shedtr.commit();
+	}
+
+	public String getLink() {
+		return link;
+	}
+
+	public void setLink(String link) {
+		this.link = link;
 	}
 	
 	

@@ -9,9 +9,13 @@ import control.V;
 import android.R;
 import android.os.Bundle;
 import android.app.Activity;
+import android.content.Intent;
 import android.view.Menu;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.AdapterView.OnItemClickListener;
 
 public class AwardListViewActivity extends Activity {
 
@@ -39,7 +43,23 @@ public class AwardListViewActivity extends Activity {
 		}
         
         ListView awardListView = (ListView) findViewById(com.example.tariand.R.id.awardListView);
-        
+        awardListView.setOnItemClickListener(new OnItemClickListener() {
+
+			public void onItemClick(AdapterView<?> arg0, View arg1, int arg2,
+					long arg3) {
+				// TODO Auto-generated method stub
+				int position = arg2;
+				Award award = listAward.get(position);
+				if(listAward.get(position).isAchieved()){
+					Intent sendIntent = new Intent();
+					sendIntent.setAction(Intent.ACTION_SEND);
+					sendIntent.putExtra(Intent.EXTRA_TEXT, award.getName()+" : "+award.getLink());
+					sendIntent.setType("text/plain");
+					startActivity(Intent.createChooser(sendIntent, "Share With"));
+				}
+			}
+        	
+        });
         awardListView.setBackgroundColor(getResources().getColor(R.color.black));
         ArrayAdapter<String> adapt = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, namaAward);
         awardListView.setAdapter(adapt);
