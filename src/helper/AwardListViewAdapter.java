@@ -2,13 +2,19 @@ package helper;
 
 import java.util.ArrayList;
 
+import control.V;
+
 import model.Award;
 import android.R;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageButton;
+import android.widget.TextView;
+import android.widget.Toast;
 
 public class AwardListViewAdapter extends BaseAdapter {
 
@@ -35,13 +41,50 @@ public class AwardListViewAdapter extends BaseAdapter {
 		return arg0;
 	}
 
-	public View getView(int arg0, View arg1, ViewGroup arg2) {
+	public View getView(int position, View convertView, ViewGroup arg2) {
 		// TODO Auto-generated method stub
-		if (arg1==null){
-			arg1 = mInflater.inflate(R.layout.simple_list_item_1, null);
+		final int thisposition = position;
+		final Award mAward = awardArray.get(position);
+		if (convertView==null){
+			convertView = mInflater.inflate(com.example.tariand.R.layout.list_award_view, null);
 		}
+		TextView tv  = (TextView) convertView.findViewById(com.example.tariand.R.id.awardName);
+		TextView tv2  = (TextView) convertView.findViewById(com.example.tariand.R.id.awardDesc);
+		ImageButton btn= (ImageButton) convertView.findViewById(com.example.tariand.R.id.awardIcon);
 		
-		return null;
+		if(mAward.isAchieved()){
+			tv.setText(mAward.getName()+" (Sudah Didapat)");
+			tv2.setText(mAward.getDescription());
+		} else {
+			tv.setText(mAward.getName()+" (Belum Didapat");
+			tv2.setText(mAward.getDescription());
+			convertView.setBackgroundColor(0x114477);
+		}	
+
+		tv.setTextColor(com.example.tariand.R.color.blue);
+		tv2.setTextColor(com.example.tariand.R.color.blue);
+		btn.setImageResource(V.awardImgRes[position]);
+		btn.setClickable(mAward.isAchieved());
+		btn.setOnClickListener(new View.OnClickListener() {
+			
+			public void onClick(View v) {
+				// TODO Auto-generated method stub
+				Intent sendIntent = new Intent();
+				sendIntent.setAction(Intent.ACTION_SEND);
+				sendIntent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+				sendIntent.putExtra(Intent.EXTRA_TEXT, mAward.getName()+" : "+mAward.getLink());
+				sendIntent.setType("text/plain");
+				if(mAward.isAchieved()){
+				v.getContext().startActivity(sendIntent);
+				} else {
+					Toast.makeText(v.getContext(), "Award Belum Didapatkan", Toast.LENGTH_SHORT).show();
+				}
+				//startActivity(Intent.createChooser(sendIntent, "Share With"));
+			}
+		});
+		
+		
+		return convertView;
 	}
 
 

@@ -26,7 +26,7 @@ public class AwardManager {
 		aw[3].setLink("http://tariand.id1945.com/asd/Kontributor.html");
 		aw[4] = new Award(5, "Komentator II", "Pengguna memberikan 10 buah komentar dan rating");
 		aw[4].setLink("http://tariand.id1945.com/asd/Komentator%202.html");
-		aw[5] = new Award(6, "Penyebar Budaya II", "Pengguna membagikan Tarian ke media sosial 5 kali");
+		aw[5] = new Award(6, "Penyebar Budaya II", "Pengguna membagikan Tarian ke media sosial 10 kali");
 		aw[5].setLink("http://tariand.id1945.com/asd/Penyebar%20Budaya%202.html");
 		aw[6] = new Award(7, "Penanda", "Pengguna memberikan Bookmark pada 5 Tarian");
 		aw[6].setLink("http://tariand.id1945.com/asd/Penanda.html");

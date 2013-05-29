@@ -117,45 +117,6 @@ public class ListViewAdapter extends BaseAdapter {
 			}
 		});
 
-		/*
-			if (tarianArray.get(thisposition).isBookmarked()){
-				bukmark.setVisibility(1);
-				anbukmark.setVisibility(View.INVISIBLE);
-				bukmark.setOnClickListener(new View.OnClickListener() {
-
-					public void onClick(View v) {
-						// TODO Auto-generated method stub
-						Tarian aaa = tarianArray.get(thisposition);
-						aaa.setBookmark(false);
-						//v.findViewById(com.example.tariand.R.id.bookmark).setVisibility(View.INVISIBLE);
-						ImageButton book = (ImageButton) v.findViewById(com.example.tariand.R.id.bookmark);
-						book.setImageResource(com.example.tariand.R.drawable.nostar);
-						//v.findViewById(com.example.tariand.R.id.noBookmark).setVisibility(View.VISIBLE);
-						notifyDataSetChanged();
-						Log.d(""+aaa.getName(), "setBookmark dari true ke "+aaa.isBookmarked());
-					}
-				});
-			}
-			else {
-				anbukmark.setVisibility(1);
-				anbukmark.setOnClickListener(new View.OnClickListener() {
-
-					public void onClick(View v) {
-						// TODO Auto-generated method stub
-						Tarian aaa = tarianArray.get(thisposition);
-						aaa.setBookmark(true);
-						ImageButton book = (ImageButton) v.findViewById(com.example.tariand.R.id.noBookmark);
-						book.setImageResource(com.example.tariand.R.drawable.star);						
-						notifyDataSetChanged();
-						Log.d(""+aaa.getName(), "setBookmark dari false ke "+aaa.isBookmarked());
-						//v.findViewById(com.example.tariand.R.id.noBookmark).setVisibility(View.INVISIBLE);
-						//v.findViewById(com.example.tariand.R.id.bookmark).setVisibility(View.VISIBLE);
-					}
-				});
-			} 
-		 */
-
-
 		return convertView;
 	}
 

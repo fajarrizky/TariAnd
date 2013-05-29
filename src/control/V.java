@@ -19,11 +19,23 @@ public class V {
 	public static UserContributionManager ucmngr;
 	public static QuestionManager qmngr;
 	
+	public static int[] awardImgRes;
+	
 	public static void initiateVariables(){
 		//tariManager = new TarianManager();
 		awrdMngr = new AwardManager();
 		rtcmmngr = new RateAndCommentManager();
 		ucmngr = new UserContributionManager();
 		qmngr = new QuestionManager();
+		
+		awardImgRes = new int[7];
+		awardImgRes[0] = com.example.tariand.R.drawable.perfect;
+		awardImgRes[1] = com.example.tariand.R.drawable.comment1award;
+		awardImgRes[2] = com.example.tariand.R.drawable.shareaward;
+		awardImgRes[3] = com.example.tariand.R.drawable.kontribaward;
+		awardImgRes[4] = com.example.tariand.R.drawable.comment2award;
+		awardImgRes[5] = com.example.tariand.R.drawable.shareaward2;
+		awardImgRes[6] = com.example.tariand.R.drawable.bookmarkaward;
+
 	}
 }

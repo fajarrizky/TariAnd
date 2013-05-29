@@ -32,21 +32,28 @@ public final class R {
         public static final int padding_small=0x7f050004;
     }
     public static final class drawable {
-        public static final int fail=0x7f020000;
-        public static final int fb=0x7f020001;
-        public static final int gambyong=0x7f020002;
-        public static final int ic_action_search=0x7f020003;
-        public static final int ic_launcher=0x7f020004;
-        public static final int imap=0x7f020005;
-        public static final int menu=0x7f020006;
-        public static final int menu_btn=0x7f020007;
-        public static final int nostar=0x7f020008;
-        public static final int pendet=0x7f020009;
-        public static final int share=0x7f02000a;
-        public static final int star=0x7f02000b;
-        public static final int success=0x7f02000c;
-        public static final int tombol=0x7f02000d;
-        public static final int twitter=0x7f02000e;
+        public static final int bookmarkaward=0x7f020000;
+        public static final int comment1award=0x7f020001;
+        public static final int comment2award=0x7f020002;
+        public static final int fail=0x7f020003;
+        public static final int fb=0x7f020004;
+        public static final int gambyong=0x7f020005;
+        public static final int ic_action_search=0x7f020006;
+        public static final int ic_launcher=0x7f020007;
+        public static final int imap=0x7f020008;
+        public static final int kontribaward=0x7f020009;
+        public static final int menu=0x7f02000a;
+        public static final int menu_btn=0x7f02000b;
+        public static final int nostar=0x7f02000c;
+        public static final int pendet=0x7f02000d;
+        public static final int perfect=0x7f02000e;
+        public static final int share=0x7f02000f;
+        public static final int shareaward=0x7f020010;
+        public static final int shareaward2=0x7f020011;
+        public static final int star=0x7f020012;
+        public static final int success=0x7f020013;
+        public static final int tombol=0x7f020014;
+        public static final int twitter=0x7f020015;
     }
     public static final class id {
         public static final int BeriKomentar=0x7f090015;
@@ -70,12 +77,15 @@ public final class R {
         public static final int TarianListView=0x7f090027;
         public static final int True=0x7f090033;
         public static final int UserContribution=0x7f09002c;
-        public static final int action_settings=0x7f090059;
+        public static final int action_settings=0x7f09005c;
         public static final int authButton=0x7f090055;
+        public static final int awardDesc=0x7f090058;
+        public static final int awardIcon=0x7f090056;
         public static final int awardListView=0x7f090003;
+        public static final int awardName=0x7f090057;
         public static final int beriKomentarTV=0x7f090016;
         public static final int beriRating=0x7f09001a;
-        public static final int bookmark=0x7f090057;
+        public static final int bookmark=0x7f09005a;
         public static final int btnLoginTwitter=0x7f09003c;
         public static final int btnLogoutTwitter=0x7f090041;
         public static final int btnUpdateStatus=0x7f090040;
@@ -107,9 +117,9 @@ public final class R {
         public static final int link=0x7f09004a;
         public static final int listViewProvinsi=0x7f090006;
         public static final int menuImage=0x7f09002d;
-        public static final int menu_settings=0x7f090058;
+        public static final int menu_settings=0x7f09005b;
         public static final int namaKomenter=0x7f09001d;
-        public static final int namaTarian=0x7f090056;
+        public static final int namaTarian=0x7f090059;
         public static final int namaTarianUC=0x7f090048;
         public static final int pic=0x7f090045;
         public static final int qNumber=0x7f090035;
@@ -169,7 +179,8 @@ public final class R {
         public static final int comment_viewer=0x7f030019;
         public static final int customlistviewlayout=0x7f03001a;
         public static final int fbsharefragment=0x7f03001b;
-        public static final int list_view=0x7f03001c;
+        public static final int list_award_view=0x7f03001c;
+        public static final int list_view=0x7f03001d;
     }
     public static final class menu {
         public static final int activity_answer_question=0x7f080000;

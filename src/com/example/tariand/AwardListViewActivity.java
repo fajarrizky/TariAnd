@@ -1,5 +1,7 @@
 package com.example.tariand;
 
+import helper.AwardListViewAdapter;
+
 import java.util.ArrayList;
 
 import model.Award;
@@ -21,7 +23,6 @@ public class AwardListViewActivity extends Activity {
 
 	AwardManager awardManage;
 	ArrayList<Award> listAward;
-	ArrayList<String> namaAward;
 	
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -29,18 +30,7 @@ public class AwardListViewActivity extends Activity {
         setContentView(com.example.tariand.R.layout.activity_award_list_view);
         awardManage = V.awrdMngr;
         listAward = awardManage.getListAward();
-        namaAward = new ArrayList<String>();
         setTitle("Award");
-        
-        
-        for (Award aw : listAward) {
-			if (aw.isAchieved()){
-				namaAward.add(aw.getName() + " (Sudah Didapatkan) ");
-			}
-			else{
-				namaAward.add(aw.getName() + " (Belum Didapatkan) ");
-			}
-		}
         
         ListView awardListView = (ListView) findViewById(com.example.tariand.R.id.awardListView);
         awardListView.setOnItemClickListener(new OnItemClickListener() {
@@ -60,9 +50,10 @@ public class AwardListViewActivity extends Activity {
 			}
         	
         });
-        awardListView.setBackgroundColor(getResources().getColor(R.color.black));
-        ArrayAdapter<String> adapt = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, namaAward);
-        awardListView.setAdapter(adapt);
+        //awardListView.setBackgroundColor(getResources().getColor(R.color.black));
+        //ArrayAdapter<String> adapt = new ArrayAdapter<String>(getApplicationContext(), android.R.layout.simple_list_item_1, namaAward);
+        AwardListViewAdapter adpt = new AwardListViewAdapter(getApplicationContext(), listAward);
+        awardListView.setAdapter(adpt);
     
     }
 
