@@ -3,15 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <Button
-        android:id="@+id/Selesai"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="19dp"
-        android:text="Selesai" />
-
     <TextView
         android:id="@+id/Hasil"
         android:layout_width="wrap_content"
@@ -21,12 +12,23 @@
         android:textAppearance="?android:attr/textAppearanceLarge" />
 
     <Button
+        android:id="@+id/Selesai"
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="102dp"
+        android:background="@drawable/menu_btn"
+        android:text="Selesai" />
+
+    <Button
         android:id="@+id/Kontinyu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
         android:layout_above="@+id/Selesai"
-        android:layout_alignLeft="@+id/Selesai"
-        android:layout_alignRight="@+id/Selesai"
+        android:layout_alignParentLeft="true"
+        android:layout_marginBottom="34dp"
+        android:background="@drawable/menu_btn"
         android:text="Ulangi" />
 
 </RelativeLayout>

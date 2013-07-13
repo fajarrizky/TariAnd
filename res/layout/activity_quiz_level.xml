@@ -3,26 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
-    <Button
-        android:id="@+id/True"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_marginBottom="20dp"
-        android:layout_marginLeft="57dp"
-        android:text="Benar" />
-
-    <Button
-        android:id="@+id/False"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/True"
-        android:layout_alignBottom="@+id/True"
-        android:layout_alignParentRight="true"
-        android:layout_marginRight="110dp"
-        android:text="Salah" />
-
     <TextView
         android:id="@+id/qNumber"
         android:layout_width="wrap_content"
@@ -44,5 +24,25 @@
         android:inputType="textMultiLine"
         android:singleLine="false"
         android:text="Pertanyaaan" />
+
+    <Button
+        android:id="@+id/False"
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:layout_below="@+id/isi"
+        android:layout_marginTop="62dp"
+        android:layout_toRightOf="@+id/isi"
+        android:background="@drawable/menu_btn"
+        android:text="Salah" />
+
+    <Button
+        android:id="@+id/True"
+        android:layout_width="match_parent"
+        android:layout_height="31dp"
+        android:layout_alignBaseline="@+id/False"
+        android:layout_alignBottom="@+id/False"
+        android:layout_toLeftOf="@+id/isi"
+        android:background="@drawable/menu_btn"
+        android:text="Benar" />
 
 </RelativeLayout>
